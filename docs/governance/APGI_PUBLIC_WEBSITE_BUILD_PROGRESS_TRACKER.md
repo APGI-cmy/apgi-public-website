@@ -33,8 +33,8 @@
 
 | Stage | Artifact | Status | Notes |
 |---|---|---|---|
-| 1 | App Description | In progress | Draft created and cleaned up against governance canon |
-| 2 | UX Workflow & Wiring Spec | In progress | Draft created from the APGI Public Website App Description |
+| 1 | App Description | In progress | Draft aligned to governance canon; public reference URLs and asset policy frozen |
+| 2 | UX Workflow & Wiring Spec | In progress | Gap analysis completed; Section 11 resolved and route map frozen |
 | 3 | FRS | Pending | To be derived after UX spec approval |
 | 4 | TRS | Pending | To be derived after FRS |
 | 5 | Architecture | Pending | To be derived after TRS |

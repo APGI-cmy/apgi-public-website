@@ -38,7 +38,7 @@
 
 - Recreate the APGI public site as a modern, responsive, Vercel-hosted website.
 - Preserve and modernize the current company story, training offer, client proof, philanthropy, and contact pathways.
-- Add a polished APGI hub section that links to public or gated APGI/ISMS applications.
+- Add a polished APGI hub section that links to the frozen v1 public ISMS marketing routes and any later governed expansions.
 - Include clear external link-outs to LinkedIn and Thinkific.
 - Include a featured training area for the current course surface, including the VPSHR Level 0 course.
 - Include placeholder content slots so copy, proof points, testimonials, and app tiles can be tuned progressively.
@@ -60,7 +60,7 @@
 - The public website is a marketing and routing layer, not a system of record.
 - Thinkific remains the system of record for course delivery and management.
 - LinkedIn remains the social proof and discovery channel, but the website must own the canonical brand narrative.
-- App tiles that lead into the ISMS ecosystem may point to public demos, marketing pages, or gated environments, depending on the module.
+- App tiles that lead into the ISMS ecosystem resolve through a frozen route-slug map at deploy time; the host may vary by environment, but the route paths are canonical.
 - Any later contact-form, CMS, or analytics integration must be added as a deliberate artifact, not as an accidental code shortcut.
 
 ---
@@ -96,10 +96,11 @@
 | Source | URL | Use |
 |---|---|---|
 | Current public site | `https://apginc.ca/` | Content and positioning reference |
-| LinkedIn presence | TBD | Social proof, outbound referral, and launch channel |
+| LinkedIn presence | `https://www.linkedin.com/company/assurance-protection-group-inc` | Social proof, outbound referral, and launch channel |
 | VPSHR course index | `https://training-urls-module.vercel.app/courses/vpshr-level-0` | Course content reference for the current training focus |
 | Thinkific manage | `https://apgi.thinkific.com/manage` | Staff/admin destination, not public nav |
-| Thinkific storefront | TBD | Public course destination to link from the site |
+| Thinkific storefront | `https://apgi.thinkific.com/` | Public course destination to link from the site |
+| APGI contact reference | `https://apginc.ca/contact-us/` | Public contact model reference for email, phone, and address |
 | ISMS repo | `https://github.com/APGI-cmy/maturion-isms` | App ecosystem reference |
 | Governance repo | `https://github.com/APGI-cmy/maturion-foreman-governance` | Canonical build/governance reference |
 
@@ -110,7 +111,7 @@
 - Palette: deep slate, warm ivory, brass or gold accent, with restrained supporting neutrals.
 - Layout: strong vertical rhythm, generous whitespace, alternating full-bleed and card-based sections.
 - Motion: subtle, purposeful motion only, such as scroll reveals, hero ambient movement, hover lift, and gentle logo movement.
-- Imagery: real APGI or APGI-approved imagery where possible; avoid generic security stock that weakens trust.
+- Imagery: APGI-owned or explicitly licensed imagery only; no generic security stock. The proof strip is text-first in v1 so rights ambiguity does not leak into the launch.
 - Social/SEO: strong Open Graph and LinkedIn preview images, canonical metadata, and clear page titles.
 
 ### 4.3 Proposed Public Site Composition
@@ -118,14 +119,14 @@
 | Section | Purpose | Placeholder Status |
 |---|---|---|
 | Hero | Immediate positioning and primary CTA | Headline and subheadline to tune |
-| Proof strip | Client logos / trust markers | Logo set to confirm rights and order |
+| Proof strip | APGI-owned marks / trust cues | Text-first proof strip in v1; third-party logos deferred until separately licensed |
 | About / Who We Are | APGI story and authority | Copy to tune |
 | Services | What APGI does | Card labels and descriptions to tune |
 | Training | Thinkific and course spotlight | VPSHR Level 0 featured now; more slots later |
-| APGI Hub | Links to ISMS and APGI digital tools | Mixed public, gated, and coming-soon states |
+| APGI Hub | Links to the frozen v1 ISMS public module routes | Frozen public route map; future tiles require governance |
 | Philanthropy / Impact | Community and mentorship narrative | Copy to tune |
 | Team | People behind the brand | Bios and photos to tune |
-| Contact | Enquiry path and utility links | Form or mailto placeholder |
+| Contact | Enquiry path and utility links | Email, phone, and address card; no form in v1 |
 | Footer | Legal, social, and utility links | Stable |
 
 ### 4.4 Content Slots to Tune Later
@@ -138,9 +139,9 @@
 | Secondary CTA | Stable placeholder | LinkedIn, contact, or app hub |
 | Client proof stats | Placeholder | Use only once verified |
 | Testimonials | Placeholder | Add after approval and rights clearance |
-| App tiles | Placeholder + live mix | Public, gated, or coming soon |
+| App tiles | Frozen v1 route map + reserved future expansion | Public routes are fixed; future routes require governance |
 | Team bios | Placeholder | Add as the leadership story is confirmed |
-| Contact details | Stable | Phone, email, and contact form later |
+| Contact details | Stable | `info@apginc.ca`, `+1 416 642 9974`, and the Scarborough address |
 | Legal pages | Stable | Privacy and terms required before launch |
 
 ---
@@ -205,7 +206,7 @@ Every downstream artifact must explicitly reference this App Description by file
 | CI/CD | GitHub Actions + Vercel | Expected deployment path |
 | Deployment | Vercel | Primary hosting target |
 | Notifications | Sonner or equivalent toast/banner system | No `alert()`-based UX |
-| Analytics | TBD | Add only if approved |
+| Analytics | None in v1 | Add only if approved |
 
 ---
 
