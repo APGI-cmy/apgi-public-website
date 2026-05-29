@@ -8,13 +8,17 @@
 | Stage | 4 - Technical Requirements Specification |
 | Folder | `modules/APW/03-trs` |
 | Version | v0.1 |
-| Status | Draft - pending Foreman QP / ECAP / IAA review |
+| Status | Approved for Stage 5 Architecture progression |
 | Owner | Johan Ras |
 | Authority | CS2: Johan Ras |
+| Approval Method | AI-assisted CS2 proxy evaluation for Johan Ras |
+| Approval Date | 2026-05-29 |
 | Last Updated | 2026-05-29 |
 | Upstream Stage | `modules/APW/02-frs/functional-requirements.md` |
 | Scope Declaration | `.agent-admin/scope-declarations/apw-stage4-trs-20260529.md` |
 | Builder Appointment | `.agent-admin/builder-appointments/apw-stage4-trs-builder-contract-20260529.md` |
+| IAA Review | `.agent-admin/assurance/iaa-review-apw-stage4-trs-20260529.md` |
+| CS2 Proxy Sign-Off | `.agent-admin/signoffs/cs2-proxy-stage4-trs-signoff-20260529.md` |
 
 ---
 
@@ -488,9 +492,9 @@ The following items must become QA-to-Red checks in Stage 6:
 
 ## 17. Readiness for Stage 5 Architecture
 
-This TRS is ready for Foreman QP, ECAP, IAA pre-brief, and IAA review.
+This TRS is approved for Stage 5 Architecture progression by AI-assisted CS2 proxy evaluation for Johan Ras.
 
-After approval, Stage 5 Architecture should define:
+Stage 5 Architecture should define:
 
 - site architecture;
 - route and section architecture;
