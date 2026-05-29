@@ -21,7 +21,7 @@
 | 1 | `01-ux-workflow-wiring` | UX Workflow & Wiring Spec | Approved | Approved by AI-assisted CS2 proxy evaluation for Johan Ras; see `.agent-admin/signoffs/cs2-proxy-stage2-ux-workflow-signoff-20260529.md`. |
 | 2 | `02-frs` | FRS | Approved for Stage 4 TRS progression | IAA conditional pass accepted by AI-assisted CS2 proxy evaluation; see `.agent-admin/signoffs/cs2-proxy-stage3-frs-signoff-20260529.md`. |
 | 3 | `03-trs` | TRS | Approved for Stage 5 Architecture progression | IAA conditional pass accepted by AI-assisted CS2 proxy evaluation; see `.agent-admin/signoffs/cs2-proxy-stage4-trs-signoff-20260529.md`. |
-| 4 | `04-architecture` | Architecture | Ready to start | To be derived from approved TRS. |
+| 4 | `04-architecture` | Architecture | Drafted - pending QP / ECAP / IAA / CS2 proxy disposition | Draft created on branch `foreman/apw-stage5-architecture`; do not treat as approved until review gates complete. |
 | 5 | `05-qa-to-red` | QA-to-Red | Pending | Must exist before implementation. |
 | 6 | `06-pbfag` | PBFAG | Pending | Pre-build functional assurance gate. |
 | 7 | `07-implementation-plan` | Implementation Plan | Pending | To be prepared after architecture and gates. |
@@ -34,7 +34,7 @@
 
 ## Current Focus
 
-Stage 4 TRS is approved for progression. Stage 5 Architecture may begin as the next Foreman wave.
+Stage 5 Architecture is drafted and must complete Foreman QP, ECAP, IAA pre-brief, IAA review, CI/status inspection, and CS2 proxy disposition before Stage 6 QA-to-Red begins.
 
 ---
 
@@ -43,7 +43,8 @@ Stage 4 TRS is approved for progression. Stage 5 Architecture may begin as the n
 | Wave | Branch | Status | Notes |
 |------|--------|--------|-------|
 | apw-stage3-frs-20260529 | `foreman/apw-stage3-frs` | Merged | PR #2 merged into `main`; Stage 3 FRS approved for TRS progression. |
-| apw-stage4-trs-20260529 | `foreman/apw-stage4-trs` | Ready for PR review | Scope, builder appointment, TRS draft, QP, ECAP, IAA pre-brief, IAA review, and CS2 proxy sign-off are filed. |
+| apw-stage4-trs-20260529 | `foreman/apw-stage4-trs` | Merged | PR #3 merged into `main`; Stage 4 TRS approved for Architecture progression. |
+| apw-stage5-architecture-20260529 | `foreman/apw-stage5-architecture` | Draft prepared | Stages 1-4 readiness review, TRS header normalization, scope, builder appointment, Architecture draft, QP, ECAP, IAA, and sign-off are part of this wave. |
 
 ---
 
