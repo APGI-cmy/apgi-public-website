@@ -18,9 +18,9 @@
 | Stage | Folder | Artifact | Status | Notes |
 |-------|--------|----------|--------|-------|
 | 0 | `00-app-description` | App Description | Complete / authoritative | Source artifact exists under `docs/governance/APGI_PUBLIC_WEBSITE_APP_DESCRIPTION.md`. |
-| 1 | `01-ux-workflow-wiring` | UX Workflow & Wiring Spec | In progress | Source artifact exists under `docs/governance/APGI_PUBLIC_WEBSITE_UX_WORKFLOW_WIRING_SPEC.md`; ready for sign-off review. |
-| 2 | `02-frs` | FRS | Drafted - pending QP / ECAP / IAA | Draft created on branch `foreman/apw-stage3-frs`; do not treat as approved until review gates complete. |
-| 3 | `03-trs` | TRS | Pending | To be derived after FRS approval. |
+| 1 | `01-ux-workflow-wiring` | UX Workflow & Wiring Spec | Approved | Approved by AI-assisted CS2 proxy evaluation for Johan Ras; see `.agent-admin/signoffs/cs2-proxy-stage2-ux-workflow-signoff-20260529.md`. |
+| 2 | `02-frs` | FRS | IAA conditional pass - ready for CS2 proxy disposition | Draft created on branch `foreman/apw-stage3-frs`; IAA condition for Stage 2 sign-off resolved by proxy sign-off artifact. |
+| 3 | `03-trs` | TRS | Ready to start after Stage 3 disposition | To be derived from approved/proxy-accepted FRS. |
 | 4 | `04-architecture` | Architecture | Pending | To be derived after TRS. |
 | 5 | `05-qa-to-red` | QA-to-Red | Pending | Must exist before implementation. |
 | 6 | `06-pbfag` | PBFAG | Pending | Pre-build functional assurance gate. |
@@ -34,7 +34,7 @@
 
 ## Current Focus
 
-Review APW Stage 3 FRS draft through Foreman QP, ECAP, and IAA pre-brief before approval or progression to TRS.
+Stage 2 is now approved by CS2 proxy sign-off. Stage 3 FRS has IAA conditional pass and is ready for CS2 proxy disposition. After Stage 3 disposition is recorded, Stage 4 TRS may begin as the next Foreman wave.
 
 ---
 
@@ -42,7 +42,7 @@ Review APW Stage 3 FRS draft through Foreman QP, ECAP, and IAA pre-brief before 
 
 | Wave | Branch | Status | Notes |
 |------|--------|--------|-------|
-| apw-stage3-frs-20260529 | `foreman/apw-stage3-frs` | Draft prepared | Scope, builder appointment, FRS draft, QP, ECAP, and IAA pre-brief are part of this wave. |
+| apw-stage3-frs-20260529 | `foreman/apw-stage3-frs` | IAA conditional pass | Scope, builder appointment, FRS draft, QP, ECAP, IAA pre-brief, IAA review, and CS2 proxy Stage 2 sign-off are filed. |
 
 ---
 
