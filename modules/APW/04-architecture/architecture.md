@@ -8,13 +8,17 @@
 | Stage | 5 - Architecture |
 | Folder | `modules/APW/04-architecture` |
 | Version | v0.1 |
-| Status | Draft - pending Foreman QP / ECAP / IAA review |
+| Status | Approved for Stage 6 QA-to-Red progression |
 | Owner | Johan Ras |
 | Authority | CS2: Johan Ras |
+| Approval Method | AI-assisted CS2 proxy evaluation for Johan Ras |
+| Approval Date | 2026-05-29 |
 | Last Updated | 2026-05-29 |
 | Upstream Stage | `modules/APW/03-trs/technical-requirements-specification.md` |
 | Scope Declaration | `.agent-admin/scope-declarations/apw-stage5-architecture-20260529.md` |
 | Builder Appointment | `.agent-admin/builder-appointments/apw-stage5-architecture-builder-contract-20260529.md` |
+| IAA Review | `.agent-admin/assurance/iaa-review-apw-stage5-architecture-20260529.md` |
+| CS2 Proxy Sign-Off | `.agent-admin/signoffs/cs2-proxy-stage5-architecture-signoff-20260529.md` |
 
 ---
 
@@ -423,7 +427,7 @@ Stage 6 QA-to-Red must be able to convert this architecture into checkable asser
 
 ## 16. Readiness for Stage 6 QA-to-Red
 
-This Architecture artifact is intended to be consumed by Stage 6 QA-to-Red.
+This Architecture artifact is approved for Stage 6 QA-to-Red progression by AI-assisted CS2 proxy evaluation for Johan Ras.
 
 Stage 6 should create concrete pre-build checks for:
 
