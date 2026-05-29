@@ -1,5 +1,8 @@
-# APGI Public Website
+# apgi-public-website
 
-This repository contains the official APGI website.
+APGI public website workspace.
 
-The website is the central distribution point for APGI-cmy projects, linking visitors to all repositories hosted under the APGI-cmy GitHub account.
+Current authoritative draft:
+- `docs/governance/APGI_PUBLIC_WEBSITE_APP_DESCRIPTION.md`
+- `docs/governance/APGI_PUBLIC_WEBSITE_UX_WORKFLOW_WIRING_SPEC.md`
+- `docs/governance/APGI_PUBLIC_WEBSITE_BUILD_PROGRESS_TRACKER.md`
