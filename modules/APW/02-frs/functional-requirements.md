@@ -8,14 +8,18 @@
 | Stage | 3 - Functional Requirements Specification |
 | Folder | `modules/APW/02-frs` |
 | Version | v0.1 |
-| Status | Draft - pending Foreman QP / ECAP / IAA review |
+| Status | Approved for Stage 4 TRS progression |
 | Owner | Johan Ras |
 | Authority | CS2: Johan Ras |
+| Approval Method | AI-assisted CS2 proxy evaluation for Johan Ras |
+| Approval Date | 2026-05-29 |
 | Last Updated | 2026-05-29 |
 | Upstream Stage 1 | `docs/governance/APGI_PUBLIC_WEBSITE_APP_DESCRIPTION.md` |
 | Upstream Stage 2 | `docs/governance/APGI_PUBLIC_WEBSITE_UX_WORKFLOW_WIRING_SPEC.md` |
 | Scope Declaration | `.agent-admin/scope-declarations/apw-stage3-frs-20260529.md` |
 | Builder Appointment | `.agent-admin/builder-appointments/apw-stage3-frs-builder-contract-20260529.md` |
+| IAA Review | `.agent-admin/assurance/iaa-review-apw-stage3-frs-20260529.md` |
+| CS2 Proxy Sign-Off | `.agent-admin/signoffs/cs2-proxy-stage3-frs-signoff-20260529.md` |
 
 ---
 
@@ -399,20 +403,22 @@ The APGI Public Website must not:
 
 ## 17. Readiness for Stage 4 TRS
 
-This FRS is ready for Foreman QP, ECAP packaging, and IAA pre-brief review.
+This FRS is approved for Stage 4 TRS progression by AI-assisted CS2 proxy evaluation for Johan Ras.
 
-After review and approval, Stage 4 TRS should translate these functional requirements into technical requirements for framework, routing, content data model, metadata, link validation, accessibility implementation, testing, and deployment verification.
+Stage 4 TRS should translate these functional requirements into technical requirements for framework, routing, content data model, metadata, link validation, accessibility implementation, testing, deployment verification, and fully functional delivery enforcement.
 
 ---
 
-## 18. Open Items for Review
+## 18. Conditions Carried Forward
 
 | Item | Status | Notes |
 |------|--------|-------|
-| Stage 2 sign-off | Open | UX Workflow & Wiring Spec is recorded as in progress / ready for sign-off. CS2 may approve progression or require formal sign-off artifact. |
-| Public legal pages | Open | Privacy / terms destinations are required before public launch but not authored in this FRS. |
-| Final public copy | Open | Content slots remain tuneable and must not be treated as final claims. |
-| Public ISMS base URL | Open | Host remains environment-configurable while route paths are frozen. |
+| Stage 2 sign-off | Resolved | Stage 2 approved by `.agent-admin/signoffs/cs2-proxy-stage2-ux-workflow-signoff-20260529.md`. |
+| Fully functional delivery hardening | Carry forward | Stage 4 TRS must define technical implications of fully functional delivery. |
+| QA-to-Red hardening | Carry forward | Stage 6 QA-to-Red must convert requirements into testable gates. |
+| Public legal pages | Carry forward | Privacy / terms destinations are required before public launch but not authored in this FRS. |
+| Final public copy | Carry forward | Content slots remain tuneable and must not be treated as final claims. |
+| Public ISMS base URL | Carry forward | Host remains environment-configurable while route paths are frozen. |
 
 ---
 
