@@ -1,0 +1,13 @@
+{
+  "module_slug": "APW",
+  "module_name": "APGI Public Website",
+  "status": "pre-build",
+  "owner": "Johan Ras",
+  "authority": "CS2: Johan Ras",
+  "canonical_root": "modules/APW",
+  "governance_root": "docs/governance",
+  "stage_model": "APGI Public Website 12-stage pre-build sequence",
+  "source_pattern": "APGI-cmy/maturion-isms/modules/MMM",
+  "artifact_lineage": "Stage 1 and Stage 2 artifacts initially authored under docs/governance and layered into the module structure as canonical stage pointers.",
+  "last_structured_at": "2026-05-29"
+}
