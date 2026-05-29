@@ -8,7 +8,7 @@
 | Status | Draft |
 | Owner | Johan Ras |
 | Approval Date | N/A |
-| Last Updated | 2026-05-28 |
+| Last Updated | 2026-05-29 |
 | Authority | Johan Ras |
 | Canonical Location | `docs/governance/APGI_PUBLIC_WEBSITE_APP_DESCRIPTION.md` |
 | Policy Authority | `governance/policy/APP_DESCRIPTION_REQUIREMENT_POLICY.md` v2.0 |
@@ -447,3 +447,13 @@ Any new persistent state must be defined here before implementation.
 - Design the site so that APGI can evolve sections and cards without reworking the page architecture.
 - Treat LinkedIn, Thinkific, and the ISMS apps as coordinated destinations, not disconnected links.
 - The public website should feel like APGI's command surface for brand, training, and launch paths.
+
+---
+
+## 7. Approval Record
+
+| Action | By | Date | Notes |
+|--------|----|------|-------|
+| Draft created | Johan Ras | 2026-05-28 | Initial APGI public website App Description drafted and scoped. |
+| Review completed | Codex | 2026-05-29 | Canon gap analysis completed; file is ready for human sign-off. |
+| Authoritative status granted | Johan Ras | Pending | Awaiting final approval to move status from Draft to Authoritative. |

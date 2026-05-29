@@ -8,7 +8,7 @@
 | Status | Draft |
 | Owner | Johan Ras |
 | Approval Date | N/A |
-| Last Updated | 2026-05-28 |
+| Last Updated | 2026-05-29 |
 | Authority | Johan Ras |
 | Canonical Location | `docs/governance/APGI_PUBLIC_WEBSITE_UX_WORKFLOW_WIRING_SPEC.md` |
 | Policy Authority | `PRE_BUILD_STAGE_MODEL_CANON.md` v1.0.0 - Stage 2 |
@@ -541,3 +541,4 @@ Before this spec may be approved, confirm:
 | Version | Date | Change Description | Changed By | Approval |
 |---------|------|--------------------|------------|----------|
 | v0.1 | 2026-05-28 | Initial Stage 2 draft aligned to the APGI public website App Description, including journeys, screen definitions, triggers, data flows, state transitions, wiring matrix, and open gap analysis. | Johan Ras | Draft |
+| v0.2 | 2026-05-29 | Resolved all Section 11 gaps, froze LinkedIn/Thinkific destinations and APGI Hub routes, and prepared the spec for sign-off. | Johan Ras | Draft |

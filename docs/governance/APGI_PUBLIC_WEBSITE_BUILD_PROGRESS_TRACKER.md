@@ -7,7 +7,7 @@
 | Version | v0.1 |
 | Status | Draft |
 | Owner | Johan Ras |
-| Last Updated | 2026-05-28 |
+| Last Updated | 2026-05-29 |
 | Canonical Location | `docs/governance/APGI_PUBLIC_WEBSITE_BUILD_PROGRESS_TRACKER.md` |
 
 ---
@@ -33,8 +33,8 @@
 
 | Stage | Artifact | Status | Notes |
 |---|---|---|---|
-| 1 | App Description | In progress | Draft aligned to governance canon; public reference URLs and asset policy frozen |
-| 2 | UX Workflow & Wiring Spec | In progress | Gap analysis completed; Section 11 resolved and route map frozen |
+| 1 | App Description | In progress | Draft aligned to governance canon; approval record added and ready for human sign-off |
+| 2 | UX Workflow & Wiring Spec | In progress | Gap analysis completed; Section 11 resolved, route map frozen, ready for sign-off |
 | 3 | FRS | Pending | To be derived after UX spec approval |
 | 4 | TRS | Pending | To be derived after FRS |
 | 5 | Architecture | Pending | To be derived after TRS |
