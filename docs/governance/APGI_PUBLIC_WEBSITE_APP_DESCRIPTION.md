@@ -457,3 +457,27 @@ Any new persistent state must be defined here before implementation.
 | Draft created | Johan Ras | 2026-05-28 | Initial APGI public website App Description drafted and scoped. |
 | Review completed | Codex | 2026-05-29 | Canon gap analysis completed; file is ready for human sign-off. |
 | Authoritative status granted | Johan Ras | Pending | Awaiting final approval to move status from Draft to Authoritative. |
+
+## §4 — CS2 Approval and Sign-Off
+
+I, **CS2: Johan Ras**, hereby review and approve this **APGI Public Website - App Description** document as a governed description of the APGI Public Website application.
+
+By signing off this document, I confirm that:
+
+* the stated application identity, scope, boundaries, and success criteria are acceptable for the current governed version;
+* the document may be used as the approved reference for design, implementation, deployment, and related governance decisions for the APGI Public Website;
+* any material changes after this approval must be handled through the appropriate governed review and update process.
+
+| Field             | Value                                                    |
+| ----------------- | -------------------------------------------------------- |
+| Approved By       | CS2: Johan Ras                                           |
+| Role / Authority  | CS2 Approval Authority                                   |
+| Approval Decision | Approved                                                 |
+| Approval Date     | 2026-05-29                                               |
+| Document Location | `docs/governance/APGI_PUBLIC_WEBSITE_APP_DESCRIPTION.md` |
+| Version Approved  | v0.1                                                     |
+
+**Signed:** CS2: Johan Ras
+**Date:** 2026-05-29
+**Status:** Approved
+
