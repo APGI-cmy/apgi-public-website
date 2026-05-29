@@ -5,9 +5,9 @@
 | Field | Value |
 |-------|-------|
 | Version | v0.1 |
-| Status | Draft |
+| Status | Authoritative |
 | Owner | Johan Ras |
-| Approval Date | N/A |
+| Approval Date | 2026-05-29 |
 | Last Updated | 2026-05-29 |
 | Authority | Johan Ras |
 | Canonical Location | `docs/governance/APGI_PUBLIC_WEBSITE_APP_DESCRIPTION.md` |
@@ -435,9 +435,9 @@ Any new persistent state must be defined here before implementation.
 
 ## 5. Approval and Authority
 
-- This document is a draft and is not yet authoritative.
-- It becomes authoritative only after Johan Ras approves it.
-- Once approved, it should be treated as the upstream source for the website's UX, FRS, TRS, and architecture artifacts.
+- This document is authoritative following Johan Ras approval on 2026-05-29.
+- It serves as the upstream source for the website's UX, FRS, TRS, and architecture artifacts.
+- Any material change after approval must follow the governed versioning and supersession process.
 
 ---
 
@@ -456,7 +456,7 @@ Any new persistent state must be defined here before implementation.
 |--------|----|------|-------|
 | Draft created | Johan Ras | 2026-05-28 | Initial APGI public website App Description drafted and scoped. |
 | Review completed | Codex | 2026-05-29 | Canon gap analysis completed; file is ready for human sign-off. |
-| Authoritative status granted | Johan Ras | Pending | Awaiting final approval to move status from Draft to Authoritative. |
+| Authoritative status granted | Johan Ras | 2026-05-29 | Approved and effective as of the sign-off record below. |
 
 ## §4 — CS2 Approval and Sign-Off
 

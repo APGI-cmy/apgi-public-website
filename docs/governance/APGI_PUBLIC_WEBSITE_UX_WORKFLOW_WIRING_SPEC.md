@@ -19,13 +19,13 @@
 
 ### Derivation Statement
 
-> This UX Workflow & Wiring Spec is derived from `APGI_PUBLIC_WEBSITE_APP_DESCRIPTION.md` version v0.1, drafted on 2026-05-28 and currently pending approval. All user journeys, interactions, data flows, and wiring definitions herein operationalise the scope, purpose, and capabilities defined in that upstream document.
+> This UX Workflow & Wiring Spec is derived from `APGI_PUBLIC_WEBSITE_APP_DESCRIPTION.md` version v0.1, approved and authoritative as of 2026-05-29. All user journeys, interactions, data flows, and wiring definitions herein operationalise the scope, purpose, and capabilities defined in that upstream document.
 
 ### Upstream Authority References
 
 | Artifact | Location | Version | Status |
 |----------|----------|---------|--------|
-| App Description | `docs/governance/APGI_PUBLIC_WEBSITE_APP_DESCRIPTION.md` | v0.1 | Draft / pending approval |
+| App Description | `docs/governance/APGI_PUBLIC_WEBSITE_APP_DESCRIPTION.md` | v0.1 | Authoritative / approved 2026-05-29 |
 
 ---
 

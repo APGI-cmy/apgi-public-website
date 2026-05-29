@@ -33,7 +33,7 @@
 
 | Stage | Artifact | Status | Notes |
 |---|---|---|---|
-| 1 | App Description | In progress | Draft aligned to governance canon; approval record added and ready for human sign-off |
+| 1 | App Description | Complete | Approved and authoritative as of 2026-05-29 |
 | 2 | UX Workflow & Wiring Spec | In progress | Gap analysis completed; Section 11 resolved, route map frozen, ready for sign-off |
 | 3 | FRS | Pending | To be derived after UX spec approval |
 | 4 | TRS | Pending | To be derived after FRS |
