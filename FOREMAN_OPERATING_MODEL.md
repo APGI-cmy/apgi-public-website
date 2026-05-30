@@ -9,22 +9,31 @@
 | Operating Role | Foreman-led governed delivery |
 | AI Proxy Mode | Permitted only when Johan Ras explicitly authorizes it |
 | Status | Active reference |
-| Last Updated | 2026-05-29 |
+| Last Updated | 2026-05-30 |
 
 ---
 
 ## 1. Why this file exists
 
-This file records how work is run in this repository so a future chat or agent session can continue without rebuilding the whole operating model from conversation history.
+This file records how work is run in this repository so a future chat or agent session can continue without rebuilding the operating model from conversation history.
 
 The working model is:
 
 1. Johan Ras remains the CS2 authority.
-2. ChatGPT may act as Foreman when asked.
-3. ChatGPT may act as an AI-assisted CS2 proxy evaluator when Johan explicitly authorizes it.
-4. Builder work must be appointed and bounded.
-5. ECAP and IAA are required for material stage completion or build handover.
-6. Implementation must not start before the required pre-build gates unless CS2 explicitly authorizes a waiver.
+2. AI may act as CS2 proxy only when Johan explicitly authorizes it.
+3. ChatGPT may assume Foreman when Johan asks it to do so.
+4. Foreman loads governance and tracker state before changing scope or artifacts.
+5. Foreman creates a scope declaration before work starts.
+6. Foreman appoints a builder.
+7. Builder produces only the scoped artifact or artifacts.
+8. Foreman updates the tracker.
+9. Foreman performs QP review.
+10. ECAP records the administrative trail.
+11. IAA performs independent assurance review.
+12. CI/status is inspected and reported honestly.
+13. CS2 proxy disposition is recorded only where Johan has explicitly authorized it.
+14. PRs are opened as draft unless ready for full review.
+15. No implementation begins before QA-to-Red, PBFAG, implementation plan, builder checklist, IAA pre-brief, builder appointment, and build evidence gates are complete or explicitly waived by CS2 / Johan Ras.
 
 ---
 
@@ -38,7 +47,7 @@ CS2 decisions include stage approval, progression approval, acceptance of condit
 
 ### AI-assisted CS2 proxy
 
-When Johan Ras authorizes it, AI may evaluate and approve a stage on his behalf.
+When Johan Ras explicitly authorizes it, AI may evaluate and approve a stage on his behalf.
 
 This must be recorded transparently as:
 
@@ -57,7 +66,7 @@ Proxy sign-offs should be filed under:
 
 The Foreman orchestrates the work.
 
-The Foreman loads governance, declares scope, appoints builders, manages the wave, performs QP review, ensures ECAP and IAA are filed, keeps the tracker updated, and controls whether work is ready for PR or needs correction.
+The Foreman loads governance and tracker state, declares scope, appoints builders, manages the wave, performs QP review, ensures ECAP and IAA are filed, keeps the tracker updated, inspects CI/status, and controls whether work is ready for PR or needs correction.
 
 ### Builder
 
@@ -100,7 +109,7 @@ A governed wave should normally include:
 ```text
 .agent-admin/scope-declarations/<wave-id>.md
 .agent-admin/builder-appointments/<wave-id>-builder-contract.md
-<primary stage artifact>
+<primary stage artifact(s)>
 modules/APW/BUILD_PROGRESS_TRACKER.md
 .agent-admin/quality/<wave-id>-foreman-qp.md
 .agent-admin/ecap/<wave-id>-ecap.md
@@ -109,7 +118,7 @@ modules/APW/BUILD_PROGRESS_TRACKER.md
 .agent-admin/signoffs/<stage-or-wave-signoff>.md
 ```
 
-A stage is not complete merely because a file exists. The stage should have scope, builder appointment, QP, ECAP, IAA, tracker update, and CS2 or proxy disposition where approval is required.
+A stage is not complete merely because a file exists. The stage should have scope, builder appointment, QP, ECAP, IAA, tracker update, CI/status inspection, and CS2 or authorized proxy disposition where approval is required.
 
 ---
 
@@ -121,7 +130,9 @@ A PR may move out of draft when the governance trail is complete enough for revi
 
 Documentation-only PRs may record CI as unavailable if GitHub has no workflow runs. This must not be described as CI passing.
 
-Implementation PRs require stronger evidence. They should not be merged until the relevant pre-build gates are complete or CS2 has explicitly waived them.
+Implementation PRs require stronger evidence. They must not be merged until the relevant pre-build gates are complete or CS2 has explicitly waived them.
+
+No implementation begins before QA-to-Red, PBFAG, implementation plan, builder checklist, IAA pre-brief, builder appointment, and build evidence gates are complete or explicitly waived.
 
 ---
 
@@ -171,7 +182,7 @@ when a stage changes state.
 Use this at the start of a new chat:
 
 ```text
-Load `FOREMAN_OPERATING_MODEL.md` first. Assume Foreman for APW. Load the local governance canon, APW tracker, and current stage artifacts. Continue from the current tracker state. Use AI-assisted CS2 proxy evaluation only where Johan Ras explicitly authorizes it. Preserve Foreman, Builder, ECAP, and IAA separation.
+Load `FOREMAN_OPERATING_MODEL.md` first. Assume Foreman for APW. Load the local governance canon, APW tracker, and current stage artifacts. Continue from the current tracker state. Use AI-assisted CS2 proxy evaluation only where Johan Ras explicitly authorizes it. Preserve Foreman, Builder, ECAP, IAA, and CS2 proxy separation.
 ```
 
 For a job, use:
@@ -197,21 +208,21 @@ Required ceremony:
 - Run IAA review
 - Inspect CI/status
 - Record CS2/proxy disposition
-- Open or update PR
+- Open or update draft PR unless ready
 ```
 
 ---
 
-## 8. Current state after PR #2
+## 8. Current state after PR #4
 
-As of 2026-05-29:
+As of 2026-05-30:
 
-- Stage 1 App Description is complete / authoritative.
-- Stage 2 UX Workflow & Wiring Spec is approved by AI-assisted CS2 proxy evaluation.
-- Stage 3 FRS is approved for Stage 4 TRS progression by AI-assisted CS2 proxy evaluation.
-- PR #2 was merged into `main`.
-- Stage 4 TRS is the next governed wave.
-- PR #1 remains an implementation draft and should wait until the required pre-build gates are complete or waived.
+- PR #2 is merged: Stage 3 FRS complete and approved for Stage 4 TRS progression.
+- PR #3 is merged: Stage 4 TRS complete and approved for Stage 5 Architecture progression.
+- PR #4 is merged: Stage 5 Architecture complete and approved for Stage 6 QA-to-Red progression.
+- Stage 6 QA-to-Red is the next governed wave on `main`.
+- PR #1 remains an implementation draft and should wait until required pre-build gates are complete or waived.
+- Implementation remains blocked until QA-to-Red, PBFAG, implementation plan, builder checklist, IAA pre-brief, builder appointment, and build evidence gates are complete or explicitly waived by CS2 / Johan Ras.
 
 ---
 
@@ -220,19 +231,30 @@ As of 2026-05-29:
 Start:
 
 ```text
-APW Stage 4 - Technical Requirements Specification
+APW Stage 6 - QA-to-Red
 ```
 
 Expected branch:
 
 ```text
-foreman/apw-stage4-trs
+foreman/apw-stage6-qa-to-red
 ```
 
-Expected primary artifact:
+Expected stage folder:
 
 ```text
-modules/APW/03-trs/technical-requirements-specification.md
+modules/APW/05-qa-to-red/
 ```
 
-Stage 4 must convert the approved FRS into technical requirements and harden fully functional delivery into enforceable downstream obligations.
+Expected Stage 6 artifact package:
+
+```text
+modules/APW/05-qa-to-red/qa-to-red.md
+modules/APW/05-qa-to-red/qa-to-red-catalog.md
+modules/APW/05-qa-to-red/journey-coverage.md
+modules/APW/05-qa-to-red/requirement-traceability.md
+modules/APW/05-qa-to-red/qa-catalog-alignment.md
+modules/APW/05-qa-to-red/foreman-signoff-package.md
+```
+
+Stage 6 must convert the approved FRS, TRS, and Architecture into concrete RED checks with traceable sources, RED conditions, acceptance criteria, and clean handover summaries. It must not start implementation.
