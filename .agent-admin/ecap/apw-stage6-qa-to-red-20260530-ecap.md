@@ -8,7 +8,7 @@
 | Module | APW - APGI Public Website |
 | Role | ECAP Administration / Closure Resilience |
 | Branch | `foreman/apw-stage6-qa-to-red` |
-| Status | Filed |
+| Status | Filed - PR #5 ready for merge after review-thread resolution |
 | Date | 2026-05-30 |
 
 ---
@@ -39,12 +39,12 @@ It ensures the wave can be reviewed, resumed, corrected, or closed without relyi
 |---|---|---|
 | Scope declaration | `.agent-admin/scope-declarations/apw-stage6-qa-to-red-20260530.md` | Filed |
 | Builder appointment | `.agent-admin/builder-appointments/apw-stage6-qa-to-red-20260530-builder-contract.md` | Filed |
-| Operating model update | `FOREMAN_OPERATING_MODEL.md` | Filed |
-| README update | `README.md` | Filed |
+| Operating model update | `FOREMAN_OPERATING_MODEL.md` | Filed and aligned after review |
+| README update | `README.md` | Filed and aligned after review |
 | Stage overview | `modules/APW/05-qa-to-red/qa-to-red.md` | Filed |
-| RED catalog | `modules/APW/05-qa-to-red/qa-to-red-catalog.md` | Filed |
+| RED catalog | `modules/APW/05-qa-to-red/qa-to-red-catalog.md` | Filed and strengthened after review |
 | Journey coverage | `modules/APW/05-qa-to-red/journey-coverage.md` | Filed |
-| Requirement traceability | `modules/APW/05-qa-to-red/requirement-traceability.md` | Filed |
+| Requirement traceability | `modules/APW/05-qa-to-red/requirement-traceability.md` | Filed and aligned after review |
 | QA catalog alignment | `modules/APW/05-qa-to-red/qa-catalog-alignment.md` | Filed |
 | Foreman signoff package | `modules/APW/05-qa-to-red/foreman-signoff-package.md` | Filed |
 | Tracker update | `modules/APW/BUILD_PROGRESS_TRACKER.md` | Filed |
@@ -52,6 +52,7 @@ It ensures the wave can be reviewed, resumed, corrected, or closed without relyi
 | IAA pre-brief | `.agent-admin/assurance/iaa-prebrief-apw-stage6-qa-to-red-20260530.md` | Filed |
 | IAA review | `.agent-admin/assurance/iaa-review-apw-stage6-qa-to-red-20260530.md` | Filed |
 | CS2 proxy sign-off | `.agent-admin/signoffs/cs2-proxy-stage6-qa-to-red-signoff-20260530.md` | Filed |
+| CI/status inspection | `.agent-admin/status/apw-stage6-qa-to-red-20260530-ci-status.md` | Filed; no statuses or workflow runs reported |
 
 ---
 
@@ -67,7 +68,7 @@ It ensures the wave can be reviewed, resumed, corrected, or closed without relyi
 | QP decision recoverable | Pass | QP filed. |
 | IAA pathway recoverable | Pass | IAA pre-brief and review filed. |
 | CS2 proxy disposition recoverable | Pass | Authorized proxy sign-off filed. |
-| CI/PR state recoverable | Pending external status | To be inspected after draft PR creation. |
+| CI/PR state recoverable | Pass | PR #5 opened, marked ready for review, and CI/status inspection filed as no statuses/no workflow runs reported. |
 
 ---
 
@@ -78,10 +79,12 @@ It ensures the wave can be reviewed, resumed, corrected, or closed without relyi
 | ECAP-001 | This is a documentation/pre-build wave. | Do not evaluate as runtime build delivery. |
 | ECAP-002 | Stage 7 PBFAG is not yet authored. | Create after Stage 6 PR merge. |
 | ECAP-003 | Implementation remains blocked. | Preserve downstream gates or obtain explicit CS2 waiver. |
-| ECAP-004 | CI/status inspection depends on PR creation. | Report honestly after PR is opened. |
+| ECAP-004 | CI/status inspection found no reported statuses or workflow runs. | Record honestly; do not describe as CI passing. |
 
 ---
 
 ## 6. ECAP Recommendation
 
-Proceed with draft PR creation and status inspection. Do not merge implementation before downstream gates.
+PR #5 is ready for merge after review-thread resolution.
+
+Do not merge or begin implementation work before downstream gates are complete or explicitly waived by CS2 / Johan Ras.
