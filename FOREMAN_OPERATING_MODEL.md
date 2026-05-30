@@ -213,14 +213,15 @@ Required ceremony:
 
 ---
 
-## 8. Current state after PR #4
+## 8. Current state after PR #5
 
-As of 2026-05-30:
+As of 2026-05-30, pending merge of PR #5:
 
 - PR #2 is merged: Stage 3 FRS complete and approved for Stage 4 TRS progression.
 - PR #3 is merged: Stage 4 TRS complete and approved for Stage 5 Architecture progression.
 - PR #4 is merged: Stage 5 Architecture complete and approved for Stage 6 QA-to-Red progression.
-- Stage 6 QA-to-Red is the next governed wave on `main`.
+- PR #5 contains the Stage 6 QA-to-Red RED suite and is intended to approve Stage 6 for Stage 7 PBFAG progression after merge.
+- Stage 7 PBFAG is the next governed wave after PR #5 merge.
 - PR #1 remains an implementation draft and should wait until required pre-build gates are complete or waived.
 - Implementation remains blocked until QA-to-Red, PBFAG, implementation plan, builder checklist, IAA pre-brief, builder appointment, and build evidence gates are complete or explicitly waived by CS2 / Johan Ras.
 
@@ -228,33 +229,28 @@ As of 2026-05-30:
 
 ## 9. Next recommended wave
 
-Start:
+After PR #5 is merged, start:
 
 ```text
-APW Stage 6 - QA-to-Red
+APW Stage 7 - PBFAG
 ```
 
 Expected branch:
 
 ```text
-foreman/apw-stage6-qa-to-red
+foreman/apw-stage7-pbfag
 ```
 
 Expected stage folder:
 
 ```text
-modules/APW/05-qa-to-red/
+modules/APW/06-pbfag/
 ```
 
-Expected Stage 6 artifact package:
+Expected primary artifact:
 
 ```text
-modules/APW/05-qa-to-red/qa-to-red.md
-modules/APW/05-qa-to-red/qa-to-red-catalog.md
-modules/APW/05-qa-to-red/journey-coverage.md
-modules/APW/05-qa-to-red/requirement-traceability.md
-modules/APW/05-qa-to-red/qa-catalog-alignment.md
-modules/APW/05-qa-to-red/foreman-signoff-package.md
+modules/APW/06-pbfag/pbfag-checklist.md
 ```
 
-Stage 6 must convert the approved FRS, TRS, and Architecture into concrete RED checks with traceable sources, RED conditions, acceptance criteria, and clean handover summaries. It must not start implementation.
+Stage 7 must validate the Stage 6 QA-to-Red suite and determine whether the pre-build package is functionally ready to proceed toward implementation planning. It must not start implementation.
