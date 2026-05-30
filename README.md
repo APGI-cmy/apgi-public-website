@@ -18,14 +18,15 @@ The APGI Public Website module is organized under:
 
 ## Current Stage Status
 
-As of the latest governed merge:
+As of this governed Stage 6 PR:
 
 - Stage 1 - App Description: complete / authoritative
 - Stage 2 - UX Workflow & Wiring Spec: approved
 - Stage 3 - FRS: approved
 - Stage 4 - TRS: approved
 - Stage 5 - Architecture: approved
-- Stage 6 - QA-to-Red: next
+- Stage 6 - QA-to-Red: approved for Stage 7 PBFAG progression after merge
+- Stage 7 - PBFAG: next governed wave after merge
 
 The live tracker is:
 
@@ -50,6 +51,6 @@ Material work must include:
 
 ## Next Stage
 
-Proceed with:
+After this Stage 6 PR is merged, proceed with:
 
-`modules/APW/05-qa-to-red/`
+`modules/APW/06-pbfag/`
