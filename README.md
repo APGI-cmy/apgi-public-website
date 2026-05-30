@@ -1,8 +1,55 @@
-# apgi-public-website
+# APGI Public Website
 
-APGI public website workspace.
+This repository contains the governed pre-build and eventual implementation artifacts for the APGI Public Website.
 
-Current authoritative draft:
-- `docs/governance/APGI_PUBLIC_WEBSITE_APP_DESCRIPTION.md`
-- `docs/governance/APGI_PUBLIC_WEBSITE_UX_WORKFLOW_WIRING_SPEC.md`
-- `docs/governance/APGI_PUBLIC_WEBSITE_BUILD_PROGRESS_TRACKER.md`
+## Current Operating Model
+
+Work in this repository follows the Foreman-led governed delivery model described in:
+
+`FOREMAN_OPERATING_MODEL.md`
+
+Before starting a new governed wave, load that file first.
+
+## Module Root
+
+The APGI Public Website module is organized under:
+
+`modules/APW/`
+
+## Current Stage Status
+
+As of the latest governed merge:
+
+- Stage 1 - App Description: complete / authoritative
+- Stage 2 - UX Workflow & Wiring Spec: approved
+- Stage 3 - FRS: approved
+- Stage 4 - TRS: approved
+- Stage 5 - Architecture: approved
+- Stage 6 - QA-to-Red: next
+
+The live tracker is:
+
+`modules/APW/BUILD_PROGRESS_TRACKER.md`
+
+## Governance Rule
+
+Do not begin implementation until the required pre-build gates are complete or explicitly waived by CS2 / Johan Ras.
+
+Material work must include:
+
+- scope declaration
+- builder appointment
+- stage artifact
+- tracker update
+- Foreman QP
+- ECAP
+- IAA pre-brief
+- IAA review
+- CI/status inspection
+- CS2 or AI-assisted CS2 proxy disposition where authorized
+
+## Next Stage
+
+Proceed with:
+
+`modules/APW/05-qa-to-red/`
