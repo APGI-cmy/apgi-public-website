@@ -9,7 +9,7 @@
 | Operating Role | Foreman-led governed delivery |
 | AI Proxy Mode | Permitted only when Johan Ras explicitly authorizes it |
 | Status | Active reference |
-| Last Updated | 2026-05-30 |
+| Last Updated | 2026-05-31 |
 
 ---
 
@@ -213,44 +213,44 @@ Required ceremony:
 
 ---
 
-## 8. Current state after PR #5
+## 8. Current state after PR #5 and Stage 7 branch
 
-As of 2026-05-30, pending merge of PR #5:
+As of 2026-05-31:
 
 - PR #2 is merged: Stage 3 FRS complete and approved for Stage 4 TRS progression.
 - PR #3 is merged: Stage 4 TRS complete and approved for Stage 5 Architecture progression.
 - PR #4 is merged: Stage 5 Architecture complete and approved for Stage 6 QA-to-Red progression.
-- PR #5 contains the Stage 6 QA-to-Red RED suite and is intended to approve Stage 6 for Stage 7 PBFAG progression after merge.
-- Stage 7 PBFAG is the next governed wave after PR #5 merge.
+- PR #5 is merged: Stage 6 QA-to-Red complete and approved for Stage 7 PBFAG progression.
+- Stage 7 PBFAG is being run on `foreman/apw-stage7-pbfag` and is intended to approve progression to Stage 8 Implementation Plan after PR merge.
 - PR #1 remains an implementation draft and should wait until required pre-build gates are complete or waived.
-- Implementation remains blocked until QA-to-Red, PBFAG, implementation plan, builder checklist, IAA pre-brief, builder appointment, and build evidence gates are complete or explicitly waived by CS2 / Johan Ras.
+- Implementation remains blocked until Stage 8 Implementation Plan, Stage 9 Builder Checklist, Stage 10 IAA Pre-Brief, Stage 11 Builder Appointment, and Stage 12 Build Evidence gates are complete or explicitly waived by CS2 / Johan Ras.
 
 ---
 
 ## 9. Next recommended wave
 
-After PR #5 is merged, start:
+After the Stage 7 PBFAG PR is merged, start:
 
 ```text
-APW Stage 7 - PBFAG
+APW Stage 8 - Implementation Plan
 ```
 
 Expected branch:
 
 ```text
-foreman/apw-stage7-pbfag
+foreman/apw-stage8-implementation-plan
 ```
 
 Expected stage folder:
 
 ```text
-modules/APW/06-pbfag/
+modules/APW/07-implementation-plan/
 ```
 
 Expected primary artifact:
 
 ```text
-modules/APW/06-pbfag/pbfag-checklist.md
+modules/APW/07-implementation-plan/implementation-plan.md
 ```
 
-Stage 7 must validate the Stage 6 QA-to-Red suite and determine whether the pre-build package is functionally ready to proceed toward implementation planning. It must not start implementation.
+Stage 8 must map the approved FRS, TRS, Architecture, QA-to-Red, and PBFAG conditions into an implementation plan and evidence plan. It must not start implementation.
