@@ -213,7 +213,7 @@ Required ceremony:
 
 ---
 
-## 8. Current state after PR #5 and Stage 7 branch
+## 8. Current state after PR #6 and Stage 8 branch
 
 As of 2026-05-31:
 
@@ -221,36 +221,37 @@ As of 2026-05-31:
 - PR #3 is merged: Stage 4 TRS complete and approved for Stage 5 Architecture progression.
 - PR #4 is merged: Stage 5 Architecture complete and approved for Stage 6 QA-to-Red progression.
 - PR #5 is merged: Stage 6 QA-to-Red complete and approved for Stage 7 PBFAG progression.
-- Stage 7 PBFAG is being run on `foreman/apw-stage7-pbfag` and is intended to approve progression to Stage 8 Implementation Plan after PR merge.
+- PR #6 is merged: Stage 7 PBFAG complete and approved for Stage 8 Implementation Plan progression.
+- Stage 8 Implementation Plan is being run on `foreman/apw-stage8-implementation-plan` and is intended to approve progression to Stage 9 Builder Checklist after PR merge.
 - PR #1 remains an implementation draft and should wait until required pre-build gates are complete or waived.
-- Implementation remains blocked until Stage 8 Implementation Plan, Stage 9 Builder Checklist, Stage 10 IAA Pre-Brief, Stage 11 Builder Appointment, and Stage 12 Build Evidence gates are complete or explicitly waived by CS2 / Johan Ras.
+- Implementation remains blocked until Stage 9 Builder Checklist, Stage 10 IAA Pre-Brief, Stage 11 Builder Appointment, and Stage 12 Build Evidence gates are complete or explicitly waived by CS2 / Johan Ras.
 
 ---
 
 ## 9. Next recommended wave
 
-After the Stage 7 PBFAG PR is merged, start:
+After the Stage 8 Implementation Plan PR is merged, start:
 
 ```text
-APW Stage 8 - Implementation Plan
+APW Stage 9 - Builder Checklist
 ```
 
 Expected branch:
 
 ```text
-foreman/apw-stage8-implementation-plan
+foreman/apw-stage9-builder-checklist
 ```
 
 Expected stage folder:
 
 ```text
-modules/APW/07-implementation-plan/
+modules/APW/08-builder-checklist/
 ```
 
 Expected primary artifact:
 
 ```text
-modules/APW/07-implementation-plan/implementation-plan.md
+modules/APW/08-builder-checklist/builder-checklist.md
 ```
 
-Stage 8 must map the approved FRS, TRS, Architecture, QA-to-Red, and PBFAG conditions into an implementation plan and evidence plan. It must not start implementation.
+Stage 9 must convert the approved implementation plan into concrete builder obligations and evidence requirements. It must not start implementation.
