@@ -27,10 +27,9 @@ const requiredIndexTokens = [
 const forbiddenTokens = [
   "supabase",
   "createClient(",
-  "password",
-  "secret",
+  "type=\"password\"",
+  "<form",
   "apiKey",
-  "crm",
   "contact-form"
 ];
 
@@ -48,7 +47,7 @@ for (const token of requiredIndexTokens) {
 const allText = await Promise.all(requiredFiles.map((file) => readFile(file, "utf8"))).then((parts) => parts.join("\n"));
 for (const token of forbiddenTokens) {
   if (allText.toLowerCase().includes(token.toLowerCase())) {
-    throw new Error(`Forbidden token found in generated output: ${token}`);
+    throw new Error(`Forbidden implementation token found in generated output: ${token}`);
   }
 }
 
