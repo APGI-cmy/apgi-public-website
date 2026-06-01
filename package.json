@@ -1,0 +1,14 @@
+{
+  "name": "apgi-public-website",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Static-first APGI Public Website build.",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "validate": "node scripts/validate.mjs"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
