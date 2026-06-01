@@ -3,7 +3,7 @@
 **Module**: APW (APGI Public Website)  
 **Module Slug**: APW  
 **Status**: Pre-build  
-**Last Updated**: 2026-05-31  
+**Last Updated**: 2026-06-01  
 **Authority**: CS2: Johan Ras  
 **Canonical Root**: `modules/APW`
 
@@ -25,18 +25,18 @@
 | 5 | `05-qa-to-red` | QA-to-Red | Approved for Stage 7 PBFAG progression | PR #5 merged; full RED suite filed in wave `apw-stage6-qa-to-red-20260530`; IAA pass and AI-assisted CS2 proxy disposition filed. |
 | 6 | `06-pbfag` | PBFAG | Approved for Stage 8 Implementation Plan progression | PR #6 merged; PBFAG conditional pass filed in wave `apw-stage7-pbfag-20260531`; IAA conditional pass and AI-assisted CS2 proxy disposition filed. |
 | 7 | `07-implementation-plan` | Implementation Plan | Approved for Stage 9 Builder Checklist progression | PR #7 merged; implementation plan filed in wave `apw-stage8-implementation-plan-20260531`; IAA conditional pass and AI-assisted CS2 proxy disposition filed. |
-| 8 | `08-builder-checklist` | Builder Checklist | Approved for Stage 10 IAA Pre-Brief progression | Builder checklist filed in wave `apw-stage9-builder-checklist-20260531`; IAA conditional pass and AI-assisted CS2 proxy disposition filed. |
-| 9 | `09-iaa-pre-brief` | IAA Pre-Brief | Ready to start after Stage 9 PR merge | To support independent assurance before implementation. |
-| 10 | `10-builder-appointment` | Builder Contract | Pending | No implementation builder appointed yet. |
+| 8 | `08-builder-checklist` | Builder Checklist | Approved for Stage 10 IAA Pre-Brief progression | PR #8 merged; builder checklist filed in wave `apw-stage9-builder-checklist-20260531`; IAA conditional pass and AI-assisted CS2 proxy disposition filed. |
+| 9 | `09-iaa-pre-brief` | IAA Pre-Brief | Approved for Stage 11 Builder Appointment progression | IAA pre-brief filed in wave `apw-stage10-iaa-pre-brief-20260601`; IAA conditional pass and AI-assisted CS2 proxy disposition filed. |
+| 10 | `10-builder-appointment` | Builder Contract | Ready to start after Stage 10 PR merge | No implementation builder appointed yet. |
 | 11 | `11-build` | Build Evidence | Pending | Build not started. |
 
 ---
 
 ## Current Focus
 
-Stage 9 Builder Checklist has been drafted as a governed pre-build builder-readiness artifact. The next downstream stage is Stage 10 IAA Pre-Brief after this PR is merged.
+Stage 10 IAA Pre-Brief has been drafted as a governed assurance-preparation artifact. The next downstream stage is Stage 11 Builder Appointment after this PR is merged.
 
-Implementation remains blocked until Stage 10 IAA Pre-Brief, Stage 11 Builder Appointment, and Stage 12 Build Evidence gates are complete or explicitly waived by CS2 / Johan Ras.
+Implementation remains blocked until Stage 11 Builder Appointment and Stage 12 Build Evidence gates are complete or explicitly waived by CS2 / Johan Ras.
 
 ---
 
@@ -50,7 +50,8 @@ Implementation remains blocked until Stage 10 IAA Pre-Brief, Stage 11 Builder Ap
 | apw-stage6-qa-to-red-20260530 | `foreman/apw-stage6-qa-to-red` | Merged | PR #5 merged into `main`; Stage 6 QA-to-Red approved for PBFAG progression. |
 | apw-stage7-pbfag-20260531 | `foreman/apw-stage7-pbfag` | Merged | PR #6 merged into `main`; Stage 7 PBFAG approved for Implementation Plan progression. |
 | apw-stage8-implementation-plan-20260531 | `foreman/apw-stage8-implementation-plan` | Merged | PR #7 merged into `main`; Stage 8 Implementation Plan approved for Builder Checklist progression. |
-| apw-stage9-builder-checklist-20260531 | `foreman/apw-stage9-builder-checklist` | Draft PR | Stage 9 Builder Checklist, tracker update, QP, ECAP, IAA, and authorized CS2 proxy disposition filed. |
+| apw-stage9-builder-checklist-20260531 | `foreman/apw-stage9-builder-checklist` | Merged | PR #8 merged into `main`; Stage 9 Builder Checklist approved for IAA Pre-Brief progression. |
+| apw-stage10-iaa-pre-brief-20260601 | `foreman/apw-stage10-iaa-pre-brief` | Draft PR | Stage 10 IAA Pre-Brief, tracker update, QP, ECAP, IAA, and authorized CS2 proxy disposition filed. |
 
 ---
 
