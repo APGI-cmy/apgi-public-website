@@ -185,35 +185,9 @@ Use this at the start of a new chat:
 Load `FOREMAN_OPERATING_MODEL.md` first. Assume Foreman for APW. Load the local governance canon, APW tracker, and current stage artifacts. Continue from the current tracker state. Use AI-assisted CS2 proxy evaluation only where Johan Ras explicitly authorizes it. Preserve Foreman, Builder, ECAP, IAA, and CS2 proxy separation.
 ```
 
-For a job, use:
-
-```text
-Assume Foreman for APW.
-
-Job:
-<describe the task>
-
-Authority:
-Johan Ras authorizes AI-assisted CS2 proxy evaluation where needed.
-
-Required ceremony:
-- Load governance
-- Create scope declaration
-- Appoint builder
-- Execute or prepare builder task
-- Update tracker
-- Run Foreman QP
-- File ECAP
-- File IAA pre-brief
-- Run IAA review
-- Inspect CI/status
-- Record CS2/proxy disposition
-- Open or update draft PR unless ready
-```
-
 ---
 
-## 8. Current state after PR #6 and Stage 8 branch
+## 8. Current state after PR #7 and Stage 9 branch
 
 As of 2026-05-31:
 
@@ -222,36 +196,37 @@ As of 2026-05-31:
 - PR #4 is merged: Stage 5 Architecture complete and approved for Stage 6 QA-to-Red progression.
 - PR #5 is merged: Stage 6 QA-to-Red complete and approved for Stage 7 PBFAG progression.
 - PR #6 is merged: Stage 7 PBFAG complete and approved for Stage 8 Implementation Plan progression.
-- Stage 8 Implementation Plan is being run on `foreman/apw-stage8-implementation-plan` and is intended to approve progression to Stage 9 Builder Checklist after PR merge.
+- PR #7 is merged: Stage 8 Implementation Plan complete and approved for Stage 9 Builder Checklist progression.
+- Stage 9 Builder Checklist is being run on `foreman/apw-stage9-builder-checklist` and is intended to approve progression to Stage 10 IAA Pre-Brief after PR merge.
 - PR #1 remains an implementation draft and should wait until required pre-build gates are complete or waived.
-- Implementation remains blocked until Stage 9 Builder Checklist, Stage 10 IAA Pre-Brief, Stage 11 Builder Appointment, and Stage 12 Build Evidence gates are complete or explicitly waived by CS2 / Johan Ras.
+- Implementation remains blocked until Stage 10 IAA Pre-Brief, Stage 11 Builder Appointment, and Stage 12 Build Evidence gates are complete or explicitly waived by CS2 / Johan Ras.
 
 ---
 
 ## 9. Next recommended wave
 
-After the Stage 8 Implementation Plan PR is merged, start:
+After the Stage 9 Builder Checklist PR is merged, start:
 
 ```text
-APW Stage 9 - Builder Checklist
+APW Stage 10 - IAA Pre-Brief
 ```
 
 Expected branch:
 
 ```text
-foreman/apw-stage9-builder-checklist
+foreman/apw-stage10-iaa-pre-brief
 ```
 
 Expected stage folder:
 
 ```text
-modules/APW/08-builder-checklist/
+modules/APW/09-iaa-pre-brief/
 ```
 
 Expected primary artifact:
 
 ```text
-modules/APW/08-builder-checklist/builder-checklist.md
+modules/APW/09-iaa-pre-brief/iaa-pre-brief.md
 ```
 
-Stage 9 must convert the approved implementation plan into concrete builder obligations and evidence requirements. It must not start implementation.
+Stage 10 must prepare the independent assurance brief that a future IAA will use before the runtime implementation builder is appointed. It must not start implementation.
