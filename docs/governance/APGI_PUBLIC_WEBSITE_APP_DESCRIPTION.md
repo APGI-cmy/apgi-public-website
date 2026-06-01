@@ -4,480 +4,273 @@
 
 | Field | Value |
 |-------|-------|
-| Version | v0.1 |
-| Status | Authoritative |
+| Version | v0.2 - Corrective Design Upgrade |
+| Status | Authoritative - corrective replacement for v0.1 |
 | Owner | Johan Ras |
-| Approval Date | 2026-05-29 |
-| Last Updated | 2026-05-29 |
+| Approval Date | 2026-06-01 |
+| Last Updated | 2026-06-01 |
 | Authority | Johan Ras |
 | Canonical Location | `docs/governance/APGI_PUBLIC_WEBSITE_APP_DESCRIPTION.md` |
-| Policy Authority | `governance/policy/APP_DESCRIPTION_REQUIREMENT_POLICY.md` v2.0 |
+| Corrective Trigger | Stage 12 PR #11 delivered a functional static scaffold but failed the fully functional design-quality expectation |
 
 ---
 
-## §1 — Application Identity
+## §0 - Corrective Context
+
+Stage 12 PR #11 proved that APW could be deployed as a static Vercel site, but it did **not** deliver the intended APGI website experience.
+
+The failure was not primarily technical. The branch produced a functional build scaffold, but design and product experience arrived as an afterthought. It did not meet the required standard for a high-profile, professional APGI public website.
+
+This App Description v0.2 supersedes the earlier one-page/scaffold interpretation. All downstream pre-build artifacts must be realigned before the upgraded build resumes.
+
+APW build philosophy:
+
+> We only build to green.
+
+A build is not green merely because it compiles, deploys, and has working links. It is green only when it satisfies the approved experience, information architecture, visual design, content depth, conversion readiness, accessibility, routing, deployment, and evidence requirements.
+
+---
+
+## §1 - Application Identity
 
 - **Application Name**: APGI Public Website
-- **Purpose**: A modern, high-trust public website for Assurance Protection Group Inc. that presents the brand, markets training, and acts as the central launch hub for APGI's digital ecosystem, including Thinkific courses and linked ISMS applications.
+- **Purpose**: A high-profile, modern, professional public website for Assurance Protection Group Inc. that presents APGI as a credible security, risk, training, assurance, and technology-enabled advisory organization.
+- **Primary Product Goal**: Replace a functional scaffold with a polished, content-rich, multi-page public website that can stand beside or improve on the current public APGI website at `https://apginc.ca/`.
 - **Target Users / Audience**:
-  - Prospective clients
+  - Prospective clients assessing APGI credibility
   - Current clients and partners
-  - Course learners and training prospects
-  - APGI staff and collaborators
-  - Returning visitors from LinkedIn and Thinkific
+  - Training prospects and course learners
+  - Visitors looking for APGI services
+  - Visitors exploring the APGI app/platform ecosystem
+  - Returning visitors from LinkedIn, Thinkific, Vercel previews, and referrals
 - **Core Value Proposition**:
-  - Give visitors a clear, premium first impression of APGI.
-  - Convert interest into enquiries, course sign-ups, or app exploration.
-  - Unify the APGI website, LinkedIn presence, Thinkific training, and ISMS app ecosystem under one navigable front door.
+  - Give visitors a premium first impression within seconds.
+  - Make APGI's service lines, training offer, and digital ecosystem easy to explore.
+  - Convert interest into training visits, service enquiries, contact action, or app/platform exploration.
+  - Present APGI with enough depth, polish, colour, and structure to invite exploration rather than merely proving deployability.
 
 ---
 
-## §2 — Scope Definition
+## §2 - Scope Definition
 
 ### In Scope
 
-- Recreate the APGI public site as a modern, responsive, Vercel-hosted website.
-- Preserve and modernize the current company story, training offer, client proof, philanthropy, and contact pathways.
-- Add a polished APGI hub section that links to the frozen v1 public ISMS marketing routes and any later governed expansions.
-- Include clear external link-outs to LinkedIn and Thinkific.
-- Include a featured training area for the current course surface, including the VPSHR Level 0 course.
-- Include placeholder content slots so copy, proof points, testimonials, and app tiles can be tuned progressively.
-- Support SEO, social sharing metadata, and link previews that work well when shared from LinkedIn.
-- Provide a mobile-first, accessible, visually distinctive design with modern motion and strong brand presence.
+The upgraded APW site must include a real multi-page information architecture, not only a single landing page.
 
-### Explicitly Out of Scope
+Required pages/routes:
 
-- Replacing Thinkific as the learning management system.
-- Rebuilding the training delivery backend inside the public website.
-- Recreating the ISMS apps themselves inside this website.
-- Building a full CRM, marketing automation suite, or internal admin console inside the public site.
-- Using the LinkedIn feed URL as a canonical public destination.
-- Scraping or synchronizing LinkedIn data directly into the site.
-- Exposing staff-only or management-only tools in the public navigation unless explicitly approved.
+| Route | Required Purpose |
+|-------|------------------|
+| `/` | High-impact homepage and conversion front door |
+| `/services/` or `/services.html` | Full service catalogue and service-detail presentation |
+| `/platform/` or `/platform.html` | APGI app/platform ecosystem and submodule showcase |
+| `/training/` or `/training.html` | Training catalogue, course cards, and Thinkific handoff |
+| `/about/` or `/about.html` | APGI story, credibility, mission, and positioning |
+| `/team/` or `/team.html` | Leadership/team presentation, text-first until final bios/photos are approved |
+| `/contact/` or `/contact.html` | Direct contact actions and enquiry guidance, without backend capture in v1 |
+| `/privacy/` or `/privacy.html` | Privacy page or governed legal placeholder |
+| `/terms/` or `/terms.html` | Terms page or governed legal placeholder |
 
-### Boundaries and Constraints
+Required content areas:
 
-- The public website is a marketing and routing layer, not a system of record.
-- Thinkific remains the system of record for course delivery and management.
-- LinkedIn remains the social proof and discovery channel, but the website must own the canonical brand narrative.
-- App tiles that lead into the ISMS ecosystem resolve through a frozen route-slug map at deploy time; the host may vary by environment, but the route paths are canonical.
-- Any later contact-form, CMS, or analytics integration must be added as a deliberate artifact, not as an accidental code shortcut.
+- Premium homepage hero with strong APGI positioning.
+- Services overview and full services page.
+- Platform/APGI Hub page displaying app modules and submodules.
+- Training page linking to `https://apgi.thinkific.com/` and presenting available/current training content.
+- Strong visual design with colour, contrast, rhythm, and professional polish.
+- Rich calls to action that invite visitors to explore rather than merely scroll.
+- Current-site content migration or summarisation where useful, especially services and training.
+- Placeholder discipline for unapproved legal, team, asset, testimonial, or client proof content.
+- SEO, social metadata, route titles, and share-ready pages.
+- Vercel deployment with evidence.
 
----
+### Explicitly Out of Scope for v1
 
-## §3 — Success Criteria
-
-- A first-time visitor understands who APGI is, what it offers, and where to go next within 10 seconds.
-- The site presents a premium, contemporary, and credible visual identity on both desktop and mobile.
-- Every primary link works: APGI home, LinkedIn, Thinkific, course pages, contact actions, and selected app hub tiles.
-- The site includes explicit placeholder slots for tuning content without requiring structural redesign.
-- Social previews are strong enough to share cleanly from LinkedIn and other platforms.
-- The site is deployable on Vercel with fast page loads, good SEO, and accessible markup.
-- The design should feel intentional and differentiated, not like a generic template.
-- Definition of Done for the application: the public site is live, visually coherent, responsive, accessible, and routed correctly, with all intended external destinations verified and the placeholder slots documented.
-
----
-
-## §4 — Strategic Context
-
-- The current APGI website is functional but visually and structurally dated for the role it now needs to play.
-- Replacement / extension of: the current `https://apginc.ca/` public website, extended into a modern modular APGI hub.
-- The new site should be the central APGI front door for:
-  - brand credibility,
-  - training and course discovery,
-  - outbound social proof via LinkedIn,
-  - and downstream product or app discovery from the ISMS ecosystem.
-- APGI's training presence lives in Thinkific, so the website should market and route into Thinkific rather than duplicate it.
-- The ISMS repository contains the applications that will eventually be linked or launched from the public website, so the site needs a hub section that can grow with that ecosystem.
-- The site should keep the current APGI story structure where it helps, but modernize the presentation, hierarchy, and visual rhythm.
-
-### 4.1 Current Reference Sources
-
-| Source | URL | Use |
-|---|---|---|
-| Current public site | `https://apginc.ca/` | Content and positioning reference |
-| LinkedIn presence | `https://www.linkedin.com/company/assurance-protection-group-inc` | Social proof, outbound referral, and launch channel |
-| VPSHR course index | `https://training-urls-module.vercel.app/courses/vpshr-level-0` | Course content reference for the current training focus |
-| Thinkific manage | `https://apgi.thinkific.com/manage` | Staff/admin destination, not public nav |
-| Thinkific storefront | `https://apgi.thinkific.com/` | Public course destination to link from the site |
-| APGI contact reference | `https://apginc.ca/contact-us/` | Public contact model reference for email, phone, and address |
-| ISMS repo | `https://github.com/APGI-cmy/maturion-isms` | App ecosystem reference |
-| Governance repo | `https://github.com/APGI-cmy/maturion-foreman-governance` | Canonical build/governance reference |
-
-### 4.2 Design Direction
-
-- Visual tone: authoritative, calm, modern, and premium.
-- Typography: expressive headline treatment with a clean body face.
-- Palette: deep slate, warm ivory, brass or gold accent, with restrained supporting neutrals.
-- Layout: strong vertical rhythm, generous whitespace, alternating full-bleed and card-based sections.
-- Motion: subtle, purposeful motion only, such as scroll reveals, hero ambient movement, hover lift, and gentle logo movement.
-- Imagery: APGI-owned or explicitly licensed imagery only; no generic security stock. The proof strip is text-first in v1 so rights ambiguity does not leak into the launch.
-- Social/SEO: strong Open Graph and LinkedIn preview images, canonical metadata, and clear page titles.
-
-### 4.3 Proposed Public Site Composition
-
-| Section | Purpose | Placeholder Status |
-|---|---|---|
-| Hero | Immediate positioning and primary CTA | Headline and subheadline to tune |
-| Proof strip | APGI-owned marks / trust cues | Text-first proof strip in v1; third-party logos deferred until separately licensed |
-| About / Who We Are | APGI story and authority | Copy to tune |
-| Services | What APGI does | Card labels and descriptions to tune |
-| Training | Thinkific and course spotlight | VPSHR Level 0 featured now; more slots later |
-| APGI Hub | Links to the frozen v1 ISMS public module routes | Frozen public route map; future tiles require governance |
-| Philanthropy / Impact | Community and mentorship narrative | Copy to tune |
-| Team | People behind the brand | Bios and photos to tune |
-| Contact | Enquiry path and utility links | Email, phone, and address card; no form in v1 |
-| Footer | Legal, social, and utility links | Stable |
-
-### 4.4 Content Slots to Tune Later
-
-| Slot | Initial State | Notes |
-|---|---|---|
-| Hero headline | Placeholder | Needs a strong APGI positioning statement |
-| Hero subheadline | Placeholder | Should explain APGI in one plain-language sentence |
-| Primary CTA | Stable placeholder | Usually "Explore Training" or equivalent |
-| Secondary CTA | Stable placeholder | LinkedIn, contact, or app hub |
-| Client proof stats | Placeholder | Use only once verified |
-| Testimonials | Placeholder | Add after approval and rights clearance |
-| App tiles | Frozen v1 route map + reserved future expansion | Public routes are fixed; future routes require governance |
-| Team bios | Placeholder | Add as the leadership story is confirmed |
-| Contact details | Stable | `info@apginc.ca`, `+1 416 642 9974`, and the Scarborough address |
-| Legal pages | Stable | Privacy and terms required before launch |
+- Supabase project unless later explicitly approved by CS2.
+- Database-backed content or lead capture.
+- Authentication.
+- CRM/contact-form backend.
+- Thinkific replacement or Thinkific administration.
+- ISMS backend/application implementation inside APW.
+- LinkedIn scraping or automated social synchronization.
+- Unapproved analytics, CMS, marketing automation, client logos, testimonials, or regulated claims.
 
 ---
 
-## §AD-01 - Build Lifecycle Stages
+## §3 - Success Criteria
 
-The canonical build lifecycle is:
+The upgraded APW site is green only when all of the following are true:
 
-1. App Description
-2. UX Workflow & Wiring Spec
-3. Functional Requirements Specification (FRS)
-4. Technical Requirements Specification (TRS)
-5. Architecture
-6. QA-to-Red
-7. PBFAG
-8. Implementation Plan
-9. Builder Checklist
-10. IAA Pre-Brief
-11. Builder Appointment
-12. Build
-
-Skipping or reordering stages is prohibited without documented CS2 approval.
-
----
-
-## §AD-02 - Requirements Derivation Chain
-
-```text
-APGI Public Website App Description
-    ↓ derives
-UX Workflow & Wiring Spec
-    ↓ derives
-FRS
-    ↓ derives
-TRS
-    ↓ derives
-Architecture
-    ↓ derives
-QA-to-Red, PBFAG, Implementation Plan, Builder Checklist, IAA Pre-Brief
-    ↓ enables
-Build
-```
-
-Every downstream artifact must explicitly reference this App Description by filename and version.
+1. It is visually credible as a professional public website for APGI.
+2. It is materially richer than the Stage 12 PR #11 scaffold.
+3. It has a multi-page information architecture with homepage, services, platform/app, training, about/team/contact, and legal pages.
+4. Services are presented with enough depth for a visitor to understand what APGI provides.
+5. The app/platform page clearly shows the APGI ecosystem and submodules.
+6. The training page links to `https://apgi.thinkific.com/` and presents training offerings clearly.
+7. The homepage uses colour, hierarchy, sections, cards, CTAs, and visual rhythm to invite exploration.
+8. Every public route is browser-verified on desktop and mobile.
+9. Navigation works across desktop and mobile.
+10. All primary CTAs have correct destinations or explicit governed placeholder states.
+11. Legal/team/assets/social-preview placeholders are honest and visible.
+12. No Supabase, auth, backend, CRM, or contact-form processing is introduced without later approval.
+13. Vercel build and preview/production evidence is recorded.
+14. QA-to-Red tests for design, IA, services, platform, training, conversion, and visual quality are green.
 
 ---
 
-## §AD-03 - Technology Stack
+## §4 - Strategic Context
 
-| Layer | Technology | Notes |
-|---|---|---|
-| Frontend framework | Next.js (App Router) | Best fit for Vercel and modern public-site routing |
-| Language | TypeScript | Strong typing for content and route config |
-| State management | React component state + small contexts | Keep global state minimal for v1 |
-| Styling | Tailwind CSS | Utility-first styling for fast iteration |
-| UI primitives | shadcn/ui | Accessible, composable components |
-| Motion | Framer Motion or equivalent CSS motion | Keep motion subtle and intentional |
-| Content source | Repository-first content files or MDX/JSON | Keep placeholders easy to tune |
-| Database | None in v1 | Add only if forms, CMS, or lead capture require it |
-| Auth | None in v1 | Public site only; staff tooling stays external |
-| Edge functions | None in v1 | Add only if a future action requires serverless execution |
-| CI/CD | GitHub Actions + Vercel | Expected deployment path |
-| Deployment | Vercel | Primary hosting target |
-| Notifications | Sonner or equivalent toast/banner system | No `alert()`-based UX |
-| Analytics | None in v1 | Add only if approved |
+The existing public APGI website already has more content substance than PR #11. The upgrade must respect that existing value while modernizing structure, presentation, and interaction.
+
+The new APW must feel like a first-class public website, not an internal proof-of-build page.
+
+Key strategic requirements:
+
+- Present APGI as professional, credible, serious, and modern.
+- Create a visitor journey from initial trust to services, training, platform exploration, or contact.
+- Preserve and improve the current website's services/training substance.
+- Make the APGI app/platform ecosystem visible and understandable.
+- Support future content expansion without redesigning the site again.
 
 ---
 
-## §AD-04 - Deliverable Artifacts
+## §5 - Required Design Standard
 
-- [ ] Deployable public website
-- [ ] This App Description
-- [ ] UX Workflow & Wiring Spec
-- [ ] FRS
-- [ ] TRS
-- [ ] Architecture
-- [ ] QA-to-Red suite
-- [ ] PBFAG package
-- [ ] Implementation Plan
-- [ ] Builder Checklist
-- [ ] IAA Pre-Brief
-- [ ] Build Progress Tracker
-- [ ] Route and link inventory
-- [ ] Social metadata inventory
-- [ ] Content slot inventory
-- [ ] Deployment runbook
-- [ ] Screenshots and browser verification evidence
+The visual language must include:
+
+- Strong APGI brand presence.
+- Deep navy/slate foundation with richer accent colour, such as blue, gold/brass, teal, or warm neutral accents.
+- Alternating dark/light sections.
+- Premium card systems.
+- Large editorial hero treatment.
+- Service and platform cards with visual hierarchy.
+- Clear CTAs.
+- Responsive layouts that feel designed, not collapsed.
+- Modern but controlled motion, respecting reduced-motion settings.
+- Text-first fallback where images/assets are not approved.
+- No generic low-effort template feel.
+
+Design is a delivery requirement, not decoration.
 
 ---
 
-## §AD-05 - Component Definition of Done
+## §6 - Required Information Architecture
 
-Each major component is only done when it is:
+### Homepage
 
-- Implemented
-- Integrated
-- Tested
-- Browser-verified
-- Included in prehandover evidence
+Must include:
 
-### Major Components
+- hero with strong headline/subheadline;
+- trust/proof/positioning strip;
+- services preview;
+- platform/APGI Hub preview;
+- training preview;
+- why APGI / approach / credibility section;
+- impact/philanthropy/community section if content is approved or text-first placeholder is accepted;
+- contact CTA;
+- footer with legal/social/navigation links.
 
-| Component | Definition of Done |
-|---|---|
-| Hero | Copy, CTA, and motion render correctly on all target viewports |
-| Navigation | Links are correct and responsive |
-| Trust strip | Client or proof assets render cleanly and are rights-cleared |
-| Services section | Service cards are legible and tuned |
-| Training section | Thinkific and course links resolve correctly |
-| APGI hub | App tiles route correctly and show intended state |
-| Contact section | Contact actions work and are clearly labelled |
-| Footer | Legal and social links are present and correct |
+### Services Page
 
----
+Must include a service catalogue, at minimum:
 
-## §AD-06 - Test-First Guarantee
+- Security awareness and organizational design;
+- Intelligence and investigations;
+- Independent third-party security assurance and reporting;
+- Remote/security systems administration support where approved;
+- Business reporting / assurance support;
+- Security human rights training;
+- any other approved APGI service lines from the current site or CS2-provided updates.
 
-- QA-to-Red must exist before implementation.
-- Every build wave, including remediation, must have tests that fail before the code is written.
-- The test suite must cover layout, routing, responsive behavior, and external link correctness.
-- Content changes that affect visible copy or routing must be covered by the red suite before they are built.
-- QA Agent / Role: APGI site QA or delegated builder QA, assigned in the QA-to-Red stage.
-- Expected QA-to-Red state before builder allocation: all planned acceptance tests fail on the initial scaffold before implementation begins.
+Each service must include a short explanation, visitor value, and contact CTA.
 
----
+### Platform / APGI Hub Page
 
-## §AD-07 - Physical Verification Gate
+Must display the APGI digital ecosystem and submodules, including at minimum:
 
-- Every UI wave requires browser-based verification.
-- Required evidence includes desktop and mobile screenshots of the home page and each public page added in the wave.
-- Browser verification must include navigation to LinkedIn and Thinkific destinations where those are in scope.
-- No UI wave closes without screenshot evidence.
-- Role responsible: Foreman or delegated QA/Builder under Foreman verification.
+- Maturity Roadmap / MMM;
+- Risk Management;
+- Project Implementation Tracker / PIT;
+- Incident & Intelligence Hub;
+- Data Analytics & Remote Assurance;
+- Systems Integration / RADAM;
+- Skills Development Portal.
 
----
+Each module must have a description, status, and link/pending behavior.
 
-## §AD-08 - PBFAG Checklist
+### Training Page
 
-- QA-to-Red suite exists and is red before implementation.
-- Scope and placeholder inventory are approved.
-- External link inventory is complete.
-- Social metadata targets are defined.
-- Accessibility targets are confirmed.
-- No unfinished route or CTA is left without a destination or explicit placeholder label.
-- Prior-wave evidence is filed.
-- Build tracker is current.
-- Any rights-sensitive asset use has been reviewed.
-- Deployment assumptions are explicit.
-- Gate condition: all checklist items must be green before builder allocation.
+Must link prominently to:
+
+`https://apgi.thinkific.com/`
+
+Must also present training offerings and course cards, including the current known course surface and placeholders for additional courses where final titles/details are not yet approved.
+
+### Contact Page
+
+Must provide readable contact information and direct handoffs. No backend form processing in v1 unless separately approved.
 
 ---
 
-## §AD-09 - Agent Authority Chain
+## §7 - Build Lifecycle Rule
 
-| Role | Authority | Gate Point |
-|---|---|---|
-| Johan Ras | Final product and brand approval | App Description approval and any later scope override |
-| Foreman | Wave allocation and sequencing | Builder appointment and wave closure |
-| Builder | Implements within approved scope only | Build execution |
-| QA | Authors and validates QA-to-Red coverage | QA-to-Red completion |
-| CodexAdvisor | Writes or updates agent contracts if needed | Agent contract changes only |
+Because PR #11 failed the fully functional design threshold, downstream artifacts that were written for the scaffold interpretation are no longer sufficient.
 
-- No builder may modify governance artifacts without authorization.
-- No public-content change should be treated as approved until the upstream artifact chain is complete.
+The required corrective sequence is:
 
----
+1. Update App Description.
+2. Realign UX Workflow & Wiring.
+3. Realign FRS.
+4. Realign TRS.
+5. Realign Architecture.
+6. Realign QA-to-Red with design/IA/content RED tests.
+7. Realign PBFAG.
+8. Realign Implementation Plan.
+9. Realign Builder Checklist.
+10. Realign IAA Pre-Brief.
+11. Realign Builder Appointment.
+12. Only then resume upgraded Build Evidence.
 
-## §AD-10 - Schema-to-Hook Validation
-
-- N/A for the initial static public site if no database-backed features are present.
-- If contact forms, CMS content, or analytics event storage are added later, every schema or payload field must be mapped to the consuming hook or component.
-- Any future form or content schema must be checked column-by-column or field-by-field before merge.
-
----
-
-## §AD-11 - Table Pathway Audit
-
-- N/A unless the public website introduces a database-backed feature.
-- If the site later stores contact submissions, newsletter signups, or CMS records, every table usage must be audited against the consuming UI and tests.
+Skipping directly from the failed scaffold to design implementation is prohibited unless CS2 explicitly waives the corrective pre-build chain.
 
 ---
 
-## §AD-12 - RLS Audit Gate
+## §8 - QA-to-Red Requirement
 
-- N/A unless the public website introduces a database-backed feature.
-- If a future feature uses Supabase or another database, row-level or row-based access control must be reviewed before production.
+QA-to-Red must fail the current PR #11 scaffold before the upgraded build begins.
 
----
+At minimum, RED tests must cover:
 
-## §AD-13 - Auth Wiring Checklist
+- multi-page information architecture;
+- professional visual design quality;
+- service-page depth;
+- platform/app submodule presentation;
+- training-page depth and Thinkific handoff;
+- homepage conversion quality;
+- colour/visual richness;
+- desktop/mobile designed layouts;
+- navigation across all major pages;
+- placeholder honesty;
+- Vercel deployment evidence;
+- no Supabase/backend/auth/CRM/contact-form backend in v1.
 
-- v1 of the public website is public-first and does not require authenticated pages.
-- Any staff-only or admin-only page must be explicit, protected, and documented.
-- Thinkific manage remains external and is not treated as a public authenticated route inside this website.
-- No mock auth should ever be introduced if authenticated routes are added later.
-
----
-
-## §AD-14 - AI Integration Requirements
-
-- N/A — No AI action points in this module for v1.
-- If an AI assistant, content helper, or chat feature is added later, all AI calls must route through the approved gateway pattern and not directly to provider APIs.
-
----
-
-## §AD-15 - Edge Function Registry
-
-- N/A — No edge functions in v1.
-- If a contact form or other serverless action is introduced later, every function must appear in a named registry before handover.
+Only a build that turns those tests green can be considered acceptable.
 
 ---
 
-## §AD-16 - Deployment Wave
+## §9 - Definition of Done
 
-- The final wave must include Vercel preview validation, production environment provisioning, configuration injection, Combined Wave Test (CWT) execution, production deployment, and smoke testing.
-- The deployment wave must confirm redirects, external links, Open Graph previews, responsive behavior, and commissioning readiness.
-- A CWT closure report must be produced before the wave is considered complete.
-- Rollback steps must be defined before the production push.
+The APW website is done only when it is:
 
----
+- implemented;
+- integrated;
+- visually designed to the approved professional standard;
+- multi-page;
+- content-rich enough for services, platform/app, and training exploration;
+- tested against corrected QA-to-Red;
+- browser-verified on desktop and mobile;
+- Vercel-verified;
+- documented with build evidence;
+- approved by CS2/Johan or authorized proxy disposition.
 
-## §AD-17 - Secret Naming Convention
-
-- All environment variables must be UPPERCASE.
-- `.env.example` must be the canonical list of environment variables.
-- Only add secrets when a real integration needs them.
-- The public site should avoid unnecessary secrets in the client bundle.
-
----
-
-## §AD-18 - Deployment Runbook
-
-- The repository must include a runbook for preview, production, rollback, and domain verification.
-- If a future form or CMS integration is added, its deployment and rollback steps must be added to the runbook.
-- The runbook must also include link-check and metadata-check steps.
-
----
-
-## §AD-19 - Notification / UX Patterns
-
-- `alert()` is prohibited for user notifications.
-- Use a toast or inline banner pattern for success and failure states.
-- Form submissions, copy-to-clipboard actions, and other small interactions should use a quiet, premium feedback style.
-
----
-
-## §AD-20 - Shared State Architecture
-
-- Keep state minimal.
-- Use route state and small React contexts for theme, mobile navigation, and any modal or banner state.
-- Avoid a heavyweight global store unless later content complexity makes it necessary.
-- Content should be data-driven so placeholders can be tuned without touching layout code.
-
----
-
-## §AD-21 - API Authentication
-
-- N/A for the initial public site if no session-scoped API is introduced.
-- Any future API that relies on user or session context must use proper authentication and not rely on anonymous trust.
-
----
-
-## §AD-22 - Audit Log Design
-
-- N/A for the initial static public site.
-- If a future form backend, CMS, or admin workflow is added, define what events are logged, where they are visible, and how duplicates are prevented.
-
----
-
-## §AD-23 - Tracker Update Requirement
-
-- The build progress tracker must be updated at every wave closure.
-- No wave is complete until the tracker reflects the current state.
-- Canonical tracker location for this repository: `docs/governance/APGI_PUBLIC_WEBSITE_BUILD_PROGRESS_TRACKER.md`.
-- If the repository later adopts a formal tracker file, it becomes a mandatory closure artifact.
-
----
-
-## §AD-24 - State Persistence Specification
-
-| State Item | Storage | Retention | Ownership |
-|---|---|---|---|
-| Theme preference | Local storage or cookie | Persistent | Frontend |
-| Mobile navigation open state | Component state | Session | Frontend |
-| Dismissed banner state | Local storage or session storage | Configurable | Frontend |
-| Contact form draft | Session storage if needed | Session | Frontend |
-
-Any new persistent state must be defined here before implementation.
-
----
-
-## 5. Approval and Authority
-
-- This document is authoritative following Johan Ras approval on 2026-05-29.
-- It serves as the upstream source for the website's UX, FRS, TRS, and architecture artifacts.
-- Any material change after approval must follow the governed versioning and supersession process.
-
----
-
-## 6. Working Guidance
-
-- Keep the first build intentionally shaped around placeholders, not final copy perfection.
-- Design the site so that APGI can evolve sections and cards without reworking the page architecture.
-- Treat LinkedIn, Thinkific, and the ISMS apps as coordinated destinations, not disconnected links.
-- The public website should feel like APGI's command surface for brand, training, and launch paths.
-
----
-
-## 7. Approval Record
-
-| Action | By | Date | Notes |
-|--------|----|------|-------|
-| Draft created | Johan Ras | 2026-05-28 | Initial APGI public website App Description drafted and scoped. |
-| Review completed | Codex | 2026-05-29 | Canon gap analysis completed; file is ready for human sign-off. |
-| Authoritative status granted | Johan Ras | 2026-05-29 | Approved and effective as of the sign-off record below. |
-
-## §4 — CS2 Approval and Sign-Off
-
-I, **CS2: Johan Ras**, hereby review and approve this **APGI Public Website - App Description** document as a governed description of the APGI Public Website application.
-
-By signing off this document, I confirm that:
-
-* the stated application identity, scope, boundaries, and success criteria are acceptable for the current governed version;
-* the document may be used as the approved reference for design, implementation, deployment, and related governance decisions for the APGI Public Website;
-* any material changes after this approval must be handled through the appropriate governed review and update process.
-
-| Field             | Value                                                    |
-| ----------------- | -------------------------------------------------------- |
-| Approved By       | CS2: Johan Ras                                           |
-| Role / Authority  | CS2 Approval Authority                                   |
-| Approval Decision | Approved                                                 |
-| Approval Date     | 2026-05-29                                               |
-| Document Location | `docs/governance/APGI_PUBLIC_WEBSITE_APP_DESCRIPTION.md` |
-| Version Approved  | v0.1                                                     |
-
-**Signed:** CS2: Johan Ras
-**Date:** 2026-05-29
-**Status:** Approved
-
+A functional scaffold does not satisfy this definition.
