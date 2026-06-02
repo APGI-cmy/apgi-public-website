@@ -2,8 +2,8 @@
 
 **Module**: APW (APGI Public Website)  
 **Module Slug**: APW  
-**Status**: Corrective pre-build realignment required  
-**Last Updated**: 2026-06-01  
+**Status**: Corrective Stage 2 UX Workflow v0.2 drafted  
+**Last Updated**: 2026-06-02  
 **Authority**: CS2: Johan Ras  
 **Canonical Root**: `modules/APW`
 
@@ -31,7 +31,7 @@ The failure is recorded as:
 - visual richness and visitor invitation: failed;
 - build-to-green philosophy: not satisfied.
 
-PR #11 must not be merged as the final APW website. It may remain as a failed scaffold reference until superseded.
+PR #11 must not be merged as the final APW website. It has been closed as a scaffold reference.
 
 ---
 
@@ -47,9 +47,9 @@ A build is not green merely because it compiles or deploys. It must satisfy the 
 
 | Stage | Folder | Artifact | Status | Notes |
 |-------|--------|----------|--------|-------|
-| 1 | `00-app-description` | App Description | Corrective authoritative v0.2 | Updated to capture high-profile multi-page professional APW website requirements after PR #11 design failure. |
-| 2 | `01-ux-workflow-wiring` | UX Workflow & Wiring Spec | Requires corrective realignment | Must be aligned to multi-page IA, services, platform/app, training, conversion, and design-led journeys. |
-| 3 | `02-frs` | FRS | Requires corrective realignment | Must include functional requirements for upgraded design, multi-page routes, services page, platform page, training page, and visual quality acceptance. |
+| 1 | `00-app-description` | App Description | Corrective authoritative v0.2 | PR #12 merged; captures high-profile multi-page professional APW website requirements after PR #11 design failure. |
+| 2 | `01-ux-workflow-wiring` | UX Workflow & Wiring Spec | Corrective v0.2 drafted for review | Active branch `apw-stage2-ux-v02`; defines multi-page IA, services, platform/app, training, conversion, mobile, legal/trust, and design-quality journeys. |
+| 3 | `02-frs` | FRS | Requires corrective realignment | Must convert Stage 2 v0.2 journeys into upgraded functional requirements. |
 | 4 | `03-trs` | TRS | Requires corrective realignment | Must define technical obligations for multi-page static/Vercel build, richer styling, metadata, routing, validation, and evidence. |
 | 5 | `04-architecture` | Architecture | Requires corrective realignment | Must define upgraded route/component/design-system architecture. |
 | 6 | `05-qa-to-red` | QA-to-Red | Requires corrective realignment before build | Must fail PR #11 scaffold and require green evidence for design, IA, services, platform, training, conversion, and visual richness. |
@@ -66,24 +66,14 @@ A build is not green merely because it compiles or deploys. It must satisfy the 
 
 | Wave | Branch | Status | Notes |
 |------|--------|--------|-------|
-| apw-stage3-frs-20260529 | `foreman/apw-stage3-frs` | Merged | Superseded for upgraded build by corrective realignment requirements. |
-| apw-stage4-trs-20260529 | `foreman/apw-stage4-trs` | Merged | Superseded for upgraded build by corrective realignment requirements. |
-| apw-stage5-architecture-20260529 | `foreman/apw-stage5-architecture` | Merged | Superseded for upgraded build by corrective realignment requirements. |
-| apw-stage6-qa-to-red-20260530 | `foreman/apw-stage6-qa-to-red` | Merged | Insufficient for upgraded design build; requires corrective QA-to-Red. |
-| apw-stage7-pbfag-20260531 | `foreman/apw-stage7-pbfag` | Merged | Requires corrective realignment. |
-| apw-stage8-implementation-plan-20260531 | `foreman/apw-stage8-implementation-plan` | Merged | Requires corrective realignment. |
-| apw-stage9-builder-checklist-20260531 | `foreman/apw-stage9-builder-checklist` | Merged | Requires corrective realignment. |
-| apw-stage10-iaa-pre-brief-20260601 | `foreman/apw-stage10-iaa-pre-brief` | Merged | Requires corrective realignment. |
-| apw-stage11-builder-appointment-20260601 | `foreman/apw-stage11-builder-appointment` | Merged | Requires corrective realignment before new builder appointment. |
-| apw-stage12-build-evidence-20260601 | `foreman/apw-stage12-build-evidence` | Failed design gate / do not merge | PR #11 functional scaffold, not green website. |
-| apw-corrective-prebuild-realignment-20260601 | `foreman/apw-corrective-prebuild-realignment` | Active | Returns to Stage 1 and realigns the pre-build package before upgraded build resumes. |
+| apw-corrective-prebuild-realignment-20260601 | `foreman/apw-corrective-prebuild-realignment` | Merged | PR #12 merged; Stage 1 reset and corrective pre-build baseline established. |
+| apw-stage2-ux-v02-20260602 | `apw-stage2-ux-v02` | Draft PR pending | Corrective Stage 2 UX Workflow & Wiring v0.2 drafted; ready for review after PR creation. |
+| apw-stage12-build-evidence-20260601 | `foreman/apw-stage12-build-evidence` | Closed / failed design gate | PR #11 functional scaffold, not green website. |
 
 ---
 
 ## Current Focus
 
-Correct the pre-build package from Stage 1 forward so the next APW build is only allowed to build to green.
+Review and merge Corrective Stage 2 UX Workflow & Wiring v0.2. After acceptance, proceed to Corrective Stage 3 FRS v0.2.
 
-The next build must be a high-profile, professional, multi-page APW public website with services, platform/app, training, visual richness, conversion flow, and Vercel evidence.
-
-No upgraded build resumes until corrected pre-build artifacts are aligned and approved.
+No upgraded implementation resumes until corrected pre-build artifacts are aligned and approved.
