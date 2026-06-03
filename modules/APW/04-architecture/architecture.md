@@ -1,4 +1,4 @@
-# APW Stage 5 - Architecture
+# APW Stage 5 - Architecture v0.2
 
 ## Status Header
 
@@ -7,46 +7,45 @@
 | Module | APW - APGI Public Website |
 | Stage | 5 - Architecture |
 | Folder | `modules/APW/04-architecture` |
-| Version | v0.1 |
-| Status | Approved for Stage 6 QA-to-Red progression |
+| Version | v0.2 - Corrective Multi-Page Professional Website Architecture |
+| Status | Draft for review |
 | Owner | Johan Ras |
 | Authority | CS2: Johan Ras |
 | Approval Method | AI-assisted CS2 proxy evaluation for Johan Ras |
-| Approval Date | 2026-05-29 |
-| Last Updated | 2026-05-29 |
-| Upstream Stage | `modules/APW/03-trs/technical-requirements-specification.md` |
-| Scope Declaration | `.agent-admin/scope-declarations/apw-stage5-architecture-20260529.md` |
-| Builder Appointment | `.agent-admin/builder-appointments/apw-stage5-architecture-builder-contract-20260529.md` |
-| IAA Review | `.agent-admin/assurance/iaa-review-apw-stage5-architecture-20260529.md` |
-| CS2 Proxy Sign-Off | `.agent-admin/signoffs/cs2-proxy-stage5-architecture-signoff-20260529.md` |
+| Last Updated | 2026-06-03 |
+| Upstream Stage | `modules/APW/03-trs/technical-requirements-specification.md` v0.2 |
+| Scope Declaration | `.agent-admin/scope-declarations/apw-stage5-architecture-v02-20260603.md` |
+| Corrective Trigger | PR #11 functional scaffold failed APW professional website design-quality expectation |
 
 ---
 
 ## 1. Purpose
 
-This Architecture artifact converts the approved APW Stage 4 TRS into a governed design structure for the APGI Public Website.
+This Architecture v0.2 converts the corrected APW TRS v0.2 into a governed implementation architecture for the upgraded APGI Public Website.
 
-It defines how the public site should be structured across routes, sections, components, content, configuration, APGI Hub links, metadata, accessibility, responsive behavior, deployment, and evidence readiness.
+It defines the route, content, component, design-system, validation, deployment, evidence, accessibility, responsive, and public-boundary architecture required before QA-to-Red and implementation planning resume.
 
-This artifact does not authorize runtime implementation. It prepares the project for Stage 6 QA-to-Red.
+This artifact does not authorize runtime implementation.
 
 ---
 
 ## 2. Architecture Boundary
 
-The APGI Public Website architecture is a public, unauthenticated, static-first marketing and routing architecture.
+The APW v1 architecture is public-only and static-first.
 
-The architecture must not introduce:
+It must not introduce:
 
-- authenticated staff tooling;
+- Supabase;
+- database storage;
+- authentication;
 - CRM or lead database;
+- contact-form backend;
 - Thinkific administration;
-- ISMS backend logic;
-- database-backed workflows;
+- ISMS application backend logic;
 - LinkedIn scraping or synchronization;
 - unapproved analytics, CMS, or marketing automation.
 
-Any expansion beyond this boundary requires governed scope change.
+Any expansion beyond this boundary requires explicit governed scope change.
 
 ---
 
@@ -54,409 +53,460 @@ Any expansion beyond this boundary requires governed scope change.
 
 | Source | Architectural Function |
 |--------|------------------------|
-| Stage 3 FRS | Defines functional obligations and negative requirements. |
-| Stage 4 TRS | Defines technical requirements to be reflected in architecture. |
-| Stages 1-4 readiness review | Confirms fully functional foundation is adequate for Architecture. |
-| Foreman Operating Model | Defines governance ceremony, proxy approval, ECAP, and IAA. |
+| App Description v0.2 | Defines professional multi-page website goal and design-quality bar. |
+| UX Workflow v0.2 | Defines user journeys, page navigation, CTAs, and design-quality UX gate. |
+| FRS v0.2 | Defines functional requirements for routes, content, design, and public boundary. |
+| TRS v0.2 | Defines technical requirements converted here into architecture. |
+| Tracker | Records PR #11 scaffold outcome and corrected pre-build sequence. |
 
 ---
 
 ## 4. Site Architecture Overview
 
-### ARCH-SITE-001 - Single Public Entry Surface
+### ARCH-SITE-001 - Multi-Page Public Site
 
-The v1 website architecture should expose one primary public entry surface at `/`.
+The upgraded APW website must be architected as a multi-page public website.
 
-This entry surface contains the public homepage sections and routes users through anchors and approved external handoffs.
+The homepage is a premium conversion front door, not the entire website.
 
-**Derived From**: TRS-ROUTE-001, FRS-SCR-001.
+### ARCH-SITE-002 - Required Route Set
 
-### ARCH-SITE-002 - Section-Based Homepage
+The architecture must support the following route/page set:
 
-The homepage should be architected as a sequence of governed public sections:
+| Route/Page | Architectural Role |
+|------------|--------------------|
+| Home | Brand positioning, conversion front door, and previews of deeper areas. |
+| Services | Full services catalogue and service-detail presentation. |
+| Platform / APGI Hub | APGI ecosystem/module presentation and link/pending states. |
+| Training | Training offerings, Thinkific handoff, and group/custom training contact path. |
+| About | APGI story, positioning, credibility, approach, and values. |
+| Team | Approved team/profile content or honest placeholders. |
+| Contact | Public email and phone handoffs without backend capture. |
+| Privacy | Legal content or governed placeholder. |
+| Terms | Legal content or governed placeholder. |
 
-1. Hero / immediate positioning;
-2. Proof or trust strip;
-3. About / who we are;
-4. Services;
-5. Training;
-6. APGI Hub;
-7. Philanthropy / impact;
-8. Team;
-9. Contact;
-10. Footer.
+### ARCH-SITE-003 - Static-First Composition
 
-**Derived From**: FRS-SCR-001, TRS-ROUTE-002.
+Every required public route must be renderable without authentication, database queries, private APIs, or server-side business workflows.
 
-### ARCH-SITE-003 - Public-Only Rendering
+### ARCH-SITE-004 - Scaffold Exclusion
 
-All v1 user-facing content must be renderable without login, account state, staff permission, or private API access.
-
-**Derived From**: TRS-RUN-001, TRS-SEC-001.
+A one-page-only architecture is non-compliant for the upgraded APW build.
 
 ---
 
 ## 5. Route and Navigation Architecture
 
-### ARCH-ROUTE-001 - Route Map
+### ARCH-ROUTE-001 - Route Registry
 
-| Route / Anchor | Purpose | Required Status |
-|----------------|---------|-----------------|
-| `/` | Home route | Required |
-| `/#about` | About section | Required if section visible |
-| `/#services` | Services section | Required if section visible |
-| `/#training` | Training section | Required |
-| `/#hub` | APGI Hub section | Required |
-| `/#team` | Team section | Required if section visible |
-| `/#contact` | Contact section | Required |
-| `/privacy` or equivalent | Privacy/legal page | Required before launch or clearly governed placeholder |
-| `/terms` or equivalent | Terms/legal page | Required before launch or clearly governed placeholder |
+Routes should be maintained through a route registry or equivalent structured source.
 
-**Derived From**: TRS-ROUTE-002, TRS-CNT-005.
+Each route entry should include:
 
-### ARCH-ROUTE-002 - Navigation Model
+- route path or generated filename;
+- nav label;
+- page title;
+- metadata description;
+- footer inclusion flag;
+- route status;
+- primary CTA target where applicable.
 
-Primary navigation should be composed from a single route/anchor configuration source so desktop nav, mobile nav, and footer links cannot silently drift apart.
+### ARCH-ROUTE-002 - Header Navigation
 
-**Derived From**: TRS-ROUTE-003, TRS-FFD-003.
+Header navigation must be generated or maintained from the same route source as the mobile navigation where practical.
 
-### ARCH-ROUTE-003 - External Link Model
+Required header destinations:
 
-External destinations should be represented in a named link registry or equivalent structured configuration.
+- Home;
+- Services;
+- Platform / APGI Hub;
+- Training;
+- About;
+- Team;
+- Contact.
 
-Minimum approved external destinations:
+### ARCH-ROUTE-003 - Footer Navigation
 
-- LinkedIn company page;
-- VPSHR Level 0 course reference;
-- Thinkific public storefront;
-- APGI Hub ISMS public routes;
-- contact email handoff;
-- contact phone handoff.
+Footer navigation must include primary pages plus Privacy and Terms.
 
-**Derived From**: TRS-ROUTE-004, TRS-SEC-003.
+### ARCH-ROUTE-004 - CTA Registry
 
-### ARCH-ROUTE-004 - Unavailable Destination Model
+CTAs should be represented through a structured CTA pattern that supports:
 
-An unavailable or deferred destination must have an explicit architecture state:
+- internal route;
+- external link;
+- pending state;
+- accessible label;
+- visual priority;
+- analytics-free operation unless later approved.
 
-- hidden;
-- disabled;
-- labelled pending;
-- or safe informational fallback.
+### ARCH-ROUTE-005 - Pending Destination Model
 
-Enabled broken destinations are not architecturally permitted.
+Unavailable destinations must render as clear pending/private-preview/coming-soon states.
 
-**Derived From**: TRS-ROUTE-005, TRS-FFD-001.
+Broken enabled links are not architecturally permitted.
 
 ---
 
-## 6. Component Architecture
+## 6. Page Composition Architecture
 
-### ARCH-COMP-001 - Section Components
+### ARCH-PAGE-001 - Homepage Composition
 
-The site should be organized around section-level components or equivalent isolated layout blocks:
+Homepage must include:
 
-- Header / Navigation;
-- Mobile Navigation;
-- Hero;
-- Trust Strip;
-- About;
-- Services;
-- Training Spotlight;
-- APGI Hub Grid;
-- Impact / Philanthropy;
-- Team;
-- Contact;
-- Footer.
+1. premium hero;
+2. trust/credibility/positioning band;
+3. services preview;
+4. platform/APGI Hub preview;
+5. training preview;
+6. about/approach preview;
+7. contact CTA;
+8. footer.
 
-**Derived From**: TRS-RUN-002, FRS-SCR-001.
+### ARCH-PAGE-002 - Services Page Composition
 
-### ARCH-COMP-002 - Shared CTA Component
+Services page must include:
 
-CTAs should use a shared pattern that supports:
+- services hero or intro;
+- service category grid/list;
+- service detail blocks;
+- outcomes/visitor-value copy;
+- contact CTA;
+- related training/platform links where appropriate.
 
-- internal anchor navigation;
-- approved external navigation;
-- disabled or pending state;
+### ARCH-PAGE-003 - Platform Page Composition
+
+Platform/APGI Hub page must include:
+
+- ecosystem overview;
+- required module grid;
+- module status labels;
+- link or pending behavior;
+- explanation of unavailable/private-preview states;
+- contact CTA.
+
+### ARCH-PAGE-004 - Training Page Composition
+
+Training page must include:
+
+- training hero or intro;
+- Thinkific storefront CTA;
+- course/offering cards;
+- current/pending status labels;
+- group/custom training contact path.
+
+### ARCH-PAGE-005 - About and Team Composition
+
+About and Team pages must separate content from layout and support approved content or honest placeholders.
+
+### ARCH-PAGE-006 - Contact Composition
+
+Contact page must expose readable email and phone handoffs and must not include backend form submission.
+
+### ARCH-PAGE-007 - Legal Composition
+
+Privacy and Terms pages must render as pages or governed placeholders.
+
+---
+
+## 7. Structured Content Architecture
+
+### ARCH-CONTENT-001 - Central Content Source
+
+Core public content should be maintainable through structured local data, configuration files, or component props.
+
+The content source must support:
+
+- routes;
+- services;
+- platform modules;
+- training offerings;
+- CTAs;
+- contact details;
+- legal placeholder status;
+- metadata.
+
+### ARCH-CONTENT-002 - Services Model
+
+Each service entry must include:
+
+- stable ID;
+- name;
+- description;
+- visitor need/problem;
+- APGI support/outcome;
+- CTA target;
+- status where content is pending.
+
+### ARCH-CONTENT-003 - Platform Module Model
+
+Each module entry must include:
+
+- stable ID;
+- title;
+- description;
+- status;
+- route slug or pending state;
 - accessible label;
-- visible focus state.
+- CTA behavior.
 
-**Derived From**: TRS-ROUTE-004, TRS-A11Y-002.
+### ARCH-CONTENT-004 - Training Offering Model
 
-### ARCH-COMP-003 - Hub Tile Component
+Each training entry must include:
 
-Hub tiles should use a shared component pattern driven by structured hub data.
+- stable ID;
+- course/offering name;
+- description;
+- status;
+- Thinkific or contact handoff;
+- pending state where applicable.
 
-Each tile must expose:
+### ARCH-CONTENT-005 - Placeholder Register
+
+Placeholder content must be easy to identify through data flags, comments, filenames, or a clear register.
+
+---
+
+## 8. Component and Section Architecture
+
+### ARCH-COMP-001 - Shared Layout Shell
+
+The site should use a shared shell for header, mobile navigation, main content, and footer.
+
+### ARCH-COMP-002 - Reusable Sections
+
+The architecture should support reusable sections for:
+
+- hero;
+- trust/proof band;
+- card grid;
+- feature/detail block;
+- CTA band;
+- status/pending notice;
+- legal placeholder block.
+
+### ARCH-COMP-003 - Card Systems
+
+Cards should support service, module, training, and proof/positioning content with consistent accessibility and CTA behavior.
+
+### ARCH-COMP-004 - Contact Actions
+
+Contact actions should use explicit `mailto:` and `tel:` patterns while keeping contact values readable as text.
+
+### ARCH-COMP-005 - No Hover-Only Interaction
+
+Core navigation, CTAs, and content discovery must not rely on hover-only behavior.
+
+---
+
+## 9. Design-System Architecture
+
+### ARCH-DES-001 - Visual Foundation
+
+Architecture must support a professional APGI design system with:
+
+- deep navy/slate foundation;
+- richer accent colours;
+- high-contrast text;
+- premium section rhythm;
+- card and panel systems;
+- strong CTA patterns.
+
+### ARCH-DES-002 - Typography Hierarchy
+
+The design architecture must support strong editorial hierarchy for hero, page headings, section headings, body copy, cards, and labels.
+
+### ARCH-DES-003 - Section Treatment Model
+
+The site must support varied section treatments so the result does not look like a plain scaffold.
+
+### ARCH-DES-004 - Responsive Design Tokens
+
+The design system should support responsive spacing, grid, and typography tokens or equivalent maintainable rules.
+
+### ARCH-DES-005 - Motion Policy
+
+Any motion must be non-essential and compatible with reduced-motion preferences.
+
+---
+
+## 10. Platform / APGI Hub Architecture
+
+### ARCH-HUB-001 - Required Module Set
+
+The platform page must support these modules:
+
+- Maturity Roadmap / MMM;
+- Risk Management;
+- Project Implementation Tracker / PIT;
+- Incident and Intelligence Hub;
+- Data Analytics and Remote Assurance;
+- Systems Integration / RADAM;
+- Skills Development Portal.
+
+### ARCH-HUB-002 - Public Base URL Resolution
+
+If the public Hub/ISMS base URL is known, module links resolve from:
+
+`ISMS_PUBLIC_BASE_URL + governed route slug`
+
+### ARCH-HUB-003 - Pending State
+
+If the public base URL is not known, the module must render a polished pending/private-preview state.
+
+### ARCH-HUB-004 - Module Governance
+
+Adding or removing modules must be a reviewable content/configuration change.
+
+---
+
+## 11. Training Architecture
+
+### ARCH-TRN-001 - Thinkific Storefront Handoff
+
+The training page must include a prominent public handoff to:
+
+`https://apgi.thinkific.com/`
+
+### ARCH-TRN-002 - Training Offering Cards
+
+Training offerings must be modeled and rendered as cards or equivalent structured blocks.
+
+### ARCH-TRN-003 - Admin Exclusion
+
+No Thinkific admin or management URL may appear in public content, metadata, or navigation.
+
+---
+
+## 12. Metadata and SEO Architecture
+
+Each route should support route-specific metadata:
 
 - title;
 - description;
-- status label;
-- accessible label;
-- destination;
-- safe disabled/pending behavior where applicable.
+- canonical strategy;
+- Open Graph title;
+- Open Graph description;
+- Open Graph type;
+- social image where approved.
 
-**Derived From**: TRS-HUB-003.
-
-### ARCH-COMP-004 - Contact Action Component
-
-Contact actions should use explicit mail and phone link patterns, while also presenting contact values as readable text.
-
-**Derived From**: TRS-CON-001 through TRS-CON-004.
+Metadata must not imply unapproved claims or capabilities.
 
 ---
 
-## 7. Content and Configuration Architecture
+## 13. Accessibility Architecture
 
-### ARCH-CONTENT-001 - Structured Content Source
+Architecture must support:
 
-Public copy, section labels, CTA labels, hub tile content, team content, and contact data should be maintainable through structured source data rather than scattered markup.
-
-**Derived From**: TRS-CNT-001.
-
-### ARCH-CONTENT-002 - Placeholder Registry
-
-Placeholder or tuneable content should be identifiable through a clear content registry, comment convention, or data flag.
-
-The architecture must prevent placeholder content from masquerading as final claims.
-
-**Derived From**: TRS-CNT-002, TRS-FFD-005.
-
-### ARCH-CONTENT-003 - Rights-Sensitive Asset Register
-
-Images, proof assets, social preview images, team photos, third-party marks, and testimonials must be traceable to approval status before launch.
-
-**Derived From**: TRS-CNT-003, TRS-SEO-004.
-
-### ARCH-CONTENT-004 - Legal Content Slots
-
-The architecture must reserve or implement privacy and terms destinations before public launch readiness.
-
-**Derived From**: TRS-CNT-005.
+- semantic landmarks;
+- meaningful heading order;
+- keyboard reachable navigation and CTAs;
+- visible focus states;
+- accessible card and link labels;
+- skip or equivalent content bypass;
+- reduced-motion support;
+- text-first resilience.
 
 ---
 
-## 8. APGI Hub Architecture
+## 14. Responsive Architecture
 
-### ARCH-HUB-001 - Hub Configuration Source
+Architecture must support:
 
-The APGI Hub must be driven by a structured hub tile configuration source.
-
-The configuration must preserve the seven approved v1 tile slugs.
-
-**Derived From**: TRS-HUB-002, TRS-HUB-003.
-
-### ARCH-HUB-002 - Base URL Resolution
-
-Hub destination URLs must be resolved from:
-
-```text
-ISMS_PUBLIC_BASE_URL + frozen route slug
-```
-
-The host may vary by environment; route slugs must remain stable.
-
-**Derived From**: TRS-HUB-001.
-
-### ARCH-HUB-003 - Future Tile Governance
-
-The architecture must make adding hub tiles an explicit content/configuration change that can be reviewed.
-
-**Derived From**: TRS-HUB-004.
+- mobile-first layout;
+- tablet layout;
+- desktop layout;
+- no critical horizontal overflow;
+- tap-friendly CTAs;
+- readable card grids;
+- designed mobile navigation.
 
 ---
 
-## 9. Metadata and SEO Architecture
+## 15. Validation Architecture
 
-### ARCH-SEO-001 - Metadata Source
+The project must have validation capable of failing non-compliant output.
 
-The architecture must provide a clear metadata source for title, description, canonical URL, Open Graph title, Open Graph description, and social preview image where available.
+Validation must check at minimum:
 
-**Derived From**: TRS-SEO-001.
-
-### ARCH-SEO-002 - LinkedIn Share Readiness
-
-Metadata must support clean LinkedIn sharing without relying on LinkedIn content scraping or synchronization.
-
-**Derived From**: TRS-SEO-002.
-
-### ARCH-SEO-003 - Brand Narrative Guardrail
-
-Metadata must use approved APGI positioning and must not imply unapproved capabilities.
-
-**Derived From**: TRS-SEO-003.
+- required pages exist;
+- header/footer navigation includes required pages;
+- Services page includes service entries;
+- Platform page includes required modules;
+- Training page includes Thinkific handoff;
+- Contact page includes email and phone handoffs;
+- Privacy and Terms render;
+- one-page-only output is rejected;
+- no Supabase/database/auth/contact-form backend indicators are introduced.
 
 ---
 
-## 10. Accessibility Architecture
+## 16. Vercel and Deployment Architecture
 
-### ARCH-A11Y-001 - Semantic Page Structure
+The architecture must support Vercel evidence collection for:
 
-The page architecture must support semantic landmarks, meaningful heading order, accessible links, and accessible buttons.
-
-**Derived From**: TRS-A11Y-001.
-
-### ARCH-A11Y-002 - Keyboard Interaction Model
-
-Navigation, CTAs, hub tiles, contact actions, and mobile menu controls must be reachable and operable by keyboard.
-
-**Derived From**: TRS-A11Y-002.
-
-### ARCH-A11Y-003 - Mobile Menu Focus Model
-
-The mobile navigation architecture must define focus behavior for open and close states.
-
-**Derived From**: TRS-A11Y-003.
-
-### ARCH-A11Y-004 - Reduced Motion Model
-
-The architecture must allow non-essential motion to be reduced or avoided.
-
-**Derived From**: TRS-A11Y-004.
-
-### ARCH-A11Y-005 - Text-First Resilience
-
-Critical meaning must not depend on images, icons, animation, or hover-only interaction.
-
-**Derived From**: TRS-A11Y-005.
+- project connection;
+- branch and deployment source;
+- build command;
+- output directory;
+- preview URL;
+- production deployment where applicable;
+- route rendering;
+- build log validation pass.
 
 ---
 
-## 11. Responsive Architecture
+## 17. Evidence Architecture
 
-### ARCH-RESP-001 - Mobile-First Layout Model
-
-Architecture must support mobile-first section layouts that scale to tablet and desktop.
-
-**Derived From**: TRS-RESP-001.
-
-### ARCH-RESP-002 - No Critical Horizontal Overflow
-
-Core content must remain readable without horizontal scrolling at common viewport sizes.
-
-**Derived From**: TRS-RESP-002.
-
-### ARCH-RESP-003 - CTA Tap Target Model
-
-Primary CTAs must remain readable and tappable on mobile.
-
-**Derived From**: TRS-RESP-003.
-
----
-
-## 12. Deployment Architecture
-
-### ARCH-DEPLOY-001 - Static-First Deployment
-
-The website should deploy as a static or static-first public frontend suitable for Vercel or equivalent hosting.
-
-**Derived From**: TRS-RUN-001.
-
-### ARCH-DEPLOY-002 - Environment Configuration
-
-Deployment must support environment configuration for `ISMS_PUBLIC_BASE_URL` or equivalent without editing frozen route slugs.
-
-**Derived From**: TRS-RUN-004, TRS-HUB-001.
-
-### ARCH-DEPLOY-003 - No Private Runtime Dependency
-
-The v1 website must not require private services to render its public content.
-
-**Derived From**: TRS-RUN-003, TRS-SEC-001.
-
----
-
-## 13. Evidence and Verification Architecture
-
-### ARCH-EVID-001 - Evidence Categories
-
-Later implementation evidence should include:
-
-- route render evidence;
-- anchor navigation evidence;
-- external link evidence;
-- mobile navigation evidence;
-- responsive viewport evidence;
-- keyboard access evidence;
-- metadata evidence;
-- placeholder/content review evidence;
-- hub tile resolution evidence.
-
-**Derived From**: TRS-FFD-004, TRS Section 15.
-
-### ARCH-EVID-002 - QA-to-Red Readiness
-
-Stage 6 QA-to-Red must be able to convert this architecture into checkable assertions before implementation.
-
-**Derived From**: TRS Section 15.
-
----
-
-## 14. Fully Functional Architecture Controls
-
-| Fully Functional Requirement | Architectural Control |
-|------------------------------|-----------------------|
-| Routed | Route map, anchor map, external link registry, hub config. |
-| Usable | Public single-entry architecture, section flow, clear CTAs. |
-| Coherent | Shared content/config sources and section/component structure. |
-| Responsive | Mobile-first layout and mobile nav architecture. |
-| Accessible | Semantic, keyboard, focus, reduced-motion, and text-first models. |
-| Correctly linked | External link model and hub URL resolution. |
-| Inspectable | Evidence categories and QA-to-Red readiness. |
-| No avoidable broken paths | Unavailable destination model and placeholder registry. |
-
----
-
-## 15. Architecture Traceability Matrix
-
-| TRS Area | Architecture Coverage |
-|----------|----------------------|
-| Runtime / framework | Site and deployment architecture |
-| Routing / navigation | Route and navigation architecture |
-| APGI Hub | Hub configuration and URL resolution architecture |
-| Training | External link model and training handoff architecture |
-| Contact | Contact action architecture |
-| Content / placeholders | Structured content, placeholder registry, asset register |
-| SEO / social | Metadata architecture |
-| Accessibility | Semantic, keyboard, focus, motion, text-first architecture |
-| Responsive | Mobile-first and CTA tap target architecture |
-| Security / privacy | Public-only deployment and no private runtime dependency |
-| Fully functional delivery | Architecture controls and evidence categories |
-
----
-
-## 16. Readiness for Stage 6 QA-to-Red
-
-This Architecture artifact is approved for Stage 6 QA-to-Red progression by AI-assisted CS2 proxy evaluation for Johan Ras.
-
-Stage 6 should create concrete pre-build checks for:
+Stage 12 evidence must be able to prove:
 
 - route rendering;
-- anchor resolution;
-- external destination safety;
-- APGI Hub link composition;
-- mobile navigation behavior;
+- navigation and CTA behavior;
+- services depth;
+- platform module rendering;
+- training offering and Thinkific handoff;
+- contact handoffs;
+- legal placeholders or final legal pages;
+- visual/design-system application;
+- mobile/responsive behavior;
 - accessibility basics;
-- responsive viewports;
-- metadata presence;
-- placeholder honesty;
-- no unapproved backend workflows;
-- no known avoidable broken paths.
+- metadata;
+- Vercel build/deploy success;
+- public-only/no-backend boundary.
 
 ---
 
-## 17. Conditions Carried Forward
+## 18. Architecture Controls Against PR #11 Regression
 
-| Item | Status | Notes |
-|------|--------|-------|
-| QA-to-Red | Carry forward | Stage 6 must convert architecture controls into checks. |
-| Public legal pages | Carry forward | Legal/privacy/terms destinations must be addressed before launch. |
-| Final copy and assets | Carry forward | Content approval remains required before launch. |
-| CI workflow | Carry forward | Implementation waves require stronger CI evidence than documentation waves. |
-| Runtime implementation | Not authorized | Build work remains blocked until downstream gates are complete or waived. |
+| Regression Risk | Architectural Control |
+|-----------------|-----------------------|
+| One-page scaffold returns | Required multi-page route set and validation architecture. |
+| Services are shallow | Services model and Services page composition. |
+| Platform is thin tiles only | Platform page composition and module data model. |
+| Training is one button | Training page composition and training offering model. |
+| Design is afterthought | Design-system architecture and section treatment model. |
+| Mobile is collapsed scaffold | Responsive architecture and mobile navigation requirements. |
+| Broken/pending links | CTA registry and pending destination model. |
+| Backend scope creep | Public-only architecture boundary and validation. |
 
 ---
 
-## 18. Foreman Note
+## 19. Handoff to Stage 6 QA-to-Red v0.2
 
-This Architecture artifact does not authorize implementation. It authorizes progression to Stage 6 QA-to-Red after QP, ECAP, IAA, and CS2 proxy disposition.
+Corrective Stage 6 QA-to-Red v0.2 must convert this architecture into tests that are RED until the upgraded implementation proves:
+
+- all routes exist;
+- all page journeys work;
+- design-system expectations are visible;
+- services/platform/training content depth exists;
+- validation passes;
+- Vercel evidence exists;
+- public-only boundary is preserved.
+
+---
+
+## 20. Stage 5 Disposition
+
+**Foreman disposition**: Corrective Stage 5 Architecture v0.2 is complete as an architecture artifact for the upgraded APW website.
+
+**Next stage**: Corrective Stage 6 QA-to-Red v0.2.
