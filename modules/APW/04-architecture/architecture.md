@@ -7,23 +7,32 @@
 | Module | APW - APGI Public Website |
 | Stage | 5 - Architecture |
 | Folder | `modules/APW/04-architecture` |
-| Version | v0.2 - Corrective Multi-Page Professional Website Architecture |
-| Status | Draft for review |
+| Version | v0.2A - Corrective Multi-Page Professional Website Architecture |
+| Status | Draft for review - canon completeness patched |
 | Owner | Johan Ras |
 | Authority | CS2: Johan Ras |
 | Approval Method | AI-assisted CS2 proxy evaluation for Johan Ras |
 | Last Updated | 2026-06-03 |
 | Upstream Stage | `modules/APW/03-trs/technical-requirements-specification.md` v0.2 |
 | Scope Declaration | `.agent-admin/scope-declarations/apw-stage5-architecture-v02-20260603.md` |
+| Completeness Checklist | `modules/APW/04-architecture/architecture-completeness-checklist-v0.2.md` |
+| Environment Example | `.env.example` |
 | Corrective Trigger | PR #11 functional scaffold failed APW professional website design-quality expectation |
 
 ---
 
 ## 1. Purpose
 
-This Architecture v0.2 converts the corrected APW TRS v0.2 into a governed implementation architecture for the upgraded APGI Public Website.
+This Architecture v0.2A converts the corrected APW TRS v0.2 into a governed implementation architecture for the upgraded APGI Public Website.
 
 It defines the route, content, component, design-system, validation, deployment, evidence, accessibility, responsive, and public-boundary architecture required before QA-to-Red and implementation planning resume.
+
+It must be read together with:
+
+- `modules/APW/04-architecture/architecture-completeness-checklist-v0.2.md`
+- `.env.example`
+
+Those files close the governance canon completeness requirements for deployment targets, runtime/filesystem expectations, environment variables, data/persistence strategy, non-testable configuration, external dependencies, security/privacy, performance, observability, QA domains, wiring, end-to-end paths, wave model, frontend scaffolding, infrastructure provisioning, deployment evidence, and QA catalog alignment.
 
 This artifact does not authorize runtime implementation.
 
@@ -57,6 +66,8 @@ Any expansion beyond this boundary requires explicit governed scope change.
 | UX Workflow v0.2 | Defines user journeys, page navigation, CTAs, and design-quality UX gate. |
 | FRS v0.2 | Defines functional requirements for routes, content, design, and public boundary. |
 | TRS v0.2 | Defines technical requirements converted here into architecture. |
+| Architecture Completeness Checklist v0.2 | Maps this architecture to governance canon domains 3.1 through 3.17. |
+| `.env.example` | Documents required/optional public environment configuration. |
 | Tracker | Records PR #11 scaffold outcome and corrected pre-build sequence. |
 
 ---
@@ -491,9 +502,21 @@ Stage 12 evidence must be able to prove:
 
 ---
 
-## 19. Handoff to Stage 6 QA-to-Red v0.2
+## 19. Canon Completeness Closure
 
-Corrective Stage 6 QA-to-Red v0.2 must convert this architecture into tests that are RED until the upgraded implementation proves:
+The following files are part of this Architecture stage and must be treated as architecture source material for QA-to-Red:
+
+- `modules/APW/04-architecture/architecture.md`
+- `modules/APW/04-architecture/architecture-completeness-checklist-v0.2.md`
+- `.env.example`
+
+The completeness checklist maps APW architecture to governance canon domains 3.1 through 3.17 and defines the concrete technical baseline, environment variables, data/no-persistence decision, external dependency failure behavior, wiring map, end-to-end paths, security/privacy controls, performance constraints, observability, QA domains, wave model, frontend scaffold, infrastructure provisioning, deployment evidence package, and QA catalog seed.
+
+---
+
+## 20. Handoff to Stage 6 QA-to-Red v0.2
+
+Corrective Stage 6 QA-to-Red v0.2 must convert this architecture and the completeness checklist into tests that are RED until the upgraded implementation proves:
 
 - all routes exist;
 - all page journeys work;
@@ -501,12 +524,14 @@ Corrective Stage 6 QA-to-Red v0.2 must convert this architecture into tests that
 - services/platform/training content depth exists;
 - validation passes;
 - Vercel evidence exists;
-- public-only boundary is preserved.
+- public-only boundary is preserved;
+- environment and runtime expectations are satisfied;
+- required evidence package is complete.
 
 ---
 
-## 20. Stage 5 Disposition
+## 21. Stage 5 Disposition
 
-**Foreman disposition**: Corrective Stage 5 Architecture v0.2 is complete as an architecture artifact for the upgraded APW website.
+**Foreman disposition**: Corrective Stage 5 Architecture v0.2A is complete as an architecture artifact for the upgraded APW website, contingent on PR review.
 
 **Next stage**: Corrective Stage 6 QA-to-Red v0.2.
