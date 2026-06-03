@@ -1,4 +1,4 @@
-# APW Stage 3 - Functional Requirements Specification (FRS)
+# APW Stage 3 - Functional Requirements Specification v0.2
 
 ## Status Header
 
@@ -7,421 +7,542 @@
 | Module | APW - APGI Public Website |
 | Stage | 3 - Functional Requirements Specification |
 | Folder | `modules/APW/02-frs` |
-| Version | v0.1 |
-| Status | Approved for Stage 4 TRS progression |
+| Version | v0.2 - Corrective Multi-Page Professional Website FRS |
+| Status | Draft for review |
 | Owner | Johan Ras |
 | Authority | CS2: Johan Ras |
 | Approval Method | AI-assisted CS2 proxy evaluation for Johan Ras |
-| Approval Date | 2026-05-29 |
-| Last Updated | 2026-05-29 |
-| Upstream Stage 1 | `docs/governance/APGI_PUBLIC_WEBSITE_APP_DESCRIPTION.md` |
-| Upstream Stage 2 | `docs/governance/APGI_PUBLIC_WEBSITE_UX_WORKFLOW_WIRING_SPEC.md` |
-| Scope Declaration | `.agent-admin/scope-declarations/apw-stage3-frs-20260529.md` |
-| Builder Appointment | `.agent-admin/builder-appointments/apw-stage3-frs-builder-contract-20260529.md` |
-| IAA Review | `.agent-admin/assurance/iaa-review-apw-stage3-frs-20260529.md` |
-| CS2 Proxy Sign-Off | `.agent-admin/signoffs/cs2-proxy-stage3-frs-signoff-20260529.md` |
+| Last Updated | 2026-06-03 |
+| Upstream Stage 1 | `docs/governance/APGI_PUBLIC_WEBSITE_APP_DESCRIPTION.md` v0.2 |
+| Upstream Stage 2 | `docs/governance/APGI_PUBLIC_WEBSITE_UX_WORKFLOW_WIRING_SPEC_V0_2.md` |
+| Corrective Trigger | PR #11 functional scaffold failed APW professional website design-quality expectation |
+| Scope Declaration | `.agent-admin/scope-declarations/apw-stage3-frs-v02-20260603.md` |
 
 ---
 
 ## 1. Purpose
 
-This Functional Requirements Specification defines what the APGI Public Website must do from a user-facing, content, routing, accessibility, and governance perspective.
+This Functional Requirements Specification v0.2 defines what the upgraded APGI Public Website must do from a user-facing, routing, content, design-quality, accessibility, conversion, and governance perspective.
 
-It derives from the approved App Description and the Stage 2 UX Workflow & Wiring Spec. It does not define implementation architecture, component internals, test code, deployment workflow details, or visual design implementation. Those belong to later stages.
+It supersedes the scaffold-tolerant v0.1 interpretation.
+
+The central correction is:
+
+> A functional static scaffold is not a functionally complete APW website.
+
+The upgraded APW website must be a polished, multi-page, high-profile professional public website that can pass the corrected build-to-green criteria.
 
 ---
 
 ## 2. Functional Boundary
 
-The APGI Public Website is a public marketing, trust-building, training-discovery, and app-routing layer for Assurance Protection Group Inc.
+The APW v1 website remains a public-only/static-first website.
 
-The website must not become a system of record, LMS replacement, CRM, staff console, Thinkific admin surface, ISMS application backend, or authenticated internal tool unless a later governed artifact explicitly changes scope.
+It must not become:
+
+- a Supabase application;
+- a database-backed system;
+- an authenticated portal;
+- a CRM or lead database;
+- a contact-form backend;
+- a Thinkific administration surface;
+- an ISMS internal application backend;
+- a LinkedIn scraping or synchronization tool;
+- an unapproved analytics, CMS, or marketing automation system.
 
 ---
 
 ## 3. Source Traceability
 
-| Source | Function in FRS |
-|--------|-----------------|
-| App Description | Defines purpose, scope, audience, success criteria, technology assumptions, lifecycle stages, delivery boundaries, and component definition of done. |
-| UX Workflow & Wiring Spec | Defines user journeys, screens, triggers, external handoffs, route map, screen states, and observable user outcomes. |
-| Local Governance Canon | Defines Foreman, builder, assurance, ripple-awareness, and closure expectations. |
+| Source | Function in FRS v0.2 |
+|--------|----------------------|
+| App Description v0.2 | Defines corrected product goal, required pages, design standard, success criteria, and build-to-green rule. |
+| UX Workflow & Wiring v0.2 | Defines multi-page journeys, route wiring, CTAs, mobile expectations, and design-quality UX gate. |
+| Corrective QA-to-Red v0.2 | Provides early RED criteria that this FRS must support downstream. |
+| Tracker | Records PR #11 scaffold outcome and corrective stage status. |
 
 ---
 
 ## 4. User and Audience Requirements
 
-### FRS-USER-001 - Public Visitor Orientation
+### FRS-USER-001 - Premium First Impression
 
-The website must allow a first-time public visitor to understand who APGI is, what APGI offers, and where to go next within the first visible page experience.
+A first-time visitor must understand within the first visible homepage experience that APGI is a credible professional organization with services, training, and a platform/app ecosystem.
 
-**Traceability**: App Description success criteria; UJ-APGI-001.
+Acceptance:
 
-### FRS-USER-002 - Prospective Client Journey
+- homepage hero is distinctive and APGI-specific;
+- user sees clear next steps to Services, Platform, Training, and Contact;
+- page does not feel like a generic scaffold.
 
-The website must support prospective clients in scanning APGI's service positioning, credibility markers, training offer, and contact pathway without requiring login or account creation.
+### FRS-USER-002 - Prospective Client Exploration
 
-**Traceability**: App Description target audience; UJ-APGI-001; UJ-APGI-004.
+Prospective clients must be able to review APGI services in enough depth to understand what APGI provides and how to take the next step.
 
-### FRS-USER-003 - Training Prospect Journey
+Acceptance:
 
-The website must provide a clear public path from the homepage into APGI's current public training surface, including the VPSHR Level 0 course reference and Thinkific storefront handoff.
+- dedicated Services page exists;
+- service categories are explained with visitor outcomes;
+- contact CTA is available from services.
 
-**Traceability**: App Description training scope; UJ-APGI-002.
+### FRS-USER-003 - Platform/App Explorer
 
-### FRS-USER-004 - APGI Ecosystem Explorer Journey
+Visitors must be able to understand the APGI platform/app ecosystem and its major modules/submodules.
 
-The website must provide a clear APGI Hub experience for users exploring the linked ISMS application ecosystem through approved public marketing routes.
+Acceptance:
 
-**Traceability**: App Description APGI Hub scope; UJ-APGI-003.
+- dedicated Platform/APGI Hub page exists;
+- module cards include description, status, and link or pending behavior;
+- modules are not reduced to unexplained tiles.
 
-### FRS-USER-005 - Social Proof Journey
+### FRS-USER-004 - Training Prospect
 
-The website must expose a clear LinkedIn referral path so visitors can verify APGI's public social presence and return to the website without losing orientation.
+Training prospects must be able to review training offerings and reach the APGI Thinkific storefront.
 
-**Traceability**: App Description source references; UJ-APGI-005.
+Acceptance:
 
----
+- dedicated Training page exists;
+- `https://apgi.thinkific.com/` is prominently linked;
+- course/offering cards or groups are shown;
+- group/custom training contact path exists.
 
-## 5. Page and Screen Requirements
+### FRS-USER-005 - Contact Conversion
 
-### FRS-SCR-001 - Home Landing Page
+Visitors must be able to contact APGI through public handoffs without login or form submission.
 
-The website must provide a primary public home landing page at `/`.
+Acceptance:
 
-The home page must contain the following functional sections:
+- dedicated Contact page exists;
+- email and phone are readable and linked;
+- no backend form, CRM, or database capture is introduced.
 
-1. hero / immediate positioning;
-2. proof or trust strip;
-3. about / who we are;
-4. services;
-5. training;
-6. APGI Hub;
-7. philanthropy / impact;
-8. team;
-9. contact;
-10. footer.
+### FRS-USER-006 - Trust and Credibility Review
 
-**Traceability**: App Description proposed public site composition; SCR-APGI-001.
+Visitors must be able to review About, Team, Privacy, and Terms pages or honest governed placeholders.
 
-### FRS-SCR-002 - Mobile Navigation Overlay
+Acceptance:
 
-The website must provide a mobile navigation state that allows small-screen users to reach the same primary destinations as desktop users.
-
-**Traceability**: SCR-APGI-002.
-
-### FRS-SCR-003 - Section Anchor Navigation
-
-Primary navigation items must resolve to visible page sections or approved external destinations. No nav item may point to an unresolved, hidden, misleading, or staff-only destination.
-
-**Traceability**: UJ-APGI-001; UJ-APGI-004.
-
-### FRS-SCR-004 - Public-Only Access
-
-The website must be publicly accessible without authentication for v1. Authenticated or staff-only tooling must remain excluded from public navigation.
-
-**Traceability**: App Description explicitly out of scope; Screen access control.
+- required trust/legal pages render;
+- pending content is labelled honestly;
+- no unapproved claims, client marks, or testimonials are presented as final.
 
 ---
 
-## 6. Navigation and Routing Requirements
+## 5. Required Page and Route Requirements
 
-### FRS-NAV-001 - Primary Navigation
+### FRS-ROUTE-001 - Homepage
 
-The header navigation must provide clear paths to the main public content areas of the website.
+The website must provide a homepage at `/`.
 
-Minimum expected destinations:
+Required homepage sections:
 
-- About / who we are;
+1. premium hero with APGI positioning;
+2. trust/proof/credibility or positioning band;
+3. services preview;
+4. platform/APGI Hub preview;
+5. training preview;
+6. about/approach preview;
+7. contact CTA;
+8. footer.
+
+The homepage must be a conversion front door, not the whole website.
+
+### FRS-ROUTE-002 - Services Page
+
+The website must provide a dedicated Services page.
+
+The Services page must include, at minimum:
+
+- Security awareness and organizational design;
+- Intelligence and investigations;
+- Independent third-party security assurance and reporting;
+- Remote/security systems administration support where approved;
+- Business reporting / assurance support;
+- Security human rights training;
+- any later CS2-approved APGI service lines.
+
+Each service category must include a short explanation, visitor value/outcome, and next-step CTA.
+
+### FRS-ROUTE-003 - Platform / APGI Hub Page
+
+The website must provide a dedicated Platform or APGI Hub page.
+
+The page must display at least:
+
+- Maturity Roadmap / MMM;
+- Risk Management;
+- Project Implementation Tracker / PIT;
+- Incident and Intelligence Hub;
+- Data Analytics and Remote Assurance;
+- Systems Integration / RADAM;
+- Skills Development Portal.
+
+Each module must include title, description, status, and link or pending behavior.
+
+### FRS-ROUTE-004 - Training Page
+
+The website must provide a dedicated Training page.
+
+It must include:
+
+- prominent handoff to `https://apgi.thinkific.com/`;
+- current approved training offerings;
+- placeholders or coming-soon states for pending offerings;
+- contact path for group/custom training.
+
+### FRS-ROUTE-005 - About Page
+
+The website must provide an About page with APGI story, positioning, credibility, approach, or values content.
+
+### FRS-ROUTE-006 - Team Page
+
+The website must provide a Team page using approved team/profile content or honest placeholders.
+
+### FRS-ROUTE-007 - Contact Page
+
+The website must provide a Contact page with readable and linked contact methods.
+
+Required handoffs unless CS2 later updates them:
+
+- `mailto:info@apginc.ca`;
+- `tel:+14166429974`.
+
+### FRS-ROUTE-008 - Privacy Page
+
+The website must provide a Privacy page or clearly labelled governed placeholder.
+
+### FRS-ROUTE-009 - Terms Page
+
+The website must provide a Terms page or clearly labelled governed placeholder.
+
+### FRS-ROUTE-010 - One-Page Scaffold Exclusion
+
+A one-page-only website is functionally incomplete for the upgraded APW build.
+
+A build that lacks the dedicated required pages must fail QA-to-Red.
+
+---
+
+## 6. Navigation and Wiring Requirements
+
+### FRS-NAV-001 - Header Navigation
+
+Header navigation must expose:
+
+- Home;
 - Services;
+- Platform / APGI Hub;
 - Training;
-- APGI Hub;
-- Contact;
-- LinkedIn or social proof destination where included.
+- About;
+- Team;
+- Contact.
 
 ### FRS-NAV-002 - Footer Navigation
 
-The footer must provide stable utility links, contact reference, social reference, and legal / policy destinations once available.
+Footer navigation must expose:
 
-### FRS-NAV-003 - External Destination Clarity
+- Services;
+- Platform / APGI Hub;
+- Training;
+- About;
+- Team;
+- Contact;
+- Privacy;
+- Terms.
 
-External destinations must be visually or textually distinguishable enough that users understand when they are leaving the APGI Public Website.
+### FRS-NAV-003 - Page-to-Page Routing
 
-### FRS-NAV-004 - Route Integrity
+Navigation must route between pages or static route equivalents.
 
-Every user-facing route, anchor, and CTA must resolve to either:
+In-page anchors alone are insufficient for the upgraded build.
 
-1. a live destination;
-2. an explicitly labelled placeholder; or
-3. a disabled / unavailable state with a clear explanation.
+### FRS-NAV-004 - CTA Wiring
 
-Silent dead links are not permitted.
+Each major page must include at least one meaningful next-step CTA.
 
----
+Required CTA patterns:
 
-## 7. Training Requirements
+- Homepage to Services;
+- Homepage to Platform;
+- Homepage to Training;
+- Homepage to Contact;
+- Services to Contact;
+- Platform to module/pending state or Contact;
+- Training to Thinkific;
+- Training to Contact for group/custom training;
+- About/Team to Contact.
 
-### FRS-TRN-001 - Training Section
+### FRS-NAV-005 - Pending State Behavior
 
-The website must include a training section that introduces APGI training and provides a clear route to the current public training surface.
-
-### FRS-TRN-002 - VPSHR Level 0 Visibility
-
-The website must visibly feature the VPSHR Level 0 course or current approved course surface unless superseded by a later governed artifact.
-
-### FRS-TRN-003 - Thinkific Storefront Handoff
-
-The website must include a public handoff to the approved Thinkific storefront.
-
-### FRS-TRN-004 - Thinkific Admin Exclusion
-
-The website must not include the Thinkific management/admin URL in public navigation.
-
-### FRS-TRN-005 - Training Destination Failure Handling
-
-If a training destination is unavailable or intentionally deferred, the UI must degrade to a safe informational state rather than presenting a broken CTA.
+If a destination is not ready, the website must display a polished pending state rather than broken or empty links.
 
 ---
 
-## 8. APGI Hub Requirements
+## 7. Design and Experience Requirements
 
-### FRS-HUB-001 - Hub Section
+### FRS-DES-001 - Professional Design Quality
 
-The website must include an APGI Hub section that acts as a public launch surface into approved APGI / ISMS ecosystem destinations.
+The website must present APGI with a credible, high-trust, modern visual identity.
 
-### FRS-HUB-002 - Frozen v1 Route Map
+Acceptance:
 
-The APGI Hub must use the approved frozen v1 public route map for the initial seven ISMS marketing destinations:
+- strong colour system;
+- premium visual hierarchy;
+- polished cards or content panels;
+- clear CTAs;
+- section rhythm and spacing;
+- no generic scaffold feel.
 
-| Tile | Canonical Route |
-|------|-----------------|
-| Maturity Roadmap / MMM | `{{ISMS_PUBLIC_BASE_URL}}/marketing/maturity-roadmap` |
-| Risk Management | `{{ISMS_PUBLIC_BASE_URL}}/marketing/risk-management` |
-| Project Implementation Tracker / PIT | `{{ISMS_PUBLIC_BASE_URL}}/marketing/project-implementation` |
-| Incident & Intelligence Hub | `{{ISMS_PUBLIC_BASE_URL}}/marketing/incident-intelligence` |
-| Data Analytics & Remote Assurance | `{{ISMS_PUBLIC_BASE_URL}}/marketing/data-analytics-assurance` |
-| Systems Integration / RADAM | `{{ISMS_PUBLIC_BASE_URL}}/marketing/systems-integration` |
-| Skills Development Portal | `{{ISMS_PUBLIC_BASE_URL}}/marketing/skills-development` |
+### FRS-DES-002 - Visual Richness
 
-### FRS-HUB-003 - Hub Tile Clarity
+The website must use visual structure to invite exploration.
 
-Each hub tile must include enough label, description, and status information for a user to understand the destination before clicking.
+Acceptance:
 
-### FRS-HUB-004 - Future Tile Governance
+- homepage and key pages have distinct section treatments;
+- services/platform/training content is visually organized;
+- design is not mostly plain text on white background unless intentionally supported by strong editorial layout.
 
-Future hub tiles must not be added without governance update and approval.
+### FRS-DES-003 - Mobile Design Quality
 
-### FRS-HUB-005 - Environment Host Flexibility
+Mobile layouts must feel intentionally designed.
 
-The hub route paths are canonical, but the public ISMS host may vary by environment. The website must support environment-specific host configuration without changing the approved route paths.
+Acceptance:
+
+- full navigation access;
+- tappable CTAs;
+- readable cards;
+- no critical overflow;
+- visual hierarchy retained on small screens.
+
+### FRS-DES-004 - Existing Website Baseline
+
+The upgraded APW website must preserve or improve the content substance of the current public APGI site where applicable.
+
+Acceptance:
+
+- services and training are not less informative than current public content unless CS2 explicitly approves reduced content;
+- current-site substance may be summarized, reorganized, or rewritten, but not silently discarded.
 
 ---
 
-## 9. Contact and Conversion Requirements
+## 8. Services Requirements
 
-### FRS-CON-001 - Contact Section
+### FRS-SVC-001 - Services Catalogue
 
-The website must include a contact section with approved public contact pathways.
+The Services page must include a catalogue of APGI service lines.
+
+### FRS-SVC-002 - Service Detail
+
+Each service category must provide:
+
+- service name;
+- short description;
+- visitor problem or need;
+- APGI support/outcome;
+- next-step CTA.
+
+### FRS-SVC-003 - Services Preview
+
+Homepage must preview services and link to the Services page.
+
+---
+
+## 9. Platform / APGI Hub Requirements
+
+### FRS-PLAT-001 - Platform Page
+
+The website must include a Platform/APGI Hub page explaining the APGI ecosystem.
+
+### FRS-PLAT-002 - Module Presentation
+
+Each required module must include:
+
+- module name;
+- short description;
+- status;
+- link or pending behavior;
+- accessible label.
+
+### FRS-PLAT-003 - Public Hub Base URL
+
+When a public Hub/ISMS base URL is available, module links must compose from that base plus governed slugs.
+
+### FRS-PLAT-004 - Pending Hub State
+
+If the base URL is not available, the UI must show professional pending states and must not present broken links.
+
+---
+
+## 10. Training Requirements
+
+### FRS-TRN-001 - Training Page
+
+The website must include a dedicated Training page.
+
+### FRS-TRN-002 - Thinkific Handoff
+
+The website must link prominently to:
+
+`https://apgi.thinkific.com/`
+
+### FRS-TRN-003 - Course / Offering Cards
+
+The Training page must present training offerings using cards or equivalent structured content.
+
+### FRS-TRN-004 - Pending Training States
+
+Upcoming or not-yet-final course offerings must be labelled honestly.
+
+### FRS-TRN-005 - Group Training Contact Path
+
+Training page must provide a contact path for group/custom training interest.
+
+---
+
+## 11. Contact Requirements
+
+### FRS-CON-001 - Contact Page
+
+The website must include a dedicated Contact page.
 
 ### FRS-CON-002 - Email Handoff
 
-The website must support a public email handoff to the approved APGI contact address.
+The website must support a public email handoff to `info@apginc.ca` unless CS2 later changes the approved address.
 
 ### FRS-CON-003 - Phone Handoff
 
-The website must support a public phone handoff where phone interaction is available on the user's device.
+The website must support a public phone handoff to `+14166429974` unless CS2 later changes the approved number.
 
-### FRS-CON-004 - Address Visibility
+### FRS-CON-004 - No Backend Contact Capture
 
-The website must present approved public address/contact reference information in a non-confusing format.
-
-### FRS-CON-005 - No Contact Form in v1
-
-The website must not introduce a contact form, lead capture database, CRM integration, or marketing automation flow in v1 unless a later governed artifact approves it.
+The website must not introduce a contact form backend, lead database, CRM integration, or marketing automation flow in v1 without later CS2 approval.
 
 ---
 
-## 10. Content and Placeholder Requirements
+## 12. Content and Placeholder Requirements
 
-### FRS-CNT-001 - Repository-First Content
+### FRS-CNT-001 - Placeholder Honesty
 
-The website must support content that can be tuned progressively without requiring structural redesign.
+Placeholder content must be clearly maintainable and must not present unapproved legal copy, team bios, claims, client marks, testimonials, or proof assets as final.
 
-### FRS-CNT-002 - Placeholder Honesty
-
-Placeholder content must be clearly maintainable and must not present unverified statistics, claims, testimonials, client marks, legal promises, or operational capability as final.
-
-### FRS-CNT-003 - Rights-Sensitive Assets
+### FRS-CNT-002 - Rights-Sensitive Assets
 
 The website must not use rights-sensitive imagery, third-party logos, testimonials, or proof assets unless approval and usage rights are clear.
 
-### FRS-CNT-004 - Team and Bio Content
+### FRS-CNT-003 - Content Expansion
 
-Team-related content must remain tuneable and must not imply confirmed biographies, roles, or approvals before final content approval.
+Content structure must allow services, training, and platform modules to expand without a full redesign.
 
-### FRS-CNT-005 - Legal Page Readiness
+### FRS-CNT-004 - Legal Readiness
 
-The website must provide or reserve stable destinations for legal / privacy / terms content before public launch where required.
+Privacy and Terms pages must render before launch, even if final copy is represented by governed placeholders.
 
 ---
 
-## 11. SEO and Social Sharing Requirements
+## 13. SEO and Social Requirements
 
 ### FRS-SEO-001 - Page Metadata
 
-The website must include page title, description, canonical metadata, and share-friendly metadata suitable for search and LinkedIn sharing.
+Each major page must support page title and description metadata.
 
-### FRS-SEO-002 - Social Preview Quality
+### FRS-SEO-002 - Social Sharing
 
-The website must support strong Open Graph / social preview information so shared links present APGI cleanly and credibly.
+Homepage and major pages must support share-friendly metadata suitable for LinkedIn and public sharing.
 
-### FRS-SEO-003 - LinkedIn Share Fitness
+### FRS-SEO-003 - Brand Narrative
 
-The website must be suitable for sharing from LinkedIn without relying on LinkedIn feed scraping or synchronization.
-
-### FRS-SEO-004 - Public Brand Narrative Ownership
-
-The website must own the canonical APGI brand narrative even where LinkedIn remains a discovery and proof channel.
+Metadata and page copy must present APGI cleanly and avoid unapproved capability claims.
 
 ---
 
-## 12. Accessibility and Responsive Requirements
+## 14. Accessibility and Responsive Requirements
 
-### FRS-A11Y-001 - Mobile-First Responsive Behavior
+### FRS-A11Y-001 - Responsive Behavior
 
-The website must provide a coherent mobile-first experience and remain usable across common mobile, tablet, and desktop viewports.
+The website must be usable across mobile, tablet, and desktop viewports.
 
 ### FRS-A11Y-002 - Keyboard Navigation
 
-Primary navigation, CTAs, hub tiles, social links, and contact actions must be reachable and understandable through keyboard interaction.
+Navigation, CTAs, cards, and contact links must be keyboard reachable.
 
-### FRS-A11Y-003 - Reduced Motion Support
+### FRS-A11Y-003 - Semantic Structure
 
-Non-essential motion must not block the user experience and must respect reduced-motion expectations where implemented.
+Pages must use coherent headings, landmarks, links, and button semantics.
 
-### FRS-A11Y-004 - Semantic Structure
+### FRS-A11Y-004 - Reduced Motion
 
-The website must use coherent headings, landmarks, links, and button semantics suitable for public accessibility expectations.
+Non-essential motion must respect reduced-motion settings where motion exists.
 
-### FRS-A11Y-005 - Text-First Fallback
+### FRS-A11Y-005 - Text-First Resilience
 
-Core APGI positioning, training, hub, and contact information must remain understandable even if imagery or motion fails.
-
----
-
-## 13. Public Trust and Quality Requirements
-
-### FRS-TRUST-001 - Premium Trust Presentation
-
-The website must present APGI with a credible, modern, high-trust public identity.
-
-### FRS-TRUST-002 - No Generic Security Stock Dependency
-
-The website must avoid generic or rights-ambiguous security stock imagery as a core trust mechanism.
-
-### FRS-TRUST-003 - Clear Next-Step Outcomes
-
-Each primary section must give the user a clear next step or understandable reason for its presence.
-
-### FRS-TRUST-004 - No Accidental Capability Claims
-
-The website must not imply that APGI offers a digital capability, app, training product, or operational workflow unless that capability is approved and linked appropriately.
-
----
-
-## 14. Governance and Build Lifecycle Requirements
-
-### FRS-GOV-001 - Stage Sequencing
-
-The website build must follow the approved pre-build lifecycle:
-
-1. App Description;
-2. UX Workflow & Wiring Spec;
-3. FRS;
-4. TRS;
-5. Architecture;
-6. QA-to-Red;
-7. PBFAG;
-8. Implementation Plan;
-9. Builder Checklist;
-10. IAA Pre-Brief;
-11. Builder Appointment;
-12. Build.
-
-### FRS-GOV-002 - No Implementation Before QA-to-Red
-
-Implementation must not begin until QA-to-Red exists or CS2 / Johan Ras explicitly waives or modifies the gate.
-
-### FRS-GOV-003 - Foreman Control
-
-Governed work must be orchestrated by Foreman under the local Foreman role and agent stack.
-
-### FRS-GOV-004 - Builder Appointment
-
-Builder work must be explicitly appointed with scope, acceptance criteria, out-of-scope boundaries, and handover requirements.
-
-### FRS-GOV-005 - ECAP and IAA Before Handover
-
-Material build or stage-completion work must include ECAP and IAA review preparation before final handover.
-
-### FRS-GOV-006 - Fully Functional Delivery Standard
-
-The website must be evaluated against fully functional delivery expectations: not merely documented, but usable, routed, coherent, verified, and free of known avoidable functional debt at the relevant stage.
+Core APGI positioning, services, training, platform, and contact information must remain understandable without images.
 
 ---
 
 ## 15. Negative Requirements
 
-The APGI Public Website must not:
+The upgraded APW website must not:
 
-1. replace Thinkific as the LMS;
-2. expose Thinkific admin destinations in public navigation;
-3. rebuild ISMS apps inside the public website;
-4. create an internal staff console in v1;
-5. introduce CRM, lead automation, analytics, CMS, database, or contact-form flows without governed approval;
-6. scrape or synchronize LinkedIn data;
-7. present unverified client proof, testimonials, statistics, or logos as final;
-8. add future APGI Hub tiles without governance approval;
-9. bypass QA-to-Red before implementation;
-10. treat placeholders as completed public claims.
-
----
-
-## 16. Functional Traceability Matrix
-
-| Journey / Source | Requirement Coverage |
-|------------------|----------------------|
-| UJ-APGI-001 - Brand orientation | FRS-USER-001, FRS-SCR-001, FRS-NAV-001, FRS-TRUST-001, FRS-TRUST-003 |
-| UJ-APGI-002 - Training discovery | FRS-USER-003, FRS-TRN-001 through FRS-TRN-005 |
-| UJ-APGI-003 - APGI Hub | FRS-USER-004, FRS-HUB-001 through FRS-HUB-005 |
-| UJ-APGI-004 - Contact and conversion | FRS-USER-002, FRS-CON-001 through FRS-CON-005 |
-| UJ-APGI-005 - LinkedIn referral | FRS-USER-005, FRS-SEO-003, FRS-SEO-004, FRS-NAV-003 |
-| App Description scope | FRS-GOV, FRS-CNT, FRS-TRUST, Negative Requirements |
-| App Description success criteria | FRS-USER, FRS-TRUST, FRS-A11Y, FRS-SEO |
+- be one-page-only;
+- present a thin scaffold as final;
+- omit dedicated Services, Platform, or Training pages;
+- rely on broken or empty links;
+- treat placeholder copy as final;
+- use unapproved testimonials, claims, logos, or legal language;
+- introduce Supabase, database, auth, CRM, or contact-form backend without CS2 approval;
+- hide critical journeys behind hover-only interaction;
+- regress below current APGI website service/training substance without CS2 approval.
 
 ---
 
-## 17. Readiness for Stage 4 TRS
+## 16. Governance and Build Lifecycle Requirements
 
-This FRS is approved for Stage 4 TRS progression by AI-assisted CS2 proxy evaluation for Johan Ras.
+### FRS-GOV-001 - Corrective Stage Sequencing
 
-Stage 4 TRS should translate these functional requirements into technical requirements for framework, routing, content data model, metadata, link validation, accessibility implementation, testing, deployment verification, and fully functional delivery enforcement.
+The upgraded build must proceed through corrected stages before implementation resumes:
+
+1. App Description v0.2;
+2. UX Workflow & Wiring v0.2;
+3. FRS v0.2;
+4. TRS v0.2;
+5. Architecture v0.2;
+6. QA-to-Red v0.2;
+7. PBFAG v0.2;
+8. Implementation Plan v0.2;
+9. Builder Checklist v0.2;
+10. IAA Pre-Brief v0.2;
+11. Builder Appointment v0.2;
+12. Upgraded Build Evidence.
+
+### FRS-GOV-002 - Build-to-Green Rule
+
+Implementation must build to green only.
+
+A build is not green if it compiles/deploys but fails design, IA, content depth, accessibility, routing, or evidence requirements.
+
+### FRS-GOV-003 - PR #11 Supersession
+
+PR #11 is superseded as a scaffold reference and must not be treated as the active implementation baseline.
 
 ---
 
-## 18. Conditions Carried Forward
+## 17. Handoff to Stage 4 TRS v0.2
 
-| Item | Status | Notes |
-|------|--------|-------|
-| Stage 2 sign-off | Resolved | Stage 2 approved by `.agent-admin/signoffs/cs2-proxy-stage2-ux-workflow-signoff-20260529.md`. |
-| Fully functional delivery hardening | Carry forward | Stage 4 TRS must define technical implications of fully functional delivery. |
-| QA-to-Red hardening | Carry forward | Stage 6 QA-to-Red must convert requirements into testable gates. |
-| Public legal pages | Carry forward | Privacy / terms destinations are required before public launch but not authored in this FRS. |
-| Final public copy | Carry forward | Content slots remain tuneable and must not be treated as final claims. |
-| Public ISMS base URL | Carry forward | Host remains environment-configurable while route paths are frozen. |
+Corrective Stage 4 TRS v0.2 must convert this FRS into technical requirements for:
+
+- static multi-page route generation;
+- structured content model;
+- design-system implementation;
+- metadata per page;
+- validation that fails missing pages and scaffold output;
+- Vercel build/deployment evidence;
+- public-only/no-backend technical controls.
 
 ---
 
-## 19. Foreman Note
+## 18. Stage 3 Disposition
 
-This FRS is a pre-build functional artifact only. It must not be used as authorization to start implementation until downstream TRS, Architecture, QA-to-Red, PBFAG, Implementation Plan, Builder Checklist, IAA Pre-Brief, and Builder Appointment gates are complete or explicitly waived by CS2 / Johan Ras.
+**Foreman disposition**: Corrective Stage 3 FRS v0.2 is complete as a functional requirements artifact for the upgraded APW website.
+
+**Next stage**: Corrective Stage 4 TRS v0.2.
