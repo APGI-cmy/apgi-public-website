@@ -1,4 +1,4 @@
-# APW Stage 4 - Technical Requirements Specification (TRS)
+# APW Stage 4 - Technical Requirements Specification v0.2
 
 ## Status Header
 
@@ -7,44 +7,44 @@
 | Module | APW - APGI Public Website |
 | Stage | 4 - Technical Requirements Specification |
 | Folder | `modules/APW/03-trs` |
-| Version | v0.1 |
-| Status | Approved for Stage 5 Architecture progression |
+| Version | v0.2 - Corrective Multi-Page Professional Website TRS |
+| Status | Draft for review |
 | Owner | Johan Ras |
 | Authority | CS2: Johan Ras |
 | Approval Method | AI-assisted CS2 proxy evaluation for Johan Ras |
-| Approval Date | 2026-05-29 |
-| Last Updated | 2026-05-29 |
-| Upstream Stage | `modules/APW/02-frs/functional-requirements.md` |
-| Scope Declaration | `.agent-admin/scope-declarations/apw-stage4-trs-20260529.md` |
-| Builder Appointment | `.agent-admin/builder-appointments/apw-stage4-trs-builder-contract-20260529.md` |
-| IAA Review | `.agent-admin/assurance/iaa-review-apw-stage4-trs-20260529.md` |
-| CS2 Proxy Sign-Off | `.agent-admin/signoffs/cs2-proxy-stage4-trs-signoff-20260529.md` |
+| Last Updated | 2026-06-03 |
+| Upstream Stage | `modules/APW/02-frs/functional-requirements.md` v0.2 |
+| Corrective Trigger | PR #11 functional scaffold failed APW professional website design-quality expectation |
 
 ---
 
 ## 1. Purpose
 
-This Technical Requirements Specification translates the approved APW Stage 3 Functional Requirements Specification into implementation-facing technical requirements.
+This Technical Requirements Specification v0.2 translates Corrective Stage 3 FRS v0.2 into implementation-facing technical requirements.
 
-The TRS is not implementation code and does not authorize implementation. It defines the technical obligations that downstream Architecture, QA-to-Red, PBFAG, implementation planning, builder checklist, and build execution must satisfy.
+It defines the technical obligations for a polished, multi-page, static-first APW website that can be built to green.
+
+It does not authorize implementation. It feeds Corrective Stage 5 Architecture v0.2, QA-to-Red v0.2, and the later build plan.
 
 ---
 
 ## 2. Technical Boundary
 
-The APGI Public Website is a public, unauthenticated, static or statically served marketing and routing surface.
+The APW v1 website must remain public-only and static-first.
 
-The technical design must not introduce:
+The technical design must not require:
 
-- authenticated staff tooling;
+- Supabase;
+- database storage;
+- authentication;
 - CRM or lead database;
+- contact-form backend;
 - Thinkific administration;
 - ISMS application backend logic;
-- database-backed workflows;
 - LinkedIn scraping or synchronization;
-- unapproved analytics, tracking, CMS, or marketing automation.
+- unapproved analytics, CMS, or marketing automation.
 
-Any future addition of these capabilities requires governed scope change.
+Any future addition of those capabilities requires an explicit governed scope change.
 
 ---
 
@@ -52,473 +52,396 @@ Any future addition of these capabilities requires governed scope change.
 
 | Source | TRS Function |
 |--------|--------------|
-| Stage 3 FRS | Defines functional requirements to be converted into technical requirements. |
-| Stage 2 UX Workflow & Wiring Spec | Defines journeys, screens, triggers, route map, handoffs, and wiring expectations. |
-| Foreman Operating Model | Defines Foreman, builder, ECAP, IAA, CS2 proxy, and merge discipline. |
-| Local Governance Canon | Defines local governance gates and fully functional expectations. |
+| App Description v0.2 | Defines product goal, professional design standard, and build-to-green rule. |
+| UX Workflow v0.2 | Defines multi-page journeys, navigation, CTAs, and design-quality UX gate. |
+| FRS v0.2 | Defines functional requirements converted here into technical requirements. |
+| Tracker | Records PR #11 scaffold result and corrective stage status. |
 
 ---
 
-## 4. Runtime and Framework Requirements
+## 4. Runtime and Build Requirements
 
-### TRS-RUN-001 - Public Website Runtime
+### TRS-RUN-001 - Static-First Public Runtime
 
-The website must run as a public, unauthenticated frontend application suitable for static or static-first deployment.
+The website must be technically capable of static or static-first deployment on Vercel.
 
-**Derived From**: FRS-SCR-004, FRS-GOV-001.
+### TRS-RUN-002 - Root Build Contract
 
-### TRS-RUN-002 - Framework Expectations
+The repository must support a clear build contract when implementation resumes:
 
-If the project uses a framework, it should support:
+- root project directory unless later architecture approves otherwise;
+- build command defined in project metadata;
+- output directory defined for Vercel;
+- no hidden server/runtime dependency for approved v1 behavior.
 
-- route-based public page rendering;
-- metadata generation;
-- responsive layout;
-- reusable sections/components;
-- accessible markup;
-- environment-based configuration;
-- CI-compatible build commands.
+### TRS-RUN-003 - Deterministic Build Output
 
-**Derived From**: FRS-SEO, FRS-A11Y, FRS-HUB.
+The build must produce predictable public output for all required routes/pages.
 
-### TRS-RUN-003 - No Server-Side Business Workflow
+### TRS-RUN-004 - No Server Business Workflow
 
-The v1 website must not require server-side business workflow processing to satisfy its approved scope.
-
-**Derived From**: Functional boundary and negative requirements.
-
-### TRS-RUN-004 - Environment Separation
-
-Environment-specific values must be isolated from source logic and must be configurable without editing canonical route paths.
-
-**Derived From**: FRS-HUB-005.
+No server-side business workflow is required or permitted for v1 website scope.
 
 ---
 
-## 5. Routing and Navigation Requirements
+## 5. Multi-Page Route Requirements
 
-### TRS-ROUTE-001 - Home Route
+The implementation must technically support all required public pages.
 
-The website must expose a public home route at `/`.
+| Route/Page | Technical Requirement |
+|------------|----------------------|
+| Home | Public route at `/` or generated `index.html`. |
+| Services | Dedicated static route/page for services. |
+| Platform/APGI Hub | Dedicated static route/page for platform modules. |
+| Training | Dedicated static route/page with Thinkific handoff. |
+| About | Dedicated static route/page for APGI story/positioning. |
+| Team | Dedicated static route/page for team/profile content or honest placeholders. |
+| Contact | Dedicated static route/page for email and phone handoffs. |
+| Privacy | Dedicated static route/page or governed placeholder. |
+| Terms | Dedicated static route/page or governed placeholder. |
 
-**Derived From**: FRS-SCR-001.
-
-### TRS-ROUTE-002 - Section Anchors
-
-The home route must support stable section anchors for core sections:
-
-- `#about`
-- `#services`
-- `#training`
-- `#hub`
-- `#team`
-- `#contact`
-
-Where a section exists visually, its anchor target must exist technically and must not resolve to a missing element.
-
-**Derived From**: FRS-NAV-001, FRS-NAV-004.
-
-### TRS-ROUTE-003 - Mobile Navigation State
-
-Small-screen navigation must provide equivalent navigation access to the desktop header and must preserve focus and context when opened or closed.
-
-**Derived From**: FRS-SCR-002, FRS-A11Y-002.
-
-### TRS-ROUTE-004 - External Handoff Handling
-
-External links must be implemented as explicit outbound destinations with accessible labels and clear user intent.
-
-**Derived From**: FRS-NAV-003.
-
-### TRS-ROUTE-005 - Dead Link Prevention
-
-No enabled public navigation element may point to an unresolved destination. A deferred destination must be disabled, hidden, or labelled as pending.
-
-**Derived From**: FRS-NAV-004, FRS-TRN-005.
+A one-page-only build is technically non-compliant for the upgraded APW website.
 
 ---
 
-## 6. APGI Hub Technical Requirements
+## 6. Navigation and Routing Technical Requirements
 
-### TRS-HUB-001 - Configurable Public ISMS Base URL
+### TRS-NAV-001 - Header Navigation
 
-The ISMS public host must be configurable through an environment variable or equivalent deployment configuration.
+Header navigation must route to the required top-level pages, not only page anchors.
 
-Recommended name:
+Required destinations:
 
-```text
-ISMS_PUBLIC_BASE_URL
-```
+- Home;
+- Services;
+- Platform / APGI Hub;
+- Training;
+- About;
+- Team;
+- Contact.
 
-**Derived From**: FRS-HUB-005.
+### TRS-NAV-002 - Footer Navigation
 
-### TRS-HUB-002 - Frozen Route Slugs
+Footer navigation must include page links for primary pages and legal pages.
 
-The APGI Hub route slugs must be treated as frozen v1 constants:
+### TRS-NAV-003 - CTA Route Integrity
 
-| Tile | Route Slug |
-|------|------------|
-| Maturity Roadmap / MMM | `/marketing/maturity-roadmap` |
-| Risk Management | `/marketing/risk-management` |
-| Project Implementation Tracker / PIT | `/marketing/project-implementation` |
-| Incident & Intelligence Hub | `/marketing/incident-intelligence` |
-| Data Analytics & Remote Assurance | `/marketing/data-analytics-assurance` |
-| Systems Integration / RADAM | `/marketing/systems-integration` |
-| Skills Development Portal | `/marketing/skills-development` |
+All CTAs must resolve to:
 
-**Derived From**: FRS-HUB-002.
+1. a live internal route;
+2. an approved external destination;
+3. a clearly labelled pending/coming-soon state.
 
-### TRS-HUB-003 - Hub Tile Data Model
+Silent dead links are not allowed.
 
-Each hub tile must be representable as structured data with at least:
+### TRS-NAV-004 - External Link Treatment
+
+External links must have clear labels and preserve user intent.
+
+---
+
+## 7. Structured Content Requirements
+
+### TRS-CONTENT-001 - Central Content Model
+
+The implementation must represent core public content in a maintainable structure rather than scattering it through hard-to-audit markup.
+
+The content model must support:
+
+- services;
+- platform modules;
+- training offerings;
+- CTAs;
+- contact details;
+- legal placeholder state;
+- metadata per page.
+
+### TRS-CONTENT-002 - Services Data Model
+
+Each service entry must support:
+
+- service name;
+- short description;
+- visitor need/problem;
+- APGI outcome/support;
+- CTA target.
+
+### TRS-CONTENT-003 - Platform Module Data Model
+
+Each platform module must support:
 
 - stable ID;
-- display title;
-- short description;
-- route slug;
-- status label;
-- accessibility label;
-- outbound link destination resolved from base URL plus slug.
+- title;
+- description;
+- status;
+- route slug or pending state;
+- accessible label.
 
-**Derived From**: FRS-HUB-003.
+### TRS-CONTENT-004 - Training Offering Data Model
 
-### TRS-HUB-004 - Future Tile Control
+Each training entry must support:
 
-New hub tiles must not be added by ad hoc UI changes. The tile list must remain explicit and reviewable.
+- course/offering name;
+- description;
+- status;
+- Thinkific or contact handoff;
+- pending state where not final.
 
-**Derived From**: FRS-HUB-004.
+### TRS-CONTENT-005 - Placeholder Register
 
----
-
-## 7. Training Handoff Technical Requirements
-
-### TRS-TRN-001 - VPSHR Course Link
-
-The VPSHR Level 0 course reference must be technically represented as an external public course link.
-
-Current approved destination:
-
-```text
-https://training-urls-module.vercel.app/courses/vpshr-level-0
-```
-
-**Derived From**: FRS-TRN-002.
-
-### TRS-TRN-002 - Thinkific Storefront Link
-
-The Thinkific public storefront must be represented as an external public link.
-
-Current approved destination:
-
-```text
-https://apgi.thinkific.com/
-```
-
-**Derived From**: FRS-TRN-003.
-
-### TRS-TRN-003 - Admin URL Exclusion
-
-No Thinkific admin or management URL may appear in public navigation, public source content constants, public page copy, or user-facing metadata.
-
-**Derived From**: FRS-TRN-004.
-
-### TRS-TRN-004 - Training Link Failure Mode
-
-If a training destination is not configured, the UI must not render a broken enabled CTA. It must present a safe disabled or informational state.
-
-**Derived From**: FRS-TRN-005.
+Placeholders must be technically easy to identify and review.
 
 ---
 
-## 8. Contact Technical Requirements
+## 8. Design-System Technical Requirements
 
-### TRS-CON-001 - Email Handoff
+### TRS-DES-001 - Palette and Theme Support
 
-The website must support an approved `mailto:` email handoff.
+The implementation must support a professional APGI palette with richer visual identity than the failed scaffold.
 
-Current approved destination:
+### TRS-DES-002 - Typography and Hierarchy
 
-```text
-mailto:info@apginc.ca
-```
+The implementation must support clear editorial hierarchy across pages.
 
-**Derived From**: FRS-CON-002.
+### TRS-DES-003 - Component / Section System
 
-### TRS-CON-002 - Phone Handoff
+The implementation must support reusable visual patterns for:
 
-The website must support an approved `tel:` handoff where device capability permits.
+- hero sections;
+- trust/proof bands;
+- service cards;
+- platform module cards;
+- training cards;
+- CTA bands;
+- legal/placeholder blocks;
+- footer.
 
-Current approved destination:
+### TRS-DES-004 - Dark/Light or Rich Section Treatments
 
-```text
-tel:+14166429974
-```
+The implementation must support varied section treatments so the site does not collapse into plain white scaffold output.
 
-**Derived From**: FRS-CON-003.
+### TRS-DES-005 - Responsive Design System
 
-### TRS-CON-003 - No Form Processing
-
-The v1 site must not include contact form submission, validation, API routes, CRM posting, email automation, or database persistence.
-
-**Derived From**: FRS-CON-005.
-
-### TRS-CON-004 - Contact Fallback
-
-Contact details must remain visible as text even if device-level email or phone handlers are unavailable.
-
-**Derived From**: FRS-CON-004.
+Design patterns must adapt intentionally across mobile, tablet, and desktop.
 
 ---
 
-## 9. Content and Asset Requirements
+## 9. Services Technical Requirements
 
-### TRS-CNT-001 - Structured Static Content
+### TRS-SVC-001 - Services Page Generation
 
-Public website content should be represented in a structured, maintainable form such as constants, configuration objects, local content files, or component props.
+The implementation must generate a dedicated Services page from structured service content.
 
-**Derived From**: FRS-CNT-001.
+### TRS-SVC-002 - Service Detail Rendering
 
-### TRS-CNT-002 - Placeholder Safety
+Each service must render name, description, visitor need, APGI outcome, and CTA.
 
-Placeholder content must be technically distinguishable and easy to find. It must not be hidden inside hard-to-audit markup.
+### TRS-SVC-003 - Homepage Service Preview
 
-**Derived From**: FRS-CNT-002.
-
-### TRS-CNT-003 - Rights-Sensitive Asset Control
-
-Assets used in public rendering must be APGI-owned, explicitly licensed, or text-first placeholders. Third-party marks must not be added without approval.
-
-**Derived From**: FRS-CNT-003.
-
-### TRS-CNT-004 - Team Content Control
-
-Team/profile content must be maintainable separately from layout logic so names, roles, bios, or images can be revised without redesign.
-
-**Derived From**: FRS-CNT-004.
-
-### TRS-CNT-005 - Legal Route Readiness
-
-The technical design must reserve or implement stable legal destinations for privacy and terms content before launch readiness.
-
-**Derived From**: FRS-CNT-005, FRS-NAV-002.
+Homepage must render a services preview that links to the Services page.
 
 ---
 
-## 10. SEO and Social Metadata Requirements
+## 10. Platform / APGI Hub Technical Requirements
 
-### TRS-SEO-001 - Metadata Support
+### TRS-PLAT-001 - Platform Page Generation
 
-The website must support page title, description, canonical URL, Open Graph title, Open Graph description, and share image metadata where available.
+The implementation must generate a dedicated Platform/APGI Hub page.
 
-**Derived From**: FRS-SEO-001, FRS-SEO-002.
+### TRS-PLAT-002 - Required Module List
 
-### TRS-SEO-002 - LinkedIn Share Compatibility
+The platform model must support:
 
-Metadata must be suitable for LinkedIn link sharing without scraping or syncing LinkedIn content.
+- Maturity Roadmap / MMM;
+- Risk Management;
+- Project Implementation Tracker / PIT;
+- Incident and Intelligence Hub;
+- Data Analytics and Remote Assurance;
+- Systems Integration / RADAM;
+- Skills Development Portal.
 
-**Derived From**: FRS-SEO-003.
+### TRS-PLAT-003 - Public Hub Base URL
 
-### TRS-SEO-003 - Brand Narrative Metadata
+If a public Hub/ISMS base URL exists, module links must compose from that base plus governed slugs.
 
-Metadata must reflect APGI's approved brand narrative and must not imply unapproved capabilities.
+Recommended public config name:
 
-**Derived From**: FRS-SEO-004, FRS-TRUST-004.
+`ISMS_PUBLIC_BASE_URL`
 
-### TRS-SEO-004 - Social Image Control
+### TRS-PLAT-004 - Pending Module State
 
-If a social preview image is used, it must be an approved APGI-owned or licensed asset.
-
-**Derived From**: FRS-CNT-003.
-
----
-
-## 11. Accessibility Technical Requirements
-
-### TRS-A11Y-001 - Semantic Structure
-
-The page must use semantic HTML structure appropriate to a public marketing site, including meaningful headings, landmarks, links, and buttons.
-
-**Derived From**: FRS-A11Y-004.
-
-### TRS-A11Y-002 - Keyboard Access
-
-All navigation, CTAs, hub tiles, contact actions, and mobile menu controls must be keyboard reachable and operable.
-
-**Derived From**: FRS-A11Y-002.
-
-### TRS-A11Y-003 - Focus Management
-
-The mobile navigation overlay must provide sensible focus behavior when opened and closed.
-
-**Derived From**: FRS-SCR-002.
-
-### TRS-A11Y-004 - Reduced Motion
-
-Non-essential animation must be avoidable or disabled for reduced-motion users.
-
-**Derived From**: FRS-A11Y-003.
-
-### TRS-A11Y-005 - Text-First Resilience
-
-Core APGI positioning, training, hub, and contact information must remain understandable if images, icons, or motion fail.
-
-**Derived From**: FRS-A11Y-005.
+If no public base URL exists, modules must show polished pending/private-preview states, not broken links.
 
 ---
 
-## 12. Responsive Technical Requirements
+## 11. Training Technical Requirements
 
-### TRS-RESP-001 - Mobile-First Layout
+### TRS-TRN-001 - Training Page Generation
 
-The implementation must support mobile-first rendering and scale cleanly to tablet and desktop viewports.
+The implementation must generate a dedicated Training page.
 
-**Derived From**: FRS-A11Y-001.
+### TRS-TRN-002 - Thinkific Link
 
-### TRS-RESP-002 - Section Stability
+The Thinkific public storefront must be represented as an external public link:
 
-Core sections must remain readable and navigable at common viewport widths without horizontal overflow or hidden critical content.
+`https://apgi.thinkific.com/`
 
-**Derived From**: FRS-SCR-001.
+### TRS-TRN-003 - Training Offering Cards
 
-### TRS-RESP-003 - CTA Visibility
+Training offerings must render as cards or equivalent structured content.
 
-Primary CTAs must remain visible, readable, and tappable on mobile.
+### TRS-TRN-004 - No Thinkific Admin Exposure
 
-**Derived From**: FRS-TRUST-003.
-
----
-
-## 13. Security and Privacy Requirements
-
-### TRS-SEC-001 - Public-Only Data Posture
-
-The v1 site must not collect or persist personal data.
-
-**Derived From**: FRS-CON-005.
-
-### TRS-SEC-002 - No Secret Exposure
-
-Environment variables, tokens, or private configuration must not be exposed in public source output or page content.
-
-**Derived From**: Public website boundary.
-
-### TRS-SEC-003 - External Link Safety
-
-External links must be explicit, approved, and reviewable.
-
-**Derived From**: FRS-NAV-003.
-
-### TRS-SEC-004 - Dependency Discipline
-
-Implementation must avoid unnecessary runtime dependencies for simple public-site behavior.
-
-**Derived From**: Fully functional delivery and maintainability expectations.
+No Thinkific admin or management URL may appear in public navigation, public content, or metadata.
 
 ---
 
-## 14. Fully Functional Delivery Technical Controls
+## 12. Contact Technical Requirements
 
-### TRS-FFD-001 - Routed
+### TRS-CON-001 - Contact Page Generation
 
-Every enabled route, anchor, CTA, and external link must resolve to its intended destination or safe unavailable state.
+The implementation must generate a dedicated Contact page.
 
-**Derived From**: FRS-GOV-006, FRS-NAV-004.
+### TRS-CON-002 - Email Handoff
 
-### TRS-FFD-002 - Usable
+The implementation must support:
 
-The homepage must be usable without requiring hidden knowledge, authentication, or developer intervention.
+`mailto:info@apginc.ca`
 
-**Derived From**: FRS-USER-001, FRS-SCR-004.
+unless CS2 later changes the approved address.
 
-### TRS-FFD-003 - Coherent
+### TRS-CON-003 - Phone Handoff
 
-The implemented sections, labels, and CTAs must align with the approved journeys and must not contradict the FRS.
+The implementation must support:
 
-**Derived From**: FRS-TRUST-003, FRS-TRUST-004.
+`tel:+14166429974`
 
-### TRS-FFD-004 - Verified
+unless CS2 later changes the approved number.
 
-Implementation readiness must include evidence for routing, external links, responsive layout, keyboard access, metadata, and placeholder safety.
+### TRS-CON-004 - No Contact Form Backend
 
-**Derived From**: FRS-GOV-006.
-
-### TRS-FFD-005 - No Known Avoidable Functional Debt
-
-Known broken routes, unresolved CTAs, inaccessible navigation, missing core content, and unlabelled placeholders must not be deferred as polish.
-
-**Derived From**: FRS-GOV-006 and no-test-debt governance.
+No contact form submission, validation endpoint, CRM posting, email automation, or database persistence is permitted in v1.
 
 ---
 
-## 15. Verification Requirements for QA-to-Red
+## 13. Metadata and SEO Technical Requirements
 
-The following items must become QA-to-Red checks in Stage 6:
+Each major page must support:
 
-| QA Seed | Required Later Check |
-|---------|----------------------|
-| TRS-ROUTE-001 | `/` renders successfully. |
-| TRS-ROUTE-002 | All section anchors resolve. |
-| TRS-ROUTE-003 | Mobile navigation opens, closes, and preserves access. |
-| TRS-ROUTE-005 | No enabled dead links. |
-| TRS-HUB-001 / TRS-HUB-002 | Hub links resolve from configured base URL plus frozen route slugs. |
-| TRS-TRN-001 / TRS-TRN-002 | Training links are public and non-admin. |
-| TRS-CON-001 / TRS-CON-002 | Email and phone handoffs are present. |
-| TRS-CON-003 | No contact form or backend submission exists in v1. |
-| TRS-SEO-001 | Metadata exists. |
-| TRS-A11Y-002 | Keyboard access works for primary controls. |
-| TRS-RESP-001 | Common mobile/tablet/desktop widths are usable. |
-| TRS-FFD-005 | No known avoidable functional debt is accepted. |
+- title;
+- description;
+- canonical URL or canonical strategy;
+- Open Graph title;
+- Open Graph description;
+- Open Graph type;
+- share image where approved;
+- route-specific metadata.
+
+Metadata must not imply unapproved capabilities or claims.
 
 ---
 
-## 16. Technical Traceability Matrix
+## 14. Accessibility Technical Requirements
 
-| FRS Area | TRS Coverage |
-|----------|--------------|
-| User and audience requirements | TRS-RUN, TRS-ROUTE, TRS-FFD |
-| Page and screen requirements | TRS-ROUTE, TRS-RESP, TRS-A11Y |
-| Navigation and routing | TRS-ROUTE, TRS-FFD |
-| Training | TRS-TRN |
-| APGI Hub | TRS-HUB |
-| Contact and conversion | TRS-CON, TRS-SEC |
-| Content and placeholders | TRS-CNT |
-| SEO and social sharing | TRS-SEO |
-| Accessibility | TRS-A11Y |
-| Public trust and quality | TRS-CNT, TRS-SEO, TRS-FFD |
-| Governance and lifecycle | TRS-FFD, verification requirements |
-| Negative requirements | TRS-SEC, TRS-CON, TRS-TRN, technical boundary |
+The implementation must support:
+
+- semantic landmarks;
+- meaningful heading order;
+- keyboard reachable navigation and CTAs;
+- visible focus states;
+- accessible names for cards and links;
+- reduced-motion behavior where motion exists;
+- text-first resilience when images are unavailable;
+- mobile menu that is usable by keyboard and touch.
 
 ---
 
-## 17. Readiness for Stage 5 Architecture
+## 15. Responsive Technical Requirements
 
-This TRS is approved for Stage 5 Architecture progression by AI-assisted CS2 proxy evaluation for Johan Ras.
+The implementation must support intentional layouts for:
 
-Stage 5 Architecture should define:
+- mobile;
+- tablet;
+- desktop;
+- wide desktop where applicable.
 
-- site architecture;
-- route and section architecture;
-- content/config architecture;
-- component architecture;
-- APGI Hub link-resolution architecture;
-- accessibility architecture;
-- verification and evidence architecture;
-- deployment architecture.
+Technical acceptance must include no critical horizontal overflow, tappable CTAs, and readable card layouts.
 
 ---
 
-## 18. Conditions Carried Forward
+## 16. Validation Requirements
 
-| Item | Status | Notes |
-|------|--------|-------|
-| Architecture design | Carry forward | Stage 5 must convert technical requirements into design structure. |
-| QA-to-Red | Carry forward | Stage 6 must create failing/inspectable tests before implementation. |
-| Public legal pages | Carry forward | Legal/privacy/terms destinations must be addressed before launch. |
-| Final content | Carry forward | Copy, proof, team, and imagery remain subject to content approval. |
-| CI workflow | Carry forward | Implementation waves should have stronger CI evidence than documentation waves. |
+The project must include validation that fails if required structure is missing.
+
+Validation must check at minimum:
+
+- all required pages are generated;
+- required navigation links exist;
+- Services page exists and has service entries;
+- Platform page exists and has required module entries;
+- Training page exists and has Thinkific handoff;
+- Contact page exists with email and phone handoffs;
+- Privacy and Terms routes exist;
+- no Supabase/database/auth/contact-form backend indicators are introduced;
+- one-page-only output is rejected.
 
 ---
 
-## 19. Foreman Note
+## 17. Vercel and Deployment Evidence Requirements
 
-This TRS does not authorize implementation. It authorizes progression to Architecture after QP, ECAP, IAA, and CS2 proxy disposition.
+Stage 12 evidence must verify:
+
+- Vercel project connected to APW repository;
+- root directory setting;
+- build command;
+- output directory;
+- preview deployment URL;
+- production deployment after merge where applicable;
+- each required page route renders;
+- build logs show the validation command passed.
+
+---
+
+## 18. Security and Privacy Requirements
+
+The v1 website must not collect or persist personal data.
+
+Public configuration values may be used for public link composition, but no private secrets may be exposed in source output or public pages.
+
+---
+
+## 19. Technical Negative Requirements
+
+The upgraded APW implementation must not:
+
+- be a one-page-only build;
+- omit dedicated Services, Platform, or Training pages;
+- use broken CTAs;
+- introduce Supabase, database, auth, CRM, or contact-form backend without CS2 approval;
+- expose private secrets;
+- use unapproved third-party proof assets;
+- rely on hover-only navigation;
+- rely on images for essential meaning.
+
+---
+
+## 20. Handoff to Stage 5 Architecture v0.2
+
+Corrective Stage 5 Architecture v0.2 must define:
+
+- route architecture;
+- content/data architecture;
+- component/section architecture;
+- design-system architecture;
+- validation architecture;
+- Vercel/deployment architecture;
+- evidence architecture;
+- public-only boundary controls.
+
+---
+
+## 21. Stage 4 Disposition
+
+**Foreman disposition**: Corrective Stage 4 TRS v0.2 is complete as a technical requirements artifact for the upgraded APW website.
+
+**Next stage**: Corrective Stage 5 Architecture v0.2.
