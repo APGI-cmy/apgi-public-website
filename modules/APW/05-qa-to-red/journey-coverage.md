@@ -1,4 +1,4 @@
-# APW Stage 6 - Journey Coverage
+# APW Stage 6 - Journey Coverage v0.2
 
 ## Status Header
 
@@ -7,29 +7,47 @@
 | Module | APW - APGI Public Website |
 | Stage | 6 - QA-to-Red |
 | Artifact | Journey Coverage |
-| Status | Complete |
-| Last Updated | 2026-05-30 |
+| Version | v0.2 |
+| Status | Draft for review |
+| Last Updated | 2026-06-04 |
 
 ---
 
-## Journey Coverage Matrix
+## 1. Purpose
 
-| Journey / Outcome | Source | Covered By | Coverage Result |
+This artifact maps user journeys and end-to-end paths to RED tests in the Stage 6 catalog.
+
+---
+
+## 2. User Journey Coverage
+
+| Journey | Source | QA Coverage | RED if |
 |---|---|---|---|
-| First-time visitor understands APGI and next steps | FRS-USER-001 | QA-D1-001, QA-D1-002, QA-D6-002 | Covered |
-| Prospective client can scan service positioning, trust, training, and contact | FRS-USER-002 | QA-D1-001, QA-D2-001, QA-D5-001, QA-D5-002 | Covered |
-| Training prospect reaches approved training surfaces | FRS-USER-003, FRS-TRN-002, FRS-TRN-003 | QA-D3-001, QA-D3-002 | Covered |
-| APGI ecosystem explorer reaches approved Hub destinations | FRS-USER-004, FRS-HUB-002 | QA-D4-001, QA-D4-002 | Covered |
-| Social proof and public metadata remain credible | FRS-USER-005, FRS-SEO-001 through FRS-SEO-004 | QA-D6-001, QA-D6-002, QA-D9-002 | Covered |
-| Mobile user can navigate primary content | FRS-SCR-002, TRS-ROUTE-003 | QA-D2-002, QA-D7-002, QA-D8-001 | Covered |
-| Keyboard user can reach primary controls | FRS-A11Y-002, TRS-A11Y-002 | QA-D7-001, QA-D7-002 | Covered |
-| Public-only visitor can use the site without auth | FRS-SCR-004, TRS-SEC-001 | QA-D10-001, QA-D10-002 | Covered |
-| Governance prevents premature implementation | FRS-GOV-001, FRS-GOV-002, FOREMAN_OPERATING_MODEL.md | QA-D12-001, QA-D12-002 | Covered |
+| Premium brand orientation | UX v0.2; Architecture homepage composition | APW-QA-006, APW-QA-015 | Homepage lacks premium hero, exploration paths, or design-system visibility. |
+| Services exploration | UX v0.2; FRS services; Architecture services model | APW-QA-003, APW-QA-004, APW-QA-007 | Services route missing, shallow, or lacks CTA. |
+| Platform/app exploration | UX v0.2; Architecture Hub model | APW-QA-008, APW-QA-009, APW-QA-023 | Required modules missing or link/pending behavior unclear. |
+| Training exploration | UX v0.2; FRS training; Architecture training model | APW-QA-010, APW-QA-011, APW-QA-012, APW-QA-023 | Thinkific handoff missing, training content shallow, or admin URL exposed. |
+| Contact conversion | UX v0.2; Architecture contact page | APW-QA-013, APW-QA-029 | Contact methods missing or capture workflow added. |
+| About/team credibility | UX v0.2; route architecture | APW-QA-001, APW-QA-004, APW-QA-014 | Required trust pages missing or placeholders dishonest. |
+| Legal/trust review | UX v0.2; legal page architecture | APW-QA-014, APW-QA-020 | Privacy/Terms missing or metadata/claims unsafe. |
+| Mobile exploration | UX v0.2; responsive architecture | APW-QA-003, APW-QA-017, APW-QA-018, APW-QA-019 | Mobile nav or layout blocks primary journeys. |
+| Design-quality exploration | UX v0.2; design-system architecture | APW-QA-015, APW-QA-016, APW-QA-019 | Site returns to plain scaffold design. |
 
 ---
 
-## Coverage Conclusion
+## 3. End-to-End Path Coverage
 
-The Stage 6 suite covers the approved public visitor, training, APGI Hub, contact, social, mobile, accessibility, public-only, and governance journeys.
+| E2E Path | Source | QA Coverage | Required Green Evidence Later |
+|---|---|---|---|
+| Home -> Services -> Contact | Architecture checklist E2E-001 | APW-QA-006, APW-QA-007, APW-QA-013, APW-QA-026 | Browser route and CTA evidence. |
+| Home -> Platform -> Module or Pending | Architecture checklist E2E-002 | APW-QA-008, APW-QA-009, APW-QA-023, APW-QA-026 | Module card/link or pending-state evidence. |
+| Home -> Training -> Thinkific | Architecture checklist E2E-003 | APW-QA-010, APW-QA-011, APW-QA-023, APW-QA-026 | Training route and Thinkific link evidence. |
+| Home -> About/Team -> Contact | Architecture checklist E2E-004 | APW-QA-001, APW-QA-004, APW-QA-013, APW-QA-026 | Route and contact CTA evidence. |
+| Footer -> Privacy/Terms | Architecture checklist E2E-005 | APW-QA-003, APW-QA-014, APW-QA-026 | Footer and legal route evidence. |
+| Mobile menu -> Any primary route | Architecture checklist E2E-006 | APW-QA-003, APW-QA-017, APW-QA-018, APW-QA-019, APW-QA-026 | Mobile browser evidence. |
 
-No journey is left as TBD.
+---
+
+## 4. Coverage Disposition
+
+All Stage 2 journeys and Architecture checklist E2E paths have at least one RED test and later green-evidence path.
