@@ -2,7 +2,7 @@
 
 **Module**: APW (APGI Public Website)  
 **Module Slug**: APW  
-**Status**: Corrective Stage 8 Implementation Plan v0.2 drafted  
+**Status**: Corrective Stage 9 Builder Checklist v0.2 drafted  
 **Last Updated**: 2026-06-10  
 **Authority**: CS2: Johan Ras  
 **Canonical Root**: `modules/APW`
@@ -23,8 +23,6 @@ The corrective path is rebuilding the pre-build chain from App Description v0.2 
 
 ## Where We Are in the Corrective Plan
 
-The IP-COR work packages are implementation-plan/build work packages. Stage 8 is the first point where those work packages are formally planned, but it is still planning only.
-
 Current position:
 
 1. Stage 1 App Description v0.2 - complete / merged in PR #12.
@@ -34,8 +32,8 @@ Current position:
 5. Stage 5 Architecture v0.2A - complete / merged through PR #16 and canon-completeness patch PR #17.
 6. Stage 6 QA-to-Red v0.2 - complete / merged in PR #18.
 7. Stage 7 PBFAG v0.2 - complete / merged in PR #19.
-8. Stage 8 Implementation Plan v0.2 - active current wave on branch `apw-stage8-implementation-plan-v02`.
-9. Stage 9 Builder Checklist v0.2 - pending.
+8. Stage 8 Implementation Plan v0.2 - complete / merged in PR #20.
+9. Stage 9 Builder Checklist v0.2 - active current wave on branch `apw-stage9-builder-checklist-v02`.
 10. Stage 10 IAA Pre-Brief v0.2 - pending.
 11. Stage 11 Builder Appointment v0.2 - pending.
 12. Stage 12 Upgraded Build Evidence - blocked until corrected pre-build chain is approved.
@@ -61,8 +59,8 @@ A build is not green merely because it compiles or deploys. It must satisfy the 
 | 5 | `04-architecture` | Architecture | Corrective v0.2A approved | PR #16 merged; PR #17 added architecture canon-completeness patch. |
 | 6 | `05-qa-to-red` | QA-to-Red | Corrective v0.2 approved | PR #18 merged; RED suite derives from Architecture v0.2A and canon checklist. |
 | 7 | `06-pbfag` | PBFAG | Corrective v0.2 approved | PR #19 merged; validates readiness for Stage 8 planning. |
-| 8 | `07-implementation-plan` | Implementation Plan | Corrective v0.2 drafted for review | Active branch `apw-stage8-implementation-plan-v02`; plans IP-COR packages and maps them to Stage 6 QA/evidence. |
-| 9 | `08-builder-checklist` | Builder Checklist | Requires corrective realignment | Must bind builder to corrected green criteria. |
+| 8 | `07-implementation-plan` | Implementation Plan | Corrective v0.2 approved | PR #20 merged; plans IP-COR packages and maps them to Stage 6 QA/evidence. |
+| 9 | `08-builder-checklist` | Builder Checklist | Corrective v0.2 drafted for review | Active branch `apw-stage9-builder-checklist-v02`; binds future builder to IP-COR, Stage 6 QA IDs, and evidence requirements. |
 | 10 | `09-iaa-pre-brief` | IAA Pre-Brief | Requires corrective realignment | Must brief IAA on upgraded criteria. |
 | 11 | `10-builder-appointment` | Builder Contract | Requires corrective realignment | Must not appoint builder against old scaffold criteria. |
 | 12 | `11-build` | Build Evidence | Blocked | Upgraded build remains blocked until corrected pre-build chain is approved. |
@@ -80,13 +78,14 @@ A build is not green merely because it compiles or deploys. It must satisfy the 
 | apw-stage5-architecture-v02-20260603 | `apw-stage5-architecture-v02` | Merged | PR #16 merged; PR #17 merged canon-completeness patch. |
 | apw-stage6-qa-to-red-v02-20260604 | `apw-stage6-qa-to-red-v02` | Merged | PR #18 merged. |
 | apw-stage7-pbfag-v02-20260608 | `apw-stage7-pbfag-v02` | Merged | PR #19 merged. |
-| apw-stage8-implementation-plan-v02-20260610 | `apw-stage8-implementation-plan-v02` | Draft PR pending | Corrective Stage 8 Implementation Plan v0.2 drafted; ready for review after PR creation. |
+| apw-stage8-implementation-plan-v02-20260610 | `apw-stage8-implementation-plan-v02` | Merged | PR #20 merged. |
+| apw-stage9-builder-checklist-v02-20260610 | `apw-stage9-builder-checklist-v02` | Draft PR pending | Corrective Stage 9 Builder Checklist v0.2 drafted; ready for review after PR creation. |
 | apw-stage12-build-evidence-20260601 | `foreman/apw-stage12-build-evidence` | Closed / scaffold reference | PR #11 closed. |
 
 ---
 
 ## Current Focus
 
-Review and merge Corrective Stage 8 Implementation Plan v0.2. After acceptance, proceed to Corrective Stage 9 Builder Checklist v0.2.
+Review and merge Corrective Stage 9 Builder Checklist v0.2. After acceptance, proceed to Corrective Stage 10 IAA Pre-Brief v0.2.
 
 No upgraded implementation resumes until corrected pre-build artifacts are aligned and approved.

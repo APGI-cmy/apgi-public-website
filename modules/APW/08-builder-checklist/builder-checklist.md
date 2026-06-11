@@ -1,4 +1,4 @@
-# APW Stage 9 - Builder Checklist
+# APW Stage 9 - Builder Checklist v0.2
 
 ## Status Header
 
@@ -7,197 +7,95 @@
 | Module | APW - APGI Public Website |
 | Stage | 9 - Builder Checklist |
 | Folder | `modules/APW/08-builder-checklist` |
-| Version | v0.1 |
-| Status | Approved for Stage 10 IAA Pre-Brief progression |
+| Version | v0.2 - Corrective Builder Checklist |
+| Status | Draft for review |
 | Owner | Johan Ras |
 | Authority | CS2: Johan Ras |
-| Approval Method | AI-assisted CS2 proxy evaluation for Johan Ras |
-| Approval Date | 2026-05-31 |
-| Last Updated | 2026-05-31 |
-| Upstream Stage | `modules/APW/07-implementation-plan/implementation-plan.md` |
-| Scope Declaration | `.agent-admin/scope-declarations/apw-stage9-builder-checklist-20260531.md` |
-| Builder Appointment | `.agent-admin/builder-appointments/apw-stage9-builder-checklist-20260531-builder-contract.md` |
-| IAA Review | `.agent-admin/assurance/iaa-review-apw-stage9-builder-checklist-20260531.md` |
-| CS2 Proxy Sign-Off | `.agent-admin/signoffs/cs2-proxy-stage9-builder-checklist-signoff-20260531.md` |
+| Last Updated | 2026-06-10 |
+| Upstream Stage | `modules/APW/07-implementation-plan/implementation-plan.md` v0.2 |
+| QA Source | `modules/APW/05-qa-to-red/qa-to-red-catalog.md` v0.2 |
+| Scope Declaration | `.agent-admin/scope-declarations/apw-stage9-builder-checklist-v02-20260610.md` |
 
 ---
 
 ## 1. Purpose
 
-This Stage 9 Builder Checklist converts the approved APW Stage 8 Implementation Plan into executable obligations for a future implementation builder.
+This Builder Checklist v0.2 converts the approved Stage 8 Implementation Plan into builder-ready obligations for a later implementation builder.
 
-This artifact does not appoint the runtime implementation builder and does not authorize build work. It prepares the checklist that Stage 10 and Stage 11 must use before implementation can begin.
+This checklist does not appoint the implementation builder and does not start build work. It prepares Stage 10 IAA Pre-Brief and Stage 11 Builder Appointment.
 
 ---
 
 ## 2. Required Source Load
 
-A future implementation builder must load and acknowledge the following before doing any build work:
+A future builder must load and acknowledge these sources before doing build work:
 
 | Source | Required Use |
-|--------|--------------|
-| `FOREMAN_OPERATING_MODEL.md` | Governance, role separation, gate rules, and no-implementation-before-gates discipline. |
-| `modules/APW/BUILD_PROGRESS_TRACKER.md` | Current stage state and downstream gates. |
-| `modules/APW/07-implementation-plan/implementation-plan.md` | Work packages, evidence plan, risks, dependencies, and handover requirements. |
-| `modules/APW/06-pbfag/pbfag-checklist.md` | PBFAG conditions and fully functional pre-build readiness. |
-| `modules/APW/05-qa-to-red/qa-to-red-catalog.md` | RED checks that must become green through evidence. |
-| `modules/APW/04-architecture/architecture.md` | Route, section, component, content/configuration, accessibility, responsive, metadata, deployment, and evidence architecture. |
-| `modules/APW/03-trs/technical-requirements-specification.md` | Technical requirements and fully functional delivery controls. |
-| `modules/APW/02-frs/functional-requirements.md` | Functional requirements and negative requirements. |
+|---|---|
+| `FOREMAN_OPERATING_MODEL.md` | Governance, gate sequence, and role discipline. |
+| `modules/APW/BUILD_PROGRESS_TRACKER.md` | Current APW stage state. |
+| `modules/APW/07-implementation-plan/implementation-plan.md` | Stage 8 implementation plan. |
+| `modules/APW/07-implementation-plan/ip-cor-work-package-map-v0.2.md` | IP-COR to QA mapping. |
+| `modules/APW/07-implementation-plan/qa-to-green-evidence-map-v0.2.md` | Evidence mapping. |
+| `modules/APW/07-implementation-plan/build-sequencing-v0.2.md` | Build sequence. |
+| `modules/APW/07-implementation-plan/implementation-readiness-gates-v0.2.md` | Gate state. |
+| `modules/APW/06-pbfag/pbfag-v0.2.md` | PBFAG conditions. |
+| `modules/APW/05-qa-to-red/qa-to-red-catalog.md` | RED checks to turn green. |
+| `modules/APW/04-architecture/architecture.md` | Architecture v0.2A. |
+| `modules/APW/04-architecture/architecture-completeness-checklist-v0.2.md` | Architecture canon completeness. |
+| `modules/APW/03-trs/technical-requirements-specification.md` | Technical requirements. |
+| `modules/APW/02-frs/functional-requirements.md` | Functional requirements. |
 
-The implementation builder must not proceed if any required source is missing, contradictory, or stale without Foreman/CS2 disposition.
-
----
-
-## 3. Hard Scope Boundaries
-
-The future implementation builder must preserve the APW v1 public-only boundary.
-
-The builder must not introduce:
-
-- authenticated staff tooling;
-- CRM or lead database;
-- LMS replacement or Thinkific administration;
-- ISMS backend logic;
-- database-backed workflows;
-- LinkedIn scraping or synchronization;
-- unapproved analytics, tracking, CMS, or marketing automation;
-- secret or private configuration exposure in public output;
-- new public claims, testimonials, client marks, or regulated content without governed approval.
-
-Any proposed deviation requires explicit Foreman escalation and CS2/Johan disposition before work continues.
+The builder must stop and escalate if required sources are missing, contradictory, or stale.
 
 ---
 
-## 4. Builder Work-Package Checklist
+## 3. Builder Work-Package Checklist
 
-| Checklist ID | Stage 8 Work Package | Builder Obligation | Evidence Required | Stop / Escalate If |
-|--------------|----------------------|--------------------|-------------------|--------------------|
-| BC-WP-001 | WP-001 Repository and Runtime Baseline | Inspect project structure, scripts, route entry points, and static/static-first posture before modifying implementation files. | Script inventory, entry point notes, command list. | Build requires auth/private runtime data or unknown framework assumptions. |
-| BC-WP-002 | WP-002 Structured Content and Configuration | Implement or update structured content/config sources for sections, links, hub tiles, placeholders, and assets. | Content/config inventory, placeholder register, asset status register. | Content is scattered, untraceable, or includes unapproved final claims/assets. |
-| BC-WP-003 | WP-003 Public Routes and Legal Destinations | Implement `/` and legal route handling for `/privacy` and `/terms` or governed placeholder equivalents. | Route render evidence and footer/legal link inspection. | Legal/footer links are broken or legal handling is not explicitly governed. |
-| BC-WP-004 | WP-004 Homepage Section Implementation | Implement hero, trust/proof, about, services, training, APGI Hub, impact, team, contact, and footer sections. | Section render evidence and content completeness review. | Required section is absent without governed deferral. |
-| BC-WP-005 | WP-005 Navigation, CTAs, and Mobile Menu | Implement desktop nav, mobile menu, anchors, footer links, visible focus, and keyboard operation. | Desktop/mobile nav evidence, anchor evidence, keyboard evidence. | Any primary path is broken, mouse-only, or hidden behind non-semantic controls. |
-| BC-WP-006 | WP-006 Training and Contact Handoffs | Implement VPSHR, Thinkific, email, and phone handoffs with readable fallback text and no contact-form processing. | Link target inspection and no-form review. | Any handoff points to admin/private URL or introduces backend capture. |
-| BC-WP-007 | WP-007 APGI Hub Implementation | Implement seven v1 hub tiles with base URL composition and frozen route slugs. | Seven-tile config inspection and generated destination evidence. | Hub slugs drift or unapproved extra tiles appear. |
-| BC-WP-008 | WP-008 Metadata, SEO, and Social Readiness | Implement APGI-owned title, description, canonical, Open Graph basics, and approved social image behavior. | Metadata inspection and claim review. | Metadata claims unapproved capabilities or uses unapproved assets. |
-| BC-WP-009 | WP-009 Accessibility and Responsive Delivery | Implement semantic structure, keyboard access, visible focus, reduced-motion handling, text-first resilience, and responsive layouts. | Semantic, keyboard, reduced-motion, text-first, and viewport evidence. | Core meaning or primary controls fail without image, hover, mouse, or motion. |
-| BC-WP-010 | WP-010 Evidence and Closure Package | Produce command/manual evidence and map every Stage 6 RED domain to green evidence or explicit exception. | RED-to-green evidence matrix and unresolved conditions list. | Evidence is missing, vague, or treats unverified behavior as complete. |
-
----
-
-## 5. RED-Domain Evidence Checklist
-
-| QA Domain | Builder Must Prove | Minimum Evidence |
-|-----------|--------------------|------------------|
-| D1 - Homepage render and section flow | `/` renders publicly and exposes the governed section sequence. | Screenshot/manual log and section checklist. |
-| D2 - Navigation, anchors, and mobile menu | Desktop/mobile navigation works and anchors resolve. | Link/anchor test notes and keyboard/menu evidence. |
-| D3 - Training handoffs | VPSHR and Thinkific public handoffs are correct. | URL inspection evidence. |
-| D4 - APGI Hub link composition | Seven hub URLs compose from base URL plus frozen slugs. | Config snapshot and generated link inspection. |
-| D5 - Contact handoffs | Email/phone handoffs work, remain readable, and no form backend exists. | `mailto`, `tel`, fallback text, and no-form inspection. |
-| D6 - SEO and social metadata | Metadata is APGI-specific and does not overclaim. | Rendered metadata inspection. |
-| D7 - Accessibility and keyboard basics | Semantics, keyboard, reduced motion, and text-first meaning are present. | Manual accessibility walkthrough and notes. |
-| D8 - Responsive behavior | Mobile/tablet/desktop layouts are usable without critical overflow. | Viewport evidence. |
-| D9 - Placeholder honesty and asset governance | Placeholder, asset, legal route, and social image states are explicit. | Registers and rendered review. |
-| D10 - Public-only boundary | Site works without auth/private APIs and exposes no private configuration. | Source/rendered inspection notes. |
-| D11 - Fully functional delivery gate | Route, links, nav, responsive, keyboard, metadata, placeholders, legal routes, and hub behavior are evidenced. | Complete evidence pack. |
-| D12 - Governance | Work stayed within approved gates and exceptions are documented. | Handover summary and exception log. |
-
-No RED item may be closed by assumption alone.
+| Checklist ID | IP-COR | Builder Obligation | QA IDs | Evidence Required | Stop / Escalate If |
+|---|---|---|---|---|---|
+| BC-001 | IP-COR-001 | Implement required public pages. | APW-QA-001, APW-QA-002 | Route list and page render evidence. | Any required page is missing. |
+| BC-002 | IP-COR-001 | Implement shared layout, header, footer, and mobile navigation. | APW-QA-003, APW-QA-017, APW-QA-019 | Header/footer/mobile nav evidence. | Primary navigation path is incomplete. |
+| BC-003 | IP-COR-002 | Implement premium APGI design system. | APW-QA-015, APW-QA-016 | Visual evidence showing palette, cards, sections, CTAs. | Site remains plain scaffold. |
+| BC-004 | IP-COR-003 | Implement Services page content depth. | APW-QA-007, APW-QA-026 | Services content inventory and browser evidence. | Services page is shallow or lacks CTAs. |
+| BC-005 | IP-COR-004 | Implement Platform/APGI Hub page. | APW-QA-008, APW-QA-009, APW-QA-023 | Module grid, status, link/pending evidence. | Required modules are missing or links are broken. |
+| BC-006 | IP-COR-005 | Implement Training page. | APW-QA-010, APW-QA-011, APW-QA-012 | Training page, offering cards, Thinkific handoff evidence. | Thinkific handoff missing or admin link exposed. |
+| BC-007 | IP-COR-006 | Implement homepage conversion front door. | APW-QA-006, APW-QA-015 | Homepage evidence for hero, previews, CTAs. | Homepage is the whole site or lacks exploration paths. |
+| BC-008 | IP-COR-007 | Implement validation checks. | APW-QA-021, APW-QA-024, APW-QA-027, APW-QA-028 | Validation output and build log. | Validation cannot fail missing required items. |
+| BC-009 | IP-COR-008 | Prepare QA-to-green evidence mapping. | APW-QA-025, APW-QA-028, APW-QA-030 | Evidence map to Stage 6 QA IDs. | Evidence cannot be traced to QA catalog. |
+| BC-010 | Boundary | Preserve public static website boundary. | APW-QA-022, APW-QA-029 | Source inspection and validation evidence. | Scope expands beyond approved public site boundary. |
 
 ---
 
-## 6. Content, Legal, and Asset Conditions
+## 4. Builder Execution Rules
 
-The future implementation builder must maintain explicit status for:
-
-- placeholder copy;
-- final copy;
-- legal/privacy/terms copy;
-- team/profile content;
-- testimonials or proof claims;
-- client or partner marks;
-- social preview image;
-- imagery and icon rights;
-- APGI Hub host/base URL;
-- training links;
-- contact details.
-
-If final content or assets are not approved, the builder must use governed placeholders or text-first alternatives and record them in the evidence package.
+1. Build work must follow the Stage 8 sequence.
+2. Every completed work package must produce evidence.
+3. Every evidence item must map to Stage 6 QA IDs.
+4. Validation must be implemented before build evidence can close green.
+5. Missing content must be labelled as governed placeholder, not final copy.
+6. External links must be live or have a clear pending state.
+7. Any unresolved contradiction must stop the builder until Foreman/CS2 disposition.
 
 ---
 
-## 7. Command and Manual Verification Expectations
+## 5. Stage 10 Handoff
 
-The future implementation builder must run available project commands, where present, such as install/build/lint/test/typecheck or equivalent project-specific checks.
+Stage 10 IAA Pre-Brief v0.2 must brief the assurance reviewer on:
 
-If no command exists, the builder must record that fact honestly and provide manual verification evidence instead of inventing a pass.
-
-Manual verification must cover at least:
-
-1. `/` route rendering;
-2. legal route/reservation behavior;
-3. primary navigation anchors;
-4. mobile menu behavior;
-5. external handoff URLs;
-6. APGI Hub URL composition;
-7. mail and phone handoffs;
-8. metadata inspection;
-9. keyboard walkthrough;
-10. reduced-motion/text-first review;
-11. responsive viewport checks;
-12. placeholder and asset review;
-13. no backend/contact-form/secret exposure review.
+- this checklist;
+- the Stage 8 implementation plan;
+- the Stage 6 QA catalog;
+- evidence expectations;
+- stop/escalation conditions;
+- the continuing build gate.
 
 ---
 
-## 8. Stop and Escalation Rules
+## 6. Disposition
 
-The future implementation builder must stop and escalate to Foreman if:
+**Decision**: Draft for review.
 
-- a required upstream artifact conflicts with another artifact;
-- implementation would require a backend, database, authentication, CRM, LMS administration, or private API;
-- approved legal/content/asset material is unavailable and a placeholder decision is unclear;
-- a RED check cannot be satisfied without changing scope;
-- a required link target is unknown or unsafe;
-- a route or section must be deferred;
-- evidence cannot be produced for a claimed completed item;
-- CI/status is unavailable and a stakeholder attempts to treat it as passing.
+**Implementation authorization**: Not granted.
 
----
-
-## 9. Handover to Stage 10 and Stage 11
-
-Stage 10 IAA Pre-Brief must use this checklist to prepare independent assurance before runtime implementation.
-
-Stage 11 Builder Appointment must bind the implementation builder to this checklist and require explicit acknowledgement of:
-
-- source artifacts loaded;
-- scope boundaries;
-- work-package checklist;
-- RED-domain evidence checklist;
-- legal/content/asset conditions;
-- stop/escalation rules;
-- fully functional evidence package requirements.
-
----
-
-## 10. Gate Statement
-
-This Stage 9 artifact approves progression to Stage 10 IAA Pre-Brief only.
-
-It does not appoint a runtime implementation builder and does not authorize build work.
-
-Implementation remains blocked until Stage 10 IAA Pre-Brief, Stage 11 Builder Appointment, and Stage 12 Build Evidence gates are complete or explicitly waived by CS2 / Johan Ras.
-
----
-
-## 11. Stage 9 Disposition
-
-**Foreman disposition**: Stage 9 Builder Checklist is complete as a governed pre-build builder-readiness artifact.
-
-**IAA disposition**: Conditional Pass.
-
-**CS2 proxy disposition**: Approved by AI-assisted CS2 proxy evaluator for Johan Ras, because Johan explicitly instructed progression to Stage 9.
-
-**Next stage**: Stage 10 IAA Pre-Brief.
+**Next stage after merge**: Corrective Stage 10 IAA Pre-Brief v0.2.
