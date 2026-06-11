@@ -1,4 +1,4 @@
-# APW Stage 10 - IAA Pre-Brief
+# APW Stage 10 - IAA Pre-Brief v0.2
 
 ## Status Header
 
@@ -7,194 +7,170 @@
 | Module | APW - APGI Public Website |
 | Stage | 10 - IAA Pre-Brief |
 | Folder | `modules/APW/09-iaa-pre-brief` |
-| Version | v0.1 |
-| Status | Approved for Stage 11 Builder Appointment progression |
+| Version | v0.2 - Corrective IAA Pre-Brief |
+| Status | Draft for review |
 | Owner | Johan Ras |
 | Authority | CS2: Johan Ras |
-| Approval Method | AI-assisted CS2 proxy evaluation for Johan Ras |
-| Approval Date | 2026-06-01 |
-| Last Updated | 2026-06-01 |
-| Upstream Stage | `modules/APW/08-builder-checklist/builder-checklist.md` |
-| Scope Declaration | `.agent-admin/scope-declarations/apw-stage10-iaa-pre-brief-20260601.md` |
-| Builder Appointment | `.agent-admin/builder-appointments/apw-stage10-iaa-pre-brief-20260601-builder-contract.md` |
-| IAA Review | `.agent-admin/assurance/iaa-review-apw-stage10-iaa-pre-brief-20260601.md` |
-| CS2 Proxy Sign-Off | `.agent-admin/signoffs/cs2-proxy-stage10-iaa-pre-brief-signoff-20260601.md` |
+| Last Updated | 2026-06-11 |
+| Upstream Stage | `modules/APW/08-builder-checklist/builder-checklist.md` v0.2 |
 
 ---
 
 ## 1. Purpose
 
-This Stage 10 IAA Pre-Brief prepares independent assurance to review whether APW is ready for Stage 11 Builder Appointment.
+This Stage 10 IAA Pre-Brief prepares independent assurance review before Stage 11 Builder Appointment.
 
-It gives the future IAA reviewer the context, source package, inspection questions, evidence expectations, and escalation rules needed to assess implementation-builder readiness without relying on chat history.
+It gives the IAA reviewer the corrected source package, review questions, readiness criteria, known conditions, and Stage 11 handoff obligations.
 
-This artifact does not appoint the runtime implementation builder and does not authorize build work.
+This artifact does not appoint the implementation builder and does not start build work.
 
 ---
 
 ## 2. Assurance Objective
 
-The IAA reviewer must determine whether the APW pre-build package is strong enough to appoint a future implementation builder under Stage 11.
+The IAA reviewer must decide whether APW is ready to appoint a future implementation builder under Stage 11.
 
-The central assurance question is:
+Central question:
 
 ```text
-Can a future implementation builder be appointed with clear scope, clear source artifacts, clear evidence obligations, clear stop rules, and a fully functional build narrative that can be verified?
+Can a future implementation builder be appointed with clear scope, source artifacts, checklist obligations, QA mapping, evidence obligations, stop rules, and stage boundaries?
 ```
 
 ---
 
-## 3. Source Package for IAA Review
+## 3. Required Source Package
 
 | Source | Review Purpose |
-|--------|----------------|
-| `FOREMAN_OPERATING_MODEL.md` | Confirm governance method, role separation, CS2 proxy limits, PR discipline, and gate rules. |
+|---|---|
+| `FOREMAN_OPERATING_MODEL.md` | Confirm governance, role separation, proxy limits, PR discipline, and gate rules. |
 | `modules/APW/BUILD_PROGRESS_TRACKER.md` | Confirm current stage state and downstream sequence. |
-| `modules/APW/08-builder-checklist/builder-checklist.md` | Confirm builder obligations, evidence requirements, stop rules, and handover expectations. |
-| `modules/APW/07-implementation-plan/implementation-plan.md` | Confirm work package sequence and RED-to-evidence planning. |
-| `modules/APW/06-pbfag/pbfag-checklist.md` | Confirm pre-build functional assurance conditions and readiness logic. |
-| `modules/APW/05-qa-to-red/qa-to-red-catalog.md` | Confirm RED checks and acceptance criteria. |
-| `modules/APW/04-architecture/architecture.md` | Confirm route, content, component, accessibility, responsive, metadata, deployment, and evidence architecture. |
-| `modules/APW/03-trs/technical-requirements-specification.md` | Confirm technical requirements and fully functional delivery controls. |
-| `modules/APW/02-frs/functional-requirements.md` | Confirm functional requirements and negative requirements. |
+| `modules/APW/08-builder-checklist/builder-checklist.md` | Confirm builder obligations, evidence requirements, stop rules, and handoff expectations. |
+| `modules/APW/08-builder-checklist/builder-checklist-qa-traceability-v0.2.md` | Confirm builder obligations map to IP-COR and Stage 6 QA IDs. |
+| `modules/APW/08-builder-checklist/builder-evidence-checklist-v0.2.md` | Confirm evidence expectations for later build. |
+| `modules/APW/07-implementation-plan/implementation-plan.md` | Confirm implementation planning and sequence. |
+| `modules/APW/07-implementation-plan/ip-cor-work-package-map-v0.2.md` | Confirm IP-COR work package to QA mapping. |
+| `modules/APW/07-implementation-plan/qa-to-green-evidence-map-v0.2.md` | Confirm evidence mapping to QA IDs. |
+| `modules/APW/06-pbfag/pbfag-v0.2.md` | Confirm pre-build acceptance and Stage 8 readiness. |
+| `modules/APW/05-qa-to-red/qa-to-red-catalog.md` | Confirm the RED suite future build must turn green. |
+| `modules/APW/04-architecture/architecture.md` | Confirm architecture v0.2A. |
+| `modules/APW/04-architecture/architecture-completeness-checklist-v0.2.md` | Confirm architecture canon completeness. |
+| `modules/APW/03-trs/technical-requirements-specification.md` | Confirm technical requirements. |
+| `modules/APW/02-frs/functional-requirements.md` | Confirm functional requirements. |
 
 ---
 
-## 4. Stage Status Summary
+## 4. Corrected Stage Status Summary
 
 | Stage | Artifact | Current Status | IAA Review Interest |
-|-------|----------|----------------|---------------------|
-| Stage 3 | FRS | Approved | Functional obligations and negative scope. |
-| Stage 4 | TRS | Approved | Technical obligations and FFD controls. |
-| Stage 5 | Architecture | Approved | Implementation architecture and evidence categories. |
-| Stage 6 | QA-to-Red | Approved | RED checks the implementation must turn green. |
-| Stage 7 | PBFAG | Approved | Functional assurance conditions. |
-| Stage 8 | Implementation Plan | Approved | Work packages and evidence plan. |
-| Stage 9 | Builder Checklist | Approved | Executable builder obligations and stop rules. |
-| Stage 10 | IAA Pre-Brief | Current wave | Independent assurance preparation before builder appointment. |
-| Stage 11 | Builder Appointment | Pending | No runtime implementation builder appointed yet. |
-| Stage 12 | Build Evidence | Pending | Build work not started. |
+|---|---|---|---|
+| Stage 1 | App Description v0.2 | Merged | Product goal and correction context. |
+| Stage 2 | UX Workflow v0.2 | Merged | Multi-page journeys and wiring. |
+| Stage 3 | FRS v0.2 | Merged | Functional obligations. |
+| Stage 4 | TRS v0.2 | Merged | Technical obligations. |
+| Stage 5 | Architecture v0.2A | Merged | Canon-complete implementation architecture. |
+| Stage 6 | QA-to-Red v0.2 | Merged | 30-test RED catalog and QA mappings. |
+| Stage 7 | PBFAG v0.2 | Merged | Pre-build readiness gate. |
+| Stage 8 | Implementation Plan v0.2 | Merged | IP-COR work packages, sequence, evidence map. |
+| Stage 9 | Builder Checklist v0.2 | Merged | Builder obligations and evidence checklist. |
+| Stage 10 | IAA Pre-Brief v0.2 | Current wave | Prepare IAA review for builder appointment. |
+| Stage 11 | Builder Appointment v0.2 | Pending | Appoint and bind future implementation builder. |
+| Stage 12 | Build Evidence | Pending | Build and prove green evidence later. |
 
 ---
 
 ## 5. Required Assurance Questions
 
-The IAA reviewer must answer each question explicitly.
-
-| ID | Assurance Question | Required Evidence Source | Pass Standard |
-|----|--------------------|--------------------------|---------------|
-| IAAQ-001 | Are all required upstream artifacts present and coherent? | Tracker, stages 3-9 | No missing required source; no unresolved contradiction. |
-| IAAQ-002 | Is the public-only v1 boundary clear enough for builder appointment? | Operating model, Stage 8, Stage 9 | Builder can identify prohibited scope without interpretation. |
-| IAAQ-003 | Are Stage 6 RED checks preserved through Stage 8 and Stage 9? | Stage 6 catalog, Stage 8, Stage 9 | Every D1-D12 domain maps to work/evidence obligations. |
-| IAAQ-004 | Does the Stage 9 checklist define executable builder obligations? | Stage 9 checklist | Checklist has source load, work packages, evidence, stop rules, and handover requirements. |
-| IAAQ-005 | Are fully functional build expectations inspectable? | Stage 6 D11, Stage 8 evidence plan, Stage 9 evidence checklist | Route, links, nav, responsive, keyboard, metadata, placeholder, legal route, and hub evidence are required. |
-| IAAQ-006 | Are legal/content/asset/social-preview conditions explicit? | Stage 7, Stage 8, Stage 9 | Conditions are visible and cannot be silently skipped. |
-| IAAQ-007 | Are stop/escalation rules strong enough? | Stage 9 checklist | Builder must stop for scope conflict, missing legal/content decisions, unknown links, or missing evidence. |
-| IAAQ-008 | Does Stage 10 avoid appointing the runtime builder? | Stage 10 scope and artifact | Stage 10 prepares assurance only. |
-| IAAQ-009 | Is Stage 11 ready to bind a builder to the checklist? | Stage 9 and this pre-brief | Builder appointment can incorporate exact obligations and acknowledgements. |
-| IAAQ-010 | Is CI/status posture honest and loop-resistant? | PR/status notes and operating model | No unavailable status is described as passing; no admin loop required solely because CI is absent. |
+| ID | Assurance Question | Pass Standard |
+|---|---|---|
+| IAAQ-001 | Are all required upstream artifacts present and coherent? | No missing required source and no unresolved contradiction. |
+| IAAQ-002 | Does Stage 9 define executable builder obligations? | Checklist contains source load, work packages, QA IDs, evidence, and stop rules. |
+| IAAQ-003 | Are Stage 6 QA IDs preserved through Stage 8 and Stage 9? | Work packages and checklist items map to QA IDs. |
+| IAAQ-004 | Are evidence requirements sufficient for later Stage 12? | Evidence checklist covers route, nav, design, content, accessibility, metadata, deployment, and QA mapping. |
+| IAAQ-005 | Is the approved public website boundary still clear? | Future builder can identify allowed and disallowed scope without interpretation. |
+| IAAQ-006 | Are stop/escalation rules strong enough? | Builder must stop for missing, contradictory, stale, or scope-changing conditions. |
+| IAAQ-007 | Does Stage 10 avoid appointing a builder? | Stage 10 prepares assurance only. |
+| IAAQ-008 | Is Stage 11 ready to bind the builder to the checklist? | Appointment can incorporate exact obligations and acknowledgements. |
+| IAAQ-009 | Is CI/status posture honest? | No unavailable status is described as passing. |
+| IAAQ-010 | Is PR #11 still treated as failed scaffold reference? | It is not used as build baseline. |
 
 ---
 
-## 6. RED-Domain Review Expectations
+## 6. Stage 6 QA Review Expectations
 
-The IAA reviewer must verify that Stage 11 Builder Appointment will require evidence for all Stage 6 RED domains.
+IAA must confirm that Stage 11 appointment will preserve the Stage 6 RED catalog, including:
 
-| Domain | IAA Must Confirm Before Builder Appointment |
-|--------|--------------------------------------------|
-| D1 | Homepage route and section sequence evidence will be required. |
-| D2 | Desktop/mobile navigation, anchors, and keyboard/menu evidence will be required. |
-| D3 | Training handoff link evidence will be required. |
-| D4 | APGI Hub seven-tile URL composition evidence will be required. |
-| D5 | Email/phone handoff and no-form evidence will be required. |
-| D6 | SEO/social metadata evidence will be required. |
-| D7 | Accessibility, keyboard, reduced-motion, and text-first evidence will be required. |
-| D8 | Responsive viewport and no-overflow evidence will be required. |
-| D9 | Placeholder, asset, legal route, and social image status evidence will be required. |
-| D10 | Public-only/no-private-dependency evidence will be required. |
-| D11 | Fully functional evidence pack will be required. |
-| D12 | Governance and exception evidence will be required. |
+- required page rendering;
+- navigation and CTA wiring;
+- services depth;
+- platform module behavior;
+- training and Thinkific handoff;
+- contact and legal routes;
+- design-system visibility;
+- accessibility basics;
+- responsive behavior;
+- metadata and social readiness;
+- environment, deployment, and Vercel evidence;
+- public-only boundary;
+- governance and build-to-green gate.
 
 ---
 
 ## 7. Builder Appointment Readiness Criteria
 
-IAA should recommend Stage 11 only if all criteria below are satisfied or explicitly dispositioned by CS2 / Johan Ras.
+IAA should recommend Stage 11 only if:
 
-| Criteria ID | Readiness Criterion | Expected State |
-|-------------|--------------------|----------------|
-| BAR-001 | Source package is complete. | All required artifacts available and coherent. |
-| BAR-002 | Builder obligations are explicit. | Stage 9 checklist can be attached to appointment without rewriting. |
-| BAR-003 | Scope boundaries are explicit. | Public-only v1 boundary and prohibited work are clear. |
-| BAR-004 | Evidence obligations are explicit. | D1-D12 evidence requirements are present. |
-| BAR-005 | Stop rules are explicit. | Builder must escalate missing, conflicting, or scope-expanding conditions. |
-| BAR-006 | Content/legal/asset conditions are explicit. | Placeholder, final copy, legal routes, social image, and assets are tracked. |
-| BAR-007 | CI/status posture is explicit. | Missing CI is recorded honestly and not treated as pass. |
-| BAR-008 | Role separation is intact. | IAA review precedes builder appointment and build evidence. |
+| Criteria | Expected State |
+|---|---|
+| Source package | Complete and coherent. |
+| Builder obligations | Explicit enough to attach to appointment. |
+| QA mapping | Stage 6 QA IDs preserved. |
+| Evidence obligations | Later evidence path is clear. |
+| Stop rules | Explicit and enforceable. |
+| Role separation | IAA review precedes appointment and build evidence. |
+| Build gate | Still intact unless CS2/Johan changes gate state. |
 
 ---
 
-## 8. Known Risks and Conditions
+## 8. Known Conditions
 
-| ID | Risk / Condition | Required IAA Handling |
-|----|------------------|-----------------------|
-| RISK-001 | Legal/privacy/terms copy may not be final. | Confirm governed live pages or placeholders are acceptable before builder appointment. |
-| RISK-002 | Final content/assets/social preview assets may not be approved. | Confirm text-first placeholders or approved assets are acceptable. |
-| RISK-003 | Public ISMS host/base URL may need environment configuration. | Confirm Stage 11 requires configuration acknowledgement. |
-| RISK-004 | CI may not report statuses. | Confirm no unavailable status is treated as passing. |
-| RISK-005 | Scope creep into backend/contact form/CRM/LMS/admin tooling. | Confirm Stage 11 binds builder to hard boundaries and stop rules. |
+| Condition | Required IAA Handling |
+|---|---|
+| Final legal/content/asset details may still need owner disposition. | Carry as explicit appointment condition if unresolved. |
+| Public APGI Hub base URL may need final configuration. | Carry environment/config acknowledgement into appointment. |
+| Current public deployment may not be a complete website yet. | Do not treat current deployment as Stage 12 evidence. |
+| Future implementation must follow Stage 9 checklist. | Confirm appointment binds builder to checklist. |
 
 ---
 
 ## 9. Recommended IAA Outcome Language
 
-IAA should return one of:
-
-- **Pass**: Ready for Stage 11 Builder Appointment with no open conditions.
-- **Conditional Pass**: Ready for Stage 11, with listed conditions carried into the builder appointment.
-- **Reject**: Not ready; correction required before builder appointment.
-- **Escalate**: CS2/Johan decision required before progression.
-
-Recommended expected outcome for current state:
+Expected outcome if no new blocker is found:
 
 ```text
-Conditional Pass - suitable for Stage 11 Builder Appointment, provided the appointment binds the implementation builder to the Stage 9 checklist, preserves public-only scope, carries legal/content/asset conditions, and requires D1-D12 evidence.
+Conditional Pass - suitable for Stage 11 Builder Appointment, provided the appointment binds the implementation builder to the Stage 9 checklist, preserves the approved public website boundary, carries unresolved owner-controlled content/configuration conditions, and requires Stage 6 QA-to-green evidence.
 ```
 
 ---
 
-## 10. Stage 10 Handover to Stage 11
+## 10. Handoff to Stage 11
 
-Stage 11 Builder Appointment should use this pre-brief and must include:
+Stage 11 Builder Appointment should include:
 
-- appointed implementation builder identity or role;
-- explicit source package acknowledgement;
-- Stage 9 checklist attachment or incorporation;
-- public-only v1 boundary acknowledgement;
-- D1-D12 evidence obligations;
-- content/legal/asset condition acknowledgement;
+- appointed builder identity or role;
+- source package acknowledgement;
+- Stage 9 checklist incorporation;
+- QA catalog acknowledgement;
+- evidence obligations;
+- known condition acknowledgement;
 - stop/escalation rules;
-- CI/status honesty rule;
-- handover requirements for Stage 12 Build Evidence.
+- handoff requirements for Stage 12 Build Evidence.
 
 ---
 
-## 11. Gate Statement
+## 11. Disposition
 
-This Stage 10 artifact approves progression to Stage 11 Builder Appointment only.
+**Decision**: Draft for review.
 
-It does not appoint the runtime implementation builder and does not authorize build work.
+**Implementation authorization**: Not granted.
 
-Implementation remains blocked until Stage 11 Builder Appointment and Stage 12 Build Evidence gates are complete or explicitly waived by CS2 / Johan Ras.
-
----
-
-## 12. Stage 10 Disposition
-
-**Foreman disposition**: Stage 10 IAA Pre-Brief is complete as a governed pre-builder-appointment assurance artifact.
-
-**IAA disposition**: Conditional Pass.
-
-**CS2 proxy disposition**: Approved by AI-assisted CS2 proxy evaluator for Johan Ras, because Johan explicitly instructed progression to Stage 10.
-
-**Next stage**: Stage 11 Builder Appointment.
+**Next stage after merge**: Corrective Stage 11 Builder Appointment v0.2.
