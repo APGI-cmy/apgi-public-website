@@ -1,0 +1,68 @@
+---
+import { routes, site } from '../data/site';
+
+const { title, description } = Astro.props;
+const pageTitle = title ? `${title} | ${site.shortName}` : `${site.name}`;
+const canonical = new URL(Astro.url.pathname, site.url).toString();
+const navRoutes = routes.filter((route) => !['privacy', 'terms'].includes(route.key));
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonical} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="stylesheet" href="/styles/global.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header" aria-label="Site header">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="APGI home">
+          <span class="brand-mark">APGI</span>
+          <span class="brand-copy">Assurance Protection Group Inc.</span>
+        </a>
+        <nav class="desktop-nav" aria-label="Primary navigation">
+          {navRoutes.map((route) => <a href={route.path}>{route.label}</a>)}
+        </nav>
+        <details class="mobile-nav">
+          <summary>Menu</summary>
+          <nav aria-label="Mobile navigation">
+            {navRoutes.map((route) => <a href={route.path}>{route.label}</a>)}
+          </nav>
+        </details>
+      </div>
+    </header>
+    <main id="main">
+      <slot />
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <section>
+          <h2>{site.shortName}</h2>
+          <p>{site.tagline}</p>
+          <p class="muted">Public website only. No backend form capture, CRM storage, authentication or private system access is provided here.</p>
+        </section>
+        <nav aria-label="Footer navigation">
+          <h2>Explore</h2>
+          <ul>
+            {routes.filter((route) => route.footer).map((route) => <li><a href={route.path}>{route.label}</a></li>)}
+          </ul>
+        </nav>
+        <section>
+          <h2>Contact</h2>
+          <p><a href={`mailto:${site.email}`}>{site.email}</a></p>
+          <p><a href={site.phoneHref}>{site.phone}</a></p>
+          <address>{site.address.map((line) => <>{line}<br /></>)}</address>
+        </section>
+      </div>
+    </footer>
+  </body>
+</html>
