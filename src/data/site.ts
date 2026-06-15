@@ -14,7 +14,7 @@ export const routes = [
   { key: 'home', path: '/', label: 'Home', title: 'APGI Public Website', description: 'Assurance Protection Group Inc. protects people, process and property through security risk mitigation, training, assurance and APGI Hub capabilities.', footer: true },
   { key: 'services', path: '/services', label: 'Services', title: 'Services', description: 'Security risk mitigation, assurance, training and operational support services for organizations protecting people, process and property.', footer: true },
   { key: 'platform', path: '/platform', label: 'APGI Hub', title: 'APGI Hub Platform', description: 'Public overview of the APGI Hub ecosystem and module readiness states.', footer: true },
-  { key: 'training', path: '/training', label: 'Training', title: 'Training', description: 'Security human rights, risk mitigation and custom training pathways with public Thinkific handoff.', footer: true },
+  { key: 'training', path: '/training', label: 'Training', title: 'Training', description: 'APGI classroom, contact-delivery and e-learning training catalogue covering security investigations, supervision, risk management, VPSHR, diamond controls and specialist awareness programmes.', footer: true },
   { key: 'about', path: '/about', label: 'About', title: 'About APGI', description: 'APGI story, operating principles and independent risk mitigation approach.', footer: true },
   { key: 'team', path: '/team', label: 'Team', title: 'Team', description: 'Governed team profile area with approved public-facing profile placeholders.', footer: true },
   { key: 'contact', path: '/contact', label: 'Contact', title: 'Contact APGI', description: 'Public APGI email, phone and office handoffs without backend form capture.', footer: true },
@@ -39,10 +39,32 @@ export const hubModules = [
   { name: 'Skills Development Portal', slug: 'marketing/skills-development' }
 ];
 
+export const classroomTraining = [
+  { title: 'Security Investigations', category: 'Investigations', duration: '4.5 days', delivery: 'Classroom / residential contact', audience: 'Personnel responsible for conducting investigations at mining operations.', overview: 'Basic investigations training covering scene handling, observation, preliminary evidence collection and case-docket preparation for handover.', assessment: 'Formative, summative, practical and post-training assignment.', cta: 'Contact APGI for classroom delivery' },
+  { title: 'Security Supervisor', category: 'Supervision', duration: '4.5 days', delivery: 'Classroom / residential contact', audience: 'Individuals responsible for supervising security personnel.', overview: 'Hands-on security supervisory training focused on assessing, guiding, coaching and mentoring subordinates in operational duties.', assessment: 'Formative and summative assessment.', cta: 'Contact APGI for classroom delivery' },
+  { title: 'Diamond Mining and Processing - A Security Perspective', category: 'Diamond controls', duration: '5 days', delivery: 'Classroom / residential contact', audience: 'Security Process Expert personnel in diamond mining operations.', overview: 'Detailed training on diamond recovery operations, vulnerabilities, indicators of theft, operational failures and loss-prevention opportunities.', assessment: 'Formative, summative, practical and post-training assignment.', cta: 'Contact APGI for classroom delivery' },
+  { title: 'Security Surveillance and Control Monitoring', category: 'Surveillance', duration: '4.5 days', delivery: 'Classroom / residential contact', audience: 'People and Process Monitoring personnel in mining operations.', overview: 'Surveillance, post-event review and targeted analysis training for high-risk activities, suspicious behaviour indicators and rights-respecting observation.', assessment: 'Formative, summative, practical and post-training assignment.', cta: 'Contact APGI for classroom delivery' },
+  { title: 'X-ray Scanning and Search Techniques', category: 'Search and screening', duration: '3.5 days', delivery: 'Classroom / residential contact', audience: 'Personnel viewing X-ray images at diamond mining operations.', overview: 'Training for critically interrogating X-ray images to detect diamonds concealed on or in the human body and prevent diamond theft.', assessment: 'Formative, summative, practical and post-training assignment.', cta: 'Contact APGI for classroom delivery' },
+  { title: 'Security Risk Management Training Programme', category: 'Risk management', duration: '4.5 days', delivery: 'Classroom / residential contact', audience: 'Key personnel managing security risk and conducting operational risk assessments.', overview: 'Security-context risk management training covering principles, frameworks, risk assessments and credible security-domain application.', assessment: 'Formative, summative and post-training assignment.', cta: 'Contact APGI for classroom delivery' },
+  { title: 'Voluntary Principles on Security and Human Rights - Level 1', category: 'VPSHR', duration: '3.5 days classroom / 1 month e-learning pathway', delivery: 'Classroom and e-learning pathway', audience: 'Security officers requiring foundational human-rights practice in law-enforcement responsibilities.', overview: 'Introduces VPSHR, broader human rights, workplace protection duties and practical human-rights awareness.', assessment: 'Formative and summative assessment.', cta: 'Open Thinkific or contact APGI' },
+  { title: 'Voluntary Principles on Security and Human Rights - Level 2', category: 'VPSHR', duration: '3.5 days', delivery: 'Classroom / residential contact', audience: 'Security officers with more advanced cognitive capabilities and human-rights responsibilities.', overview: 'Intermediate VPSHR and human-rights training for security officers applying international best-practice principles.', assessment: 'Formative and summative assessment.', cta: 'Contact APGI for classroom delivery' },
+  { title: 'Voluntary Principles on Security and Human Rights - Level 3', category: 'VPSHR', duration: '1.5 days', delivery: 'Classroom / residential contact', audience: 'Senior management responsible for designing and implementing VPSHR compliance.', overview: 'Management-level VPSHR training for implementation responsibility, due diligence and compliance oversight.', assessment: 'Formative, summative and post-training assignment.', cta: 'Contact APGI for classroom delivery' },
+  { title: 'Security Project Management', category: 'Project controls', duration: '5 days', delivery: 'Classroom / residential contact', audience: 'Security officials involved in or responsible for project environments.', overview: 'Training for applying security principles, norms and controls within project environments.', assessment: 'Formative, summative and post-training assignment.', cta: 'Contact APGI for classroom delivery' },
+  { title: 'Customer Relations in Security', category: 'Public interaction', duration: '2.5 days', delivery: 'Classroom / residential contact', audience: 'Security officers who deal with the public in rule or law-enforcement contexts.', overview: 'Practical role-play training for non-verbal communication, complaint handling, conflict defusing and assertive conduct without aggression.', assessment: 'Formative, summative and practical assessment.', cta: 'Contact APGI for classroom delivery' }
+];
+
+export const eLearningTraining = [
+  { title: 'Voluntary Principles on Security and Human Rights Level 0', status: 'Available on e-learning platform', detail: 'Foundational VPSHR course surface shown on the APGI platform catalogue.', meta: '17 lessons' },
+  { title: 'Voluntary Principles on Security and Human Rights Level 1 - Refresher 2025', status: 'Available on e-learning platform', detail: 'Refresher pathway for VPSHR Level 1 learners.', meta: '38 lessons' },
+  { title: 'Mastering Diamond Control Standards: A Comprehensive Guide', status: 'Available on e-learning platform', detail: 'Diamond control standards course aligned with APGI diamond-loss-prevention training depth.', meta: '62 lessons' },
+  { title: 'Tiger Kidnapping Awareness Programme', status: 'Available on e-learning platform', detail: 'Awareness training programme for tiger kidnapping threat recognition and mitigation.', meta: '30 lessons' },
+  { title: 'Tiger Kidnapping: Know the Threat / Assess Your Risk', status: 'Available on e-learning platform', detail: 'Short risk-awareness offering for tiger kidnapping threat assessment.', meta: '4 lessons' }
+];
+
 export const trainingOffers = [
-  { name: 'Security human rights foundations', status: 'Public storefront handoff', detail: 'Training pathway for practical security human rights awareness and decision-making.' },
-  { name: 'Risk mitigation skills', status: 'Structured offering', detail: 'Applied risk assessment, escalation and field-ready judgement training.' },
-  { name: 'Group and custom training', status: 'Contact APGI', detail: 'Custom cohorts and organizational programs are handled through direct public contact.' }
+  { name: 'Classroom and contact-delivery catalogue', status: `${classroomTraining.length} programmes`, detail: 'Security investigations, supervision, risk management, VPSHR, diamond controls, surveillance, search, projects and customer relations.' },
+  { name: 'E-learning platform offerings', status: `${eLearningTraining.length} offerings`, detail: 'Thinkific/public-platform course surface including VPSHR, Diamond Control and Tiger Kidnapping offerings.' },
+  { name: 'Group and custom training', status: 'Contact APGI', detail: 'Custom cohorts, classroom delivery and organization-specific outcomes are handled through direct public contact.' }
 ];
 
 export const pageContent = {
@@ -64,8 +86,8 @@ export const pageContent = {
   },
   training: {
     eyebrow: 'Training',
-    heading: 'Training that starts with people and moves toward safer decisions.',
-    intro: 'APGI training content is presented through structured offering cards and a public Thinkific handoff. No Thinkific administration or private course management URL is exposed.',
+    heading: 'Training that extends beyond VPSHR into a full APGI catalogue.',
+    intro: 'APGI training is presented as a structured catalogue with classroom/contact-delivery programmes and a separate public e-learning platform surface. VPSHR is one training family, not the whole training offer.',
     sections: []
   },
   about: {
