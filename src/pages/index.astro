@@ -1,0 +1,81 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { routes, services, hubModules, trainingOffers, site, hubHref } from '../data/site';
+const route = routes.find((item) => item.key === 'home');
+---
+<BaseLayout title={route?.title} description={route?.description}>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">Assurance Protection Group Inc.</p>
+        <h1>Protecting people, process and property.</h1>
+        <p class="lead">APGI helps organizations make better security risk decisions through practical advisory, assurance, mentorship and training.</p>
+        <div class="cta-row">
+          <a class="button" href="/services">Explore services</a>
+          <a class="button secondary" href="/contact">Contact APGI</a>
+        </div>
+      </div>
+      <aside class="hero-card" aria-label="APGI positioning">
+        <h2>Independent. Practical. People-first.</h2>
+        <p>APGI’s public website is now structured as a multi-page professional site, not a one-page scaffold.</p>
+        <p>Every major destination has a clear route, CTA and evidence path for Stage 12 QA.</p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container proof-panel">
+      <p class="eyebrow">Who we serve</p>
+      <h2>Clients with something valuable to protect need proportionate tools, continual verification and credible mentorship.</h2>
+      <p>APGI positions risk mitigation as a people-first discipline supported by experience, integrity and practical evidence.</p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Services preview</p>
+        <h2>Substantive service areas, each with a testable handoff.</h2>
+      </div>
+      <div class="grid two">
+        {services.map((service) => <article class="card"><h3>{service.name}</h3><p><strong>Need:</strong> {service.need}</p><p><strong>Outcome:</strong> {service.outcome}</p><a href={service.cta}>Continue</a></article>)}
+      </div>
+      <div class="cta-row"><a class="button" href="/services">View all services</a></div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">APGI Hub preview</p>
+        <h2>Platform modules are visible with safe pending states.</h2>
+      </div>
+      <div class="grid">
+        {hubModules.slice(0, 6).map((module) => <article class="card"><span class="status">{hubHref(module.slug) ? 'Public link' : 'Pending Hub base URL'}</span><h3>{module.name}</h3><p>Governed APGI Hub destination: <code>{module.slug}</code></p></article>)}
+      </div>
+      <div class="cta-row"><a class="button" href="/platform">Explore APGI Hub</a></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Training preview</p>
+        <h2>Training handoff is public, structured and does not expose administration URLs.</h2>
+      </div>
+      <div class="grid">
+        {trainingOffers.map((offer) => <article class="card"><span class="status">{offer.status}</span><h3>{offer.name}</h3><p>{offer.detail}</p></article>)}
+      </div>
+      <div class="cta-row"><a class="button" href={site.thinkificUrl}>Open Thinkific storefront</a><a class="button secondary" href="/training">View training page</a></div>
+    </div>
+  </section>
+
+  <section class="section alt">
+    <div class="container proof-panel">
+      <p class="eyebrow">Contact path</p>
+      <h2>Ready to discuss risk, training or assurance needs?</h2>
+      <p>Use public handoffs only: email, phone and contact route. No backend form capture is introduced.</p>
+      <div class="cta-row"><a class="button" href="/contact">Contact APGI</a><a class="button secondary" href={`mailto:${site.email}`}>{site.email}</a></div>
+    </div>
+  </section>
+</BaseLayout>

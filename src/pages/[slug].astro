@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { routes, services, hubModules, trainingOffers, site, pageContent, hubHref } from '../data/site';
+
+export function getStaticPaths() {
+  return routes
+    .filter((route) => route.path !== '/')
+    .map((route) => ({ params: { slug: route.path.slice(1) }, props: { route } }));
+}
+
+const { route } = Astro.props;
+const content = pageContent[route.key as keyof typeof pageContent];
+---
+<BaseLayout title={route.title} description={route.description}>
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <p class="eyebrow">{content.eyebrow}</p>
+        <h1>{content.heading}</h1>
+        <p class="lead">{content.intro}</p>
+        <div class="cta-row">
+          {route.key !== 'contact' && <a class="button" href="/contact">Contact APGI</a>}
+          {route.key === 'training' && <a class="button secondary" href={site.thinkificUrl}>Open Thinkific storefront</a>}
+          {route.key === 'platform' && <span class="button pending">Hub base URL pending if unset</span>}
+        </div>
+      </div>
+      <aside class="hero-card">
+        <h2>Stage 12 evidence note</h2>
+        <p>This route is rendered as a dedicated static page with shared navigation, metadata, footer links and public-only handoffs.</p>
+      </aside>
+    </div>
+  </section>
+
+  {route.key === 'services' && <section class="section"><div class="container"><div class="grid two">{services.map((service) => <article class="card"><h2>{service.name}</h2><p><strong>Need:</strong> {service.need}</p><p><strong>Outcome:</strong> {service.outcome}</p><a class="button secondary" href={service.cta}>Next step</a></article>)}</div></div></section>}
+
+  {route.key === 'platform' && <section class="section"><div class="container"><div class="section-head"><p class="eyebrow">Module registry</p><h2>Required APGI Hub modules</h2><p>Module links are composed from the governed frozen v1 APGI Hub map only when `ISMS_PUBLIC_BASE_URL` is configured. Otherwise, they show a polished pending state.</p></div><div class="grid">{hubModules.map((module) => { const href = hubHref(module.slug); return <article class="card"><span class="status">{href ? 'Public module link' : 'Pending'}</span><h3>{module.name}</h3><p>Governed destination: <code>{module.slug}</code></p>{href ? <a href={href}>Open module</a> : <span class="button pending">Pending Hub URL</span>}</article>; })}</div></div></section>}
+
+  {route.key === 'training' && <section class="section"><div class="container"><div class="grid">{trainingOffers.map((offer) => <article class="card"><span class="status">{offer.status}</span><h2>{offer.name}</h2><p>{offer.detail}</p></article>)}</div><div class="cta-row"><a class="button" href={site.thinkificUrl}>Open public Thinkific storefront</a><a class="button secondary" href="/contact">Ask about group training</a></div></div></section>}
+
+  {route.key === 'contact' && <section class="section"><div class="container"><div class="grid two"><article class="card"><h2>Email</h2><p><a href={`mailto:${site.email}`}>{site.email}</a></p><p>Direct public email handoff. No form capture or CRM storage.</p></article><article class="card"><h2>Phone</h2><p><a href={site.phoneHref}>{site.phone}</a></p><p>Direct public phone handoff.</p></article><article class="card"><h2>Office</h2><address>{site.address.map((line) => <>{line}<br /></>)}</address></article><article class="card legal-note"><h2>No backend form</h2><p>This page intentionally avoids backend contact-form processing, database storage or private API submission.</p></article></div></div></section>}
+
+  {['about','team','privacy','terms'].includes(route.key) && <section class="section"><div class="container"><div class="content-list">{content.sections.map((item) => <article class="card"><p>{item}</p></article>)}</div></div></section>}
+
+  {['privacy','terms'].includes(route.key) && <section class="section alt"><div class="container legal-note"><h2>Governed placeholder</h2><p>Final legal copy requires owner/legal approval before launch. This route exists to keep public navigation complete and honest during Stage 12.</p></div></section>}
+</BaseLayout>
