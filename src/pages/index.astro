@@ -51,7 +51,7 @@ const route = routes.find((item) => item.key === 'home');
         <h2>Platform modules are visible with safe pending states.</h2>
       </div>
       <div class="grid">
-        {hubModules.slice(0, 6).map((moduleName) => <article class="card"><span class="status">{hubHref(moduleName) ? 'Public link' : 'Pending Hub base URL'}</span><h3>{moduleName}</h3><p>APGI Hub module overview prepared for public route evidence.</p></article>)}
+        {hubModules.slice(0, 6).map((module) => <article class="card"><span class="status">{hubHref(module.slug) ? 'Public link' : 'Pending Hub base URL'}</span><h3>{module.name}</h3><p>Governed APGI Hub destination: <code>{module.slug}</code></p></article>)}
       </div>
       <div class="cta-row"><a class="button" href="/platform">Explore APGI Hub</a></div>
     </div>
