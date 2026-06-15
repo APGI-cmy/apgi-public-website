@@ -30,13 +30,13 @@ export const services = [
 ];
 
 export const hubModules = [
-  'MMM',
-  'Risk',
-  'PIT',
-  'Incident / Intelligence',
-  'Data / Remote Assurance',
-  'RADAM',
-  'Skills Portal'
+  { name: 'Maturity Roadmap / MMM', slug: 'marketing/maturity-roadmap' },
+  { name: 'Risk Management', slug: 'marketing/risk-management' },
+  { name: 'Project Implementation Tracker / PIT', slug: 'marketing/project-implementation' },
+  { name: 'Incident & Intelligence Hub', slug: 'marketing/incident-intelligence' },
+  { name: 'Data Analytics & Remote Assurance', slug: 'marketing/data-analytics-assurance' },
+  { name: 'Systems Integration / RADAM', slug: 'marketing/systems-integration' },
+  { name: 'Skills Development Portal', slug: 'marketing/skills-development' }
 ];
 
 export const trainingOffers = [
@@ -100,8 +100,8 @@ export const pageContent = {
   }
 };
 
-export function hubHref(moduleName: string) {
+export function hubHref(moduleSlug: string) {
   const base = import.meta.env.ISMS_PUBLIC_BASE_URL;
   if (!base) return null;
-  return `${base.replace(/\/$/, '')}/${moduleName.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+  return `${base.replace(/\/$/, '')}/${moduleSlug}`;
 }
