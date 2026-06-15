@@ -2,7 +2,7 @@
 
 **Module**: APW (APGI Public Website)  
 **Module Slug**: APW  
-**Status**: Corrective Stage 10 IAA Pre-Brief v0.2 drafted  
+**Status**: Corrective Stage 11 Builder Appointment v0.2 drafted  
 **Last Updated**: 2026-06-11  
 **Authority**: CS2: Johan Ras  
 **Canonical Root**: `modules/APW`
@@ -34,9 +34,9 @@ Current position:
 7. Stage 7 PBFAG v0.2 - complete / merged in PR #19.
 8. Stage 8 Implementation Plan v0.2 - complete / merged in PR #20.
 9. Stage 9 Builder Checklist v0.2 - complete / merged in PR #21.
-10. Stage 10 IAA Pre-Brief v0.2 - active current wave on branch `apw-stage10-iaa-prebrief-v02`.
-11. Stage 11 Builder Appointment v0.2 - pending.
-12. Stage 12 Upgraded Build Evidence - blocked until corrected pre-build chain is approved.
+10. Stage 10 IAA Pre-Brief v0.2 - complete / merged in PR #22.
+11. Stage 11 Builder Appointment v0.2 - active current wave on branch `apw-stage11-builder-appointment-v02`.
+12. Stage 12 Upgraded Build Evidence - pending / gated until Stage 11 review and merge.
 
 ---
 
@@ -61,9 +61,9 @@ A build is not green merely because it compiles or deploys. It must satisfy the 
 | 7 | `06-pbfag` | PBFAG | Corrective v0.2 approved | PR #19 merged; validates readiness for Stage 8 planning. |
 | 8 | `07-implementation-plan` | Implementation Plan | Corrective v0.2 approved | PR #20 merged; plans IP-COR packages and maps them to Stage 6 QA/evidence. |
 | 9 | `08-builder-checklist` | Builder Checklist | Corrective v0.2 approved | PR #21 merged; binds future builder to IP-COR, Stage 6 QA IDs, and evidence requirements. |
-| 10 | `09-iaa-pre-brief` | IAA Pre-Brief | Corrective v0.2 drafted for review | Active branch `apw-stage10-iaa-prebrief-v02`; prepares assurance review before builder appointment. |
-| 11 | `10-builder-appointment` | Builder Contract | Requires corrective realignment | Must bind future builder to corrected checklist and evidence duties. |
-| 12 | `11-build` | Build Evidence | Blocked | Upgraded build remains blocked until corrected pre-build chain is approved. |
+| 10 | `09-iaa-pre-brief` | IAA Pre-Brief | Corrective v0.2 approved | PR #22 merged; prepared assurance review before builder appointment. |
+| 11 | `10-builder-appointment` | Builder Appointment | Corrective v0.2 drafted for review | Active branch `apw-stage11-builder-appointment-v02`; appoints and binds Stage 12 builder. |
+| 12 | `11-build` | Build Evidence | Pending / gated | Upgraded build remains pending until Stage 11 is reviewed and merged. |
 
 ---
 
@@ -80,13 +80,14 @@ A build is not green merely because it compiles or deploys. It must satisfy the 
 | apw-stage7-pbfag-v02-20260608 | `apw-stage7-pbfag-v02` | Merged | PR #19 merged. |
 | apw-stage8-implementation-plan-v02-20260610 | `apw-stage8-implementation-plan-v02` | Merged | PR #20 merged. |
 | apw-stage9-builder-checklist-v02-20260610 | `apw-stage9-builder-checklist-v02` | Merged | PR #21 merged. |
-| apw-stage10-iaa-prebrief-v02-20260611 | `apw-stage10-iaa-prebrief-v02` | Draft PR pending | Corrective Stage 10 IAA Pre-Brief v0.2 drafted; ready for review after PR creation. |
+| apw-stage10-iaa-prebrief-v02-20260611 | `apw-stage10-iaa-prebrief-v02` | Merged | PR #22 merged; Stage 10 complete. |
+| apw-stage11-builder-appointment-v02-20260611 | `apw-stage11-builder-appointment-v02` | Drafted | Corrective Stage 11 Builder Appointment v0.2 drafted for review. |
 | apw-stage12-build-evidence-20260601 | `foreman/apw-stage12-build-evidence` | Closed / scaffold reference | PR #11 closed. |
 
 ---
 
 ## Current Focus
 
-Review and merge Corrective Stage 10 IAA Pre-Brief v0.2. After acceptance, proceed to Corrective Stage 11 Builder Appointment v0.2.
+Review Corrective Stage 11 Builder Appointment v0.2. After acceptance and merge, proceed to Corrective Stage 12 Build Evidence.
 
-No upgraded implementation resumes until corrected pre-build artifacts are aligned and approved.
+No upgraded implementation resumes until Stage 11 is reviewed and approved.

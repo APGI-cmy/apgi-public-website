@@ -1,221 +1,144 @@
-# APW Stage 11 - Builder Appointment
+# APW Corrective Stage 11 - Builder Appointment v0.2
 
 ## Status Header
 
 | Field | Value |
-|-------|-------|
+|---|---|
 | Module | APW - APGI Public Website |
 | Stage | 11 - Builder Appointment |
 | Folder | `modules/APW/10-builder-appointment` |
-| Version | v0.1 |
-| Status | Approved for Stage 12 Build Evidence progression |
+| Version | v0.2 |
+| Status | Drafted for review |
 | Owner | Johan Ras |
 | Authority | CS2: Johan Ras |
-| Approval Method | AI-assisted CS2 proxy evaluation for Johan Ras |
-| Approval Date | 2026-06-01 |
-| Last Updated | 2026-06-01 |
-| Upstream Stage | `modules/APW/09-iaa-pre-brief/iaa-pre-brief.md` |
-| Scope Declaration | `.agent-admin/scope-declarations/apw-stage11-builder-appointment-20260601.md` |
-| Artifact Builder Appointment | `.agent-admin/builder-appointments/apw-stage11-builder-appointment-20260601-artifact-builder-contract.md` |
-| IAA Review | `.agent-admin/assurance/iaa-review-apw-stage11-builder-appointment-20260601.md` |
-| CS2 Proxy Sign-Off | `.agent-admin/signoffs/cs2-proxy-stage11-builder-appointment-signoff-20260601.md` |
+| Branch | `apw-stage11-builder-appointment-v02` |
+| Upstream Merge Commit | `e1168b8fe47f0db40429382067dffb7a6dfdebe2` |
+| Upstream Stage | Stage 10 IAA Pre-Brief v0.2, merged in PR #22 |
+| Next Stage | Stage 12 Build Evidence |
 
 ---
 
 ## 1. Purpose
 
-This Stage 11 artifact appoints the APW implementation builder for Stage 12 Build Evidence.
+This artifact appoints the future implementation builder for Corrective Stage 12 Build Evidence.
 
-It binds the implementation builder to the approved pre-build source package, Stage 9 Builder Checklist, Stage 10 IAA Pre-Brief, public-only v1 scope, Vercel/environment readiness conditions, D1-D12 evidence obligations, and stop/escalation rules.
+It binds that builder to the corrected APW source package, Stage 8 Implementation Plan, Stage 9 Builder Checklist, Stage 6 QA-to-Red catalog, and Stage 12 evidence obligations.
 
-This artifact does not itself provide build evidence. Build evidence is Stage 12.
+This Stage 11 artifact does not build website pages, does not alter runtime source, does not deploy, and does not treat the earlier scaffold as a finished APW website.
 
 ---
 
-## 2. Appointed Implementation Builder
+## 2. Appointment
 
 | Field | Value |
-|-------|-------|
-| Appointed Builder Role | APW Runtime Implementation Builder |
-| Appointed By | Foreman under CS2 authority |
-| Appointment Scope | Stage 12 Build Evidence for APW public website |
-| Appointment Status | Approved for activation after this PR is merged |
-| Governing Checklist | `modules/APW/08-builder-checklist/builder-checklist.md` |
-| Assurance Brief | `modules/APW/09-iaa-pre-brief/iaa-pre-brief.md` |
+|---|---|
+| Appointed Role | APW Stage 12 Implementation Builder |
+| Appointment Authority | CS2 / Johan Ras |
+| Execution Vehicle | Future Stage 12 implementation wave / PR |
+| Appointment Scope | Build and evidence the corrected APW public website under Stage 12 |
+| Appointment Condition | Activation only after Stage 11 review and merge, unless CS2 explicitly overrides |
 
-The appointed builder may begin Stage 12 build work only after this Stage 11 appointment is merged or explicitly waived by CS2 / Johan Ras.
+The appointed builder must produce Stage 12 build evidence, not just code changes.
 
 ---
 
 ## 3. Required Source Acknowledgement
 
-Before beginning Stage 12 work, the implementation builder must load and acknowledge:
+Before beginning Stage 12 work, the builder must acknowledge the source package listed in `builder-source-acknowledgement-v0.2.md`.
 
-| Source | Required Builder Acknowledgement |
-|--------|----------------------------------|
-| `FOREMAN_OPERATING_MODEL.md` | Governance and gate rules understood. |
-| `modules/APW/BUILD_PROGRESS_TRACKER.md` | Current stage state understood. |
-| `modules/APW/09-iaa-pre-brief/iaa-pre-brief.md` | IAA assurance questions and readiness criteria understood. |
-| `modules/APW/08-builder-checklist/builder-checklist.md` | Builder obligations, evidence requirements, and stop rules accepted. |
-| `modules/APW/07-implementation-plan/implementation-plan.md` | Work packages and evidence plan understood. |
-| `modules/APW/06-pbfag/pbfag-checklist.md` | PBFAG conditions understood. |
-| `modules/APW/05-qa-to-red/qa-to-red-catalog.md` | RED checks and acceptance criteria understood. |
-| `modules/APW/04-architecture/architecture.md` | Architecture constraints understood. |
-| `modules/APW/03-trs/technical-requirements-specification.md` | Technical requirements understood. |
-| `modules/APW/02-frs/functional-requirements.md` | Functional requirements and negative requirements understood. |
+Minimum binding sources include:
 
-The builder must stop if required sources are missing, inconsistent, or materially stale.
+- `FOREMAN_OPERATING_MODEL.md`
+- `modules/APW/BUILD_PROGRESS_TRACKER.md`
+- Stage 9 Builder Checklist artifacts under `modules/APW/08-builder-checklist/`
+- Stage 8 Implementation Plan artifacts under `modules/APW/07-implementation-plan/`
+- Stage 7 PBFAG artifacts under `modules/APW/06-pbfag/`
+- Stage 6 QA-to-Red artifacts under `modules/APW/05-qa-to-red/`
+- Stage 5 Architecture artifacts under `modules/APW/04-architecture/`
+- Stage 4 TRS and Stage 3 FRS artifacts
+
+The builder must stop if required source files are missing, contradictory, stale, or materially incomplete.
 
 ---
 
-## 4. Public-Only Scope Boundary
+## 4. Checklist and QA Binding
 
-The Stage 12 builder must preserve the APW v1 public-only/static-first website boundary.
+The builder is bound to:
 
-The builder must not introduce:
+- Stage 9 Builder Checklist tasks and evidence gates;
+- Stage 8 implementation sequencing and work-package mapping;
+- Stage 6 QA IDs `APW-QA-001` through `APW-QA-030`;
+- Stage 12 evidence capture requirements.
 
-- authenticated staff tooling;
-- CRM or lead database;
-- contact-form backend processing;
-- LMS replacement or Thinkific administration;
-- ISMS backend logic;
-- database-backed workflows;
-- LinkedIn scraping or synchronization;
-- unapproved analytics, tracking, CMS, or marketing automation;
-- private configuration exposure in public output;
-- unapproved public claims, testimonials, client marks, or regulated content.
-
-Any deviation requires Foreman escalation and CS2/Johan disposition before work continues.
+No Stage 6 QA item may be marked green by assumption alone.
 
 ---
 
-## 5. Vercel Project and Environment Timing
+## 5. Stage 12 Evidence Obligations
 
-### 5.1 When Johan should create the Vercel project
+Stage 12 must later prove the actual APW website, including:
 
-The correct point to create the related Vercel project is **after Stage 11 Builder Appointment is approved/merged and before the Stage 12 builder needs deployment evidence**.
+- required public routes;
+- desktop and mobile navigation;
+- footer and CTA links;
+- homepage, services, platform / APGI Hub, training, about, team, contact, privacy, and terms coverage;
+- Thinkific and contact handoffs;
+- premium design system evidence;
+- accessibility and responsive checks;
+- metadata and social readiness;
+- environment example and public-only configuration;
+- Vercel deployment evidence;
+- build and validation output;
+- QA-to-green mapping back to Stage 6 QA IDs.
 
-Practically:
-
-1. Stage 11 appoints the implementation builder and records required configuration.
-2. Johan creates or connects the Vercel project before Stage 12 deployment/preview evidence is collected.
-3. Stage 12 records the project connection, environment values, preview URL behavior, and deployment evidence.
-
-If Johan wants to create the Vercel project earlier, that is acceptable as administrative preparation, but Stage 12 evidence must still verify it.
-
-### 5.2 Minimum Vercel setup expected before Stage 12 evidence
-
-| Item | Required State |
-|------|----------------|
-| Vercel project | Created or connected to `APGI-cmy/apgi-public-website`. |
-| Production branch | Confirmed as `main` unless CS2 approves another branch. |
-| Preview deployments | Enabled for PR branches if available. |
-| Build command | Confirmed from project scripts or recorded as not yet applicable. |
-| Output settings | Confirmed from project framework or recorded as not yet applicable. |
-| Public environment variables | Added where required. |
-| Secrets | No private secrets exposed to client code. |
-| Custom domain | Optional unless CS2 provides launch-domain instruction. |
-
-### 5.3 Environment variables expected for APW v1
-
-The current pre-build package expects at least a public APGI Hub base URL variable or equivalent.
-
-| Variable | Purpose | Required Before |
-|----------|---------|-----------------|
-| `ISMS_PUBLIC_BASE_URL` or equivalent public config | Compose APGI Hub links using approved frozen slugs. | Stage 12 hub evidence. |
-
-The builder must not invent private env vars or require secrets unless a later governed artifact approves that scope.
+Current deployability, scaffold output, or a 404 page is not completion evidence.
 
 ---
 
-## 6. Stage 12 Build Evidence Obligations
+## 6. Stop and Escalation Rules
 
-The implementation builder must produce evidence for all Stage 6 RED domains:
+The builder must stop and escalate to Foreman / CS2 when:
 
-| Domain | Stage 12 Evidence Required |
-|--------|-----------------------------|
-| D1 | Public home route renders and required section flow is present. |
-| D2 | Desktop/mobile navigation, anchors, focus, and menu behavior are verified. |
-| D3 | Training handoff URLs are correct and public. |
-| D4 | APGI Hub seven-tile link composition is correct. |
-| D5 | Contact email/phone handoffs work and no backend form capture exists. |
-| D6 | SEO/social metadata is APGI-specific and does not overclaim. |
-| D7 | Accessibility basics, keyboard operation, reduced motion, and text-first meaning are evidenced. |
-| D8 | Responsive viewport behavior and no critical overflow are evidenced. |
-| D9 | Placeholder honesty, asset status, legal route status, and social image status are evidenced. |
-| D10 | Public-only/no-private-dependency and no secret exposure are evidenced. |
-| D11 | Fully functional delivery evidence pack is complete. |
-| D12 | Governance, exceptions, and handover are recorded. |
-
-No RED domain may be closed by assumption alone.
-
----
-
-## 7. Content, Legal, and Asset Conditions
-
-The implementation builder must maintain explicit status for:
-
-- legal/privacy/terms content or governed placeholders;
-- placeholder copy and final copy;
-- team/profile content;
-- testimonials or proof claims;
-- client or partner marks;
-- social preview image;
-- imagery and icon rights;
-- APGI Hub host/base URL;
-- training links;
-- contact details.
-
-If content or assets are not approved, the builder must use governed placeholders or text-first alternatives and record this in Stage 12 evidence.
-
----
-
-## 8. Stop and Escalation Rules
-
-The implementation builder must stop and escalate to Foreman if:
-
-- required source artifacts conflict;
-- implementation would require backend, auth, database, CRM, LMS administration, or private API scope;
-- Vercel project or environment configuration is unavailable when deployment evidence is required;
-- required legal/content/asset decisions are unclear;
-- a RED check cannot be satisfied without scope change;
-- a required link target is unknown or unsafe;
+- required source artifacts conflict or cannot be found;
+- Stage 12 work would require unapproved backend, database, authentication, CRM, LMS administration, private API, or contact-form processing scope;
 - evidence cannot be produced for a claimed complete item;
-- CI/status is unavailable and a stakeholder attempts to treat it as passing.
+- a route, link, content, legal, training, Hub, or deployment decision is missing;
+- Vercel or environment setup blocks required evidence;
+- CI/status output is absent and someone attempts to treat it as passing;
+- PR #11 scaffold behavior is being treated as the APW product baseline.
 
 ---
 
-## 9. Stage 12 Handover Requirements
+## 7. Known Conditions
 
-Stage 12 Build Evidence must include:
-
-- source acknowledgement by the implementation builder;
-- branch and commit inspected;
-- project structure and command inventory;
-- build/test/lint/typecheck results or honest no-command explanation;
-- Vercel project/deployment evidence where applicable;
-- D1-D12 evidence matrix;
-- unresolved exceptions and CS2 disposition needs;
-- confirmation that no out-of-scope backend/auth/CRM/LMS/admin capability was introduced.
+- PR #11 remains closed and retained only as scaffold reference.
+- Stage 11 may authorize movement into Stage 12 after review and merge.
+- Stage 11 does not itself perform implementation.
+- Stage 12 must prove the fully functional, premium, multi-page APGI public website.
+- Public configuration variables include `ISMS_PUBLIC_BASE_URL` and `APW_PUBLIC_SITE_URL`; these are public config values, not secrets.
 
 ---
 
-## 10. Gate Statement
+## 8. Handoff
 
-This Stage 11 artifact approves progression to Stage 12 Build Evidence after PR review/merge.
+The Stage 12 builder must begin with:
 
-It appoints the implementation builder for Stage 12, but does not itself provide build evidence or complete implementation.
+1. source acknowledgement;
+2. branch and baseline confirmation;
+3. implementation plan and checklist mapping;
+4. route and evidence plan;
+5. build and validation command inventory;
+6. deployment evidence plan;
+7. QA-to-green matrix tied to `APW-QA-001` through `APW-QA-030`.
 
-Runtime build work remains accountable to Stage 12 evidence and CS2/Johan disposition.
+Detailed handoff requirements are recorded in `stage12-handoff-v0.2.md`.
 
 ---
 
-## 11. Stage 11 Disposition
+## 9. Gate Statement
 
-**Foreman disposition**: Stage 11 Builder Appointment is complete as a governed implementation-builder appointment artifact.
+Corrective Stage 11 Builder Appointment v0.2 is a governance and appointment stage.
 
-**IAA disposition**: Conditional Pass.
+It conditionally appoints the APW Stage 12 Implementation Builder and binds that role to the corrected pre-build package.
 
-**CS2 proxy disposition**: Approved by AI-assisted CS2 proxy evaluator for Johan Ras, because Johan explicitly asked whether Stage 11 can proceed and requested progression where valid.
-
-**Next stage**: Stage 12 Build Evidence.
+After review and merge, the project may proceed to Corrective Stage 12 Build Evidence.
