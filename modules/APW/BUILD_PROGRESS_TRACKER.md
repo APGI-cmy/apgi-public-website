@@ -2,7 +2,7 @@
 
 **Module**: APW (APGI Public Website)  
 **Module Slug**: APW  
-**Status**: APW v0.4 Stage 1 and Stage 2 hardening drafted  
+**Status**: APW v0.4 FRS drafted  
 **Last Updated**: 2026-06-16  
 **Authority**: CS2: Johan Ras  
 **Canonical Root**: `modules/APW`
@@ -33,8 +33,9 @@ The active wave is APW v0.4 prebuild realignment on branch `apw-maturion-offerin
 | UX Workflow v0.4 | Drafted | Defines visitor journeys, page wiring, conversion paths, and interaction behavior. |
 | Journey matrix | Drafted | Maps visitor needs to first page, interaction pattern, and conversion path. |
 | UX hardening | Drafted | Defines cards, hover/click behavior, Ask fallback, Train routing, required sections, and accessibility. |
-| FRS v0.4 | Pending | Next stage after independent review. |
-| TRS v0.4 | Pending | Follows FRS. |
+| FRS v0.4 | Drafted | Defines functional requirements APW-FR-V04-001 through APW-FR-V04-040. |
+| FRS trace matrix | Drafted | Maps upstream intent to FRS requirement IDs. |
+| TRS v0.4 | Pending | Next stage. |
 | Architecture v0.4 | Pending | Follows TRS. |
 | QA-to-Red v0.4 | Pending | Required before implementation. |
 | Build-to-green | Blocked | No implementation until QA-to-Red exists. |
@@ -43,4 +44,4 @@ The active wave is APW v0.4 prebuild realignment on branch `apw-maturion-offerin
 
 ## Current Focus
 
-Perform the second independent review of Stage 1 and Stage 2 hardening before proceeding to FRS v0.4.
+Review FRS v0.4, then proceed to TRS v0.4.
