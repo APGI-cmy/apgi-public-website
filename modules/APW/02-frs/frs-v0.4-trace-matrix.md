@@ -6,24 +6,26 @@ Drafted for review.
 
 ## Purpose
 
-This trace matrix links Stage 1 and Stage 2 v0.4 intent to the FRS v0.4 requirement IDs.
+This trace matrix links Stage 1 and Stage 2 v0.4 intent to the FRS v0.4 requirement IDs, including the v0.4A hardening addendum.
 
 | Upstream intent | FRS coverage |
 |---|---|
 | Maturity-led APGI positioning | APW-FR-V04-001 to APW-FR-V04-004 |
-| Security Philosophy page | APW-FR-V04-005 to APW-FR-V04-006 |
-| Operational Maturity Roadmap page | APW-FR-V04-007 to APW-FR-V04-009 |
+| Security Philosophy page | APW-FR-V04-005 to APW-FR-V04-006; APW-FR-V04-045 to APW-FR-V04-049 |
+| Operational Maturity Roadmap page | APW-FR-V04-007 to APW-FR-V04-009; APW-FR-V04-050 to APW-FR-V04-055 |
 | Consulting and Implementation page | APW-FR-V04-010 to APW-FR-V04-011 |
 | Remote Assurance page | APW-FR-V04-012 to APW-FR-V04-013 |
-| Digital Tools / Maturion ISMS page | APW-FR-V04-014 to APW-FR-V04-015 |
-| Case Studies page | APW-FR-V04-016 to APW-FR-V04-017 |
-| Training continuation | APW-FR-V04-018 to APW-FR-V04-019 |
+| Digital Tools / Maturion ISMS page | APW-FR-V04-014 to APW-FR-V04-015; APW-FR-V04-056 to APW-FR-V04-063 |
+| Case Studies page | APW-FR-V04-016 to APW-FR-V04-017; APW-FR-V04-075 to APW-FR-V04-078 |
+| Training continuation | APW-FR-V04-018 to APW-FR-V04-019; APW-FR-V04-071 to APW-FR-V04-074 |
 | Required card families | APW-FR-V04-020 to APW-FR-V04-023 |
-| Hover -> Click -> Ask -> Train | APW-FR-V04-024 to APW-FR-V04-032 |
+| Route and page completeness | APW-FR-V04-041 to APW-FR-V04-044 |
+| Hover -> Click -> Ask -> Train | APW-FR-V04-024 to APW-FR-V04-032; APW-FR-V04-064 to APW-FR-V04-070 |
 | No-dead-end and conversion paths | APW-FR-V04-033 to APW-FR-V04-034 |
-| Mobile and accessibility behavior | APW-FR-V04-035 to APW-FR-V04-036 |
+| Mobile and accessibility behavior | APW-FR-V04-035 to APW-FR-V04-036; APW-FR-V04-079 to APW-FR-V04-084 |
 | Public-safe knowledge boundary | APW-FR-V04-037 to APW-FR-V04-039 |
 | Static public-site boundary | APW-FR-V04-040 and negative requirements |
+| Build-level functional green criteria | FRS hardening addendum section 10 |
 
 ## Gate
 
