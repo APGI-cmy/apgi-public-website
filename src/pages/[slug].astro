@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { routes, services, hubModules, trainingOffers, site, pageContent, hubHref } from '../data/site';
+import { routes, services, hubModules, trainingOffers, classroomTraining, eLearningTraining, site, pageContent, hubHref } from '../data/site';
 
 export function getStaticPaths() {
   return routes
@@ -35,7 +35,50 @@ const content = pageContent[route.key as keyof typeof pageContent];
 
   {route.key === 'platform' && <section class="section"><div class="container"><div class="section-head"><p class="eyebrow">Module registry</p><h2>Required APGI Hub modules</h2><p>Module links are composed from the governed frozen v1 APGI Hub map only when `ISMS_PUBLIC_BASE_URL` is configured. Otherwise, they show a polished pending state.</p></div><div class="grid">{hubModules.map((module) => { const href = hubHref(module.slug); return <article class="card"><span class="status">{href ? 'Public module link' : 'Pending'}</span><h3>{module.name}</h3><p>Governed destination: <code>{module.slug}</code></p>{href ? <a href={href}>Open module</a> : <span class="button pending">Pending Hub URL</span>}</article>; })}</div></div></section>}
 
-  {route.key === 'training' && <section class="section"><div class="container"><div class="grid">{trainingOffers.map((offer) => <article class="card"><span class="status">{offer.status}</span><h2>{offer.name}</h2><p>{offer.detail}</p></article>)}</div><div class="cta-row"><a class="button" href={site.thinkificUrl}>Open public Thinkific storefront</a><a class="button secondary" href="/contact">Ask about group training</a></div></div></section>}
+  {route.key === 'training' && <>
+    <section class="section alt">
+      <div class="container">
+        <div class="grid">
+          {trainingOffers.map((offer) => <article class="card"><span class="status">{offer.status}</span><h2>{offer.name}</h2><p>{offer.detail}</p></article>)}
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Classroom / contact delivery</p>
+          <h2>APGI classroom training catalogue</h2>
+          <p>These programmes are available for classroom, residential-contact, group, or custom delivery. Cards use a contact handoff rather than pretending every course is self-enrolment.</p>
+        </div>
+        <div class="grid two">
+          {classroomTraining.map((course) => <article class="card"><span class="status">{course.category} · {course.duration}</span><h3>{course.title}</h3><p>{course.overview}</p><p><strong>Who should attend:</strong> {course.audience}</p><p><strong>Delivery:</strong> {course.delivery}</p><p><strong>Assessment:</strong> {course.assessment}</p><a class="button secondary" href="/contact">{course.cta}</a></article>)}
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">E-learning platform</p>
+          <h2>Available public e-learning offerings</h2>
+          <p>These offerings are shown as the public course-platform surface. Course-specific links can be added later when governed public URLs are supplied.</p>
+        </div>
+        <div class="grid">
+          {eLearningTraining.map((course) => <article class="card"><span class="status">{course.meta}</span><h3>{course.title}</h3><p>{course.detail}</p><p><strong>Status:</strong> {course.status}</p><a class="button" href={site.thinkificUrl}>Open Thinkific storefront</a></article>)}
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container proof-panel">
+        <p class="eyebrow">Training handoff</p>
+        <h2>Need classroom, group, or organization-specific delivery?</h2>
+        <p>APGI can discuss classroom programmes, e-learning handoffs, VPSHR levels, diamond-control training, risk-management training, surveillance/search programmes and custom delivery.</p>
+        <div class="cta-row"><a class="button" href="/contact">Contact APGI about training</a><a class="button secondary" href={site.thinkificUrl}>Open e-learning storefront</a></div>
+      </div>
+    </section>
+  </>}
 
   {route.key === 'contact' && <section class="section"><div class="container"><div class="grid two"><article class="card"><h2>Email</h2><p><a href={`mailto:${site.email}`}>{site.email}</a></p><p>Direct public email handoff. No form capture or CRM storage.</p></article><article class="card"><h2>Phone</h2><p><a href={site.phoneHref}>{site.phone}</a></p><p>Direct public phone handoff.</p></article><article class="card"><h2>Office</h2><address>{site.address.map((line) => <>{line}<br /></>)}</address></article><article class="card legal-note"><h2>No backend form</h2><p>This page intentionally avoids backend contact-form processing, database storage or private API submission.</p></article></div></div></section>}
 
