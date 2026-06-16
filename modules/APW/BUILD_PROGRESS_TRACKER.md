@@ -2,13 +2,12 @@
 
 **Module**: APW (APGI Public Website)  
 **Module Slug**: APW  
-**Status**: Corrective Stage 12 Training Catalogue Expansion v0.3 drafted  
-**Last Updated**: 2026-06-15  
+**Status**: APW v0.4 App Description Alignment drafted  
+**Last Updated**: 2026-06-16  
 **Authority**: CS2: Johan Ras  
 **Canonical Root**: `modules/APW`
 
-> **Document Role**: Primary module-stage progress tracker for the APGI Public Website process.  
-> **Governance Source**: `FOREMAN_OPERATING_MODEL.md`
+> **Document Role**: Primary module-stage progress tracker for the APGI Public Website process.
 
 ---
 
@@ -16,43 +15,29 @@
 
 PR #24 merged the first corrected Astro implementation baseline for APW.
 
-This wave expands the Training page content using the uploaded APGI Training Course Catalogue and e-learning platform screenshot.
+PR #25 merged the Training Catalogue Expansion v0.3.
+
+The active wave is now APW v0.4 App Description Alignment on branch `apw-maturion-offerings-appdesc-v04`.
 
 ---
 
-## Corrective Plan Status
-
-1. Stage 1 App Description v0.2 - complete / merged in PR #12.
-2. Stage 2 UX Workflow & Wiring v0.2 - complete / merged in PR #13.
-3. Stage 3 FRS v0.2 - complete / merged in PR #14.
-4. Stage 4 TRS v0.2 - complete / merged in PR #15.
-5. Stage 5 Architecture v0.2A - complete / merged through PR #16 and PR #17.
-6. Stage 6 QA-to-Red v0.2 - complete / merged in PR #18.
-7. Stage 7 PBFAG v0.2 - complete / merged in PR #19.
-8. Stage 8 Implementation Plan v0.2 - complete / merged in PR #20.
-9. Stage 9 Builder Checklist v0.2 - complete / merged in PR #21.
-10. Stage 10 IAA Pre-Brief v0.2 - complete / merged in PR #22.
-11. Stage 11 Builder Appointment v0.2 - complete / merged in PR #23.
-12. Stage 12 Build Evidence v0.2 - baseline implementation merged in PR #24.
-13. Stage 12 Training Catalogue Expansion v0.3 - active current wave on branch `apw-training-v02`.
-
----
-
-## Stage 12 v0.3 Scope
+## Current v0.4 Scope
 
 | Area | Status | Notes |
 |---|---|---|
-| App Description addendum | Drafted | Training offerings expansion requirement added. |
-| UX Workflow addendum | Drafted | Classroom/contact and e-learning discovery journeys defined. |
-| FRS addendum | Drafted | Training catalogue functional requirements added. |
-| TRS addendum | Drafted | Static content model and validation requirements added. |
-| Architecture addendum | Drafted | Structured training data and rendering pattern defined. |
-| QA-to-Red addendum | RED -> validation pending | Training-specific QA tests added. |
-| Build implementation | Drafted | `src/data/site.ts` and `/training` route updated. |
-| Vercel validation | Pending | To be checked after PR creation. |
+| Stage 1 pointer | Drafted | Opens the v0.4 planning wave. |
+| Offering map | Drafted | Defines the required public offering areas. |
+| Interaction model | Drafted | Defines Hover -> Click -> Ask -> Train. |
+| Knowledge boundary | Drafted | Defines public-site boundary for Maturion knowledge references. |
+| UX Workflow v0.4 | Pending | Next stage. |
+| FRS v0.4 | Pending | Follows UX. |
+| TRS v0.4 | Pending | Follows FRS. |
+| Architecture v0.4 | Pending | Follows TRS. |
+| QA-to-Red v0.4 | Pending | Required before implementation. |
+| Build-to-green | Blocked | No implementation until QA-to-Red exists. |
 
 ---
 
 ## Current Focus
 
-Open and validate the Stage 12 Training Catalogue Expansion PR. Confirm `/training` renders the expanded catalogue, Vercel build is green, and classroom/e-learning handoffs behave correctly.
+Review the Stage 1 v0.4 App Description Alignment artifacts, then proceed to UX Workflow and Wiring v0.4.
