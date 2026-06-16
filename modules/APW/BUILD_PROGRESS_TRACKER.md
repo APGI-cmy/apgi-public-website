@@ -2,7 +2,7 @@
 
 **Module**: APW (APGI Public Website)  
 **Module Slug**: APW  
-**Status**: APW v0.4 App Description Alignment drafted  
+**Status**: APW v0.4 UX Workflow and Wiring drafted  
 **Last Updated**: 2026-06-16  
 **Authority**: CS2: Johan Ras  
 **Canonical Root**: `modules/APW`
@@ -17,7 +17,7 @@ PR #24 merged the first corrected Astro implementation baseline for APW.
 
 PR #25 merged the Training Catalogue Expansion v0.3.
 
-The active wave is now APW v0.4 App Description Alignment on branch `apw-maturion-offerings-appdesc-v04`.
+The active wave is now APW v0.4 prebuild realignment on branch `apw-maturion-offerings-appdesc-v04`.
 
 ---
 
@@ -29,8 +29,9 @@ The active wave is now APW v0.4 App Description Alignment on branch `apw-maturio
 | Offering map | Drafted | Defines the required public offering areas. |
 | Interaction model | Drafted | Defines Hover -> Click -> Ask -> Train. |
 | Knowledge boundary | Drafted | Defines public-site boundary for Maturion knowledge references. |
-| UX Workflow v0.4 | Pending | Next stage. |
-| FRS v0.4 | Pending | Follows UX. |
+| UX Workflow v0.4 | Drafted | Defines visitor journeys, page wiring, conversion paths, and interaction behavior. |
+| Journey matrix | Drafted | Maps visitor needs to first page, interaction pattern, and conversion path. |
+| FRS v0.4 | Pending | Next stage. |
 | TRS v0.4 | Pending | Follows FRS. |
 | Architecture v0.4 | Pending | Follows TRS. |
 | QA-to-Red v0.4 | Pending | Required before implementation. |
@@ -40,4 +41,4 @@ The active wave is now APW v0.4 App Description Alignment on branch `apw-maturio
 
 ## Current Focus
 
-Review the Stage 1 v0.4 App Description Alignment artifacts, then proceed to UX Workflow and Wiring v0.4.
+Review UX Workflow and Wiring v0.4, then proceed to FRS v0.4.
