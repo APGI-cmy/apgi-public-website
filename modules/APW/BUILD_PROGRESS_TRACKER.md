@@ -2,7 +2,7 @@
 
 **Module**: APW (APGI Public Website)  
 **Module Slug**: APW  
-**Status**: APW v0.4 FRS hardening drafted  
+**Status**: APW v0.4 TRS drafted  
 **Last Updated**: 2026-06-16  
 **Authority**: CS2: Johan Ras  
 **Canonical Root**: `modules/APW`
@@ -36,8 +36,9 @@ The active wave is APW v0.4 prebuild realignment on branch `apw-maturion-offerin
 | FRS v0.4 | Drafted | Defines functional requirements APW-FR-V04-001 through APW-FR-V04-040. |
 | FRS hardening addendum | Drafted | Adds APW-FR-V04-041 through APW-FR-V04-084 and build-level functional success criteria. |
 | FRS trace matrix | Updated | Maps upstream intent to base and hardening requirement IDs. |
-| TRS v0.4 | Pending | Next stage after focused FRS review. |
-| Architecture v0.4 | Pending | Follows TRS. |
+| TRS v0.4 | Drafted | Defines technical requirements APW-TR-V04-001 through APW-TR-V04-052. |
+| TRS trace matrix | Drafted | Maps FRS groups to TRS requirement groups. |
+| Architecture v0.4 | Pending | Next stage. |
 | QA-to-Red v0.4 | Pending | Required before implementation. |
 | Build-to-green | Blocked | No implementation until QA-to-Red exists. |
 
@@ -45,4 +46,4 @@ The active wave is APW v0.4 prebuild realignment on branch `apw-maturion-offerin
 
 ## Current Focus
 
-Perform focused FRS review, then proceed to TRS v0.4 if passed.
+Review TRS v0.4, then proceed to Architecture v0.4.
