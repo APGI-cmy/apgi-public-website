@@ -1,11 +1,19 @@
 # APW Stage 12 v0.4 - Intent QA-to-Red
 
-**Wave:** Stage 12 Website Intent Build Alignment v0.4  
-**Branch:** `apw-stage12-intent-build-v04`  
-**Authority:** CS2 - Johan Ras  
-**Root intent anchor:** `APW_WEBSITE_INTENT.md`  
-**Prebuild alignment:** Stage 1-11 intent addenda merged in PR #27  
-**Status:** QA-to-Red before implementation
+## Status Header
+
+| Field | Value |
+|---|---|
+| Module | APW - APGI Public Website |
+| Stage | 12 - Build Evidence |
+| Addendum | Website Intent Build Alignment QA-to-Red |
+| Version | v0.4 |
+| Status | QA-to-Red before implementation |
+| Owner | Johan Ras |
+| Authority | CS2: Johan Ras |
+| Branch | `apw-stage12-intent-build-v04` |
+| Root Intent Anchor | `APW_WEBSITE_INTENT.md` |
+| Prebuild Alignment | Stage 1-11 intent addenda merged in PR #27 |
 
 ---
 
