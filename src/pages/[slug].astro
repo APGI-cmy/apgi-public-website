@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { routes, services, hubModules, trainingOffers, classroomTraining, eLearningTraining, site, pageContent, hubHref } from '../data/site';
+import { routes, services, hubModules, trainingOffers, classroomTraining, eLearningTraining, site, pageContent, hubHref, freeAssessment, freeAssessmentHref, maturityJourney, situationAwareness, learningPattern, caseStudyModel } from '../data/site';
 
 export function getStaticPaths() {
   return routes
@@ -10,6 +10,7 @@ export function getStaticPaths() {
 
 const { route } = Astro.props;
 const content = pageContent[route.key as keyof typeof pageContent];
+const assessmentHref = freeAssessmentHref();
 ---
 <BaseLayout title={route.title} description={route.description}>
   <section class="hero">
@@ -21,21 +22,89 @@ const content = pageContent[route.key as keyof typeof pageContent];
         <div class="cta-row">
           {route.key !== 'contact' && <a class="button" href="/contact">Contact APGI</a>}
           {route.key === 'training' && <a class="button secondary" href={site.thinkificUrl}>Open Thinkific storefront</a>}
-          {route.key === 'platform' && <span class="button pending">Hub base URL pending if unset</span>}
+          {route.key === 'platform' && (assessmentHref ? <a class="button secondary" href={assessmentHref}>{freeAssessment.cta}</a> : <a class="button secondary" href="/contact">{freeAssessment.fallback}</a>)}
         </div>
       </div>
       <aside class="hero-card">
-        <h2>Stage 12 evidence note</h2>
-        <p>This route is rendered as a dedicated static page with shared navigation, metadata, footer links and public-only handoffs.</p>
+        <h2>Intent alignment note</h2>
+        <p>This public route is aligned to `APW_WEBSITE_INTENT.md`: APGI is presented through loss prevention, maturity journey, safe public handoffs and no unapproved backend scope.</p>
       </aside>
     </div>
   </section>
 
-  {route.key === 'services' && <section class="section"><div class="container"><div class="grid two">{services.map((service) => <article class="card"><h2>{service.name}</h2><p><strong>Need:</strong> {service.need}</p><p><strong>Outcome:</strong> {service.outcome}</p><a class="button secondary" href={service.cta}>Next step</a></article>)}</div></div></section>}
+  {route.key === 'services' && <>
+    <section class="section alt">
+      <div class="container proof-panel">
+        <p class="eyebrow">Service philosophy</p>
+        <h2>Services support the movement from exposed to resilient.</h2>
+        <p>APGI's services are not isolated offerings. They support the client journey from maturity assessment and gap identification through roadmap delivery, capability building, control monitoring and assurance.</p>
+      </div>
+    </section>
+    <section class="section"><div class="container"><div class="grid two">{services.map((service) => <article class="card"><h2>{service.name}</h2><p><strong>Need:</strong> {service.need}</p><p><strong>Outcome:</strong> {service.outcome}</p><a class="button secondary" href={service.cta}>Next step</a></article>)}</div></div></section>
+  </>}
 
-  {route.key === 'platform' && <section class="section"><div class="container"><div class="section-head"><p class="eyebrow">Module registry</p><h2>Required APGI Hub modules</h2><p>Module links are composed from the governed frozen v1 APGI Hub map only when `ISMS_PUBLIC_BASE_URL` is configured. Otherwise, they show a polished pending state.</p></div><div class="grid">{hubModules.map((module) => { const href = hubHref(module.slug); return <article class="card"><span class="status">{href ? 'Public module link' : 'Pending'}</span><h3>{module.name}</h3><p>Governed destination: <code>{module.slug}</code></p>{href ? <a href={href}>Open module</a> : <span class="button pending">Pending Hub URL</span>}</article>; })}</div></div></section>}
+  {route.key === 'platform' && <>
+    <section class="section alt">
+      <div class="container proof-panel">
+        <p class="eyebrow">Maturity journey</p>
+        <h2>APGI Hub begins with assessment and moves toward resilient operations.</h2>
+        <p>The platform ecosystem helps organizations assess current maturity, identify gaps, create a roadmap, manage implementation, monitor evidence, resolve incidents, train people and strengthen assurance over time.</p>
+        <div class="cta-row">
+          {assessmentHref ? <a class="button" href={assessmentHref}>{freeAssessment.cta}</a> : <a class="button" href="/contact">{freeAssessment.fallback}</a>}
+          <a class="button secondary" href="/training">Build capability through training</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><p class="eyebrow">Roadmap flow</p><h2>The maturity pathway</h2><p>This journey explains why the APGI Hub modules belong together.</p></div>
+        <div class="grid">
+          {maturityJourney.map((item, index) => <article class="card"><span class="status">Step {index + 1}</span><h3>{item.step}</h3><p>{item.detail}</p></article>)}
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head"><p class="eyebrow">Ecosystem roles</p><h2>Required APGI Hub modules, mapped to the journey</h2><p>Module links are composed from the governed APGI Hub map only when `ISMS_PUBLIC_BASE_URL` is configured. Otherwise, they show a polished pending state.</p></div>
+        <div class="grid">
+          {hubModules.map((module) => { const href = hubHref(module.slug); return <article class="card"><span class="status">{module.role}</span><h3>{module.name}</h3><p>{module.journey}</p><p class="muted">Governed destination: <code>{module.slug}</code></p>{href ? <a class="button secondary" href={href}>Open module</a> : <span class="button pending">Pending Hub URL</span>}</article>; })}
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><p class="eyebrow">Situational awareness</p><h2>As maturity improves, evidence becomes more live and less dependent on memory.</h2><p>APGI's model helps organizations understand work, risk, controls, evidence and escalation before loss becomes normal.</p></div>
+        <div class="grid two">{situationAwareness.map((item) => <article class="card"><p>{item}</p></article>)}</div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head"><p class="eyebrow">Hover / click / ask / train</p><h2>A layered learning model for complex maturity concepts</h2></div>
+        <div class="grid">{learningPattern.map((item) => <article class="card"><h3>{item.label}</h3><p>{item.detail}</p></article>)}</div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head"><p class="eyebrow">Case studies</p><h2>Success stories must be anonymised unless permission exists.</h2><p>Future case studies should show risk, APGI intervention and maturity improvement without naming clients or projects unless explicit approval is recorded.</p></div>
+        <div class="grid two">{caseStudyModel.map((item) => <article class="card"><h3>{item.label}</h3><p>{item.detail}</p></article>)}</div>
+      </div>
+    </section>
+  </>}
 
   {route.key === 'training' && <>
+    <section class="section alt">
+      <div class="container proof-panel">
+        <p class="eyebrow">Training in the maturity journey</p>
+        <h2>Capability building helps people move from compliance to resilient practice.</h2>
+        <p>Training supports the roadmap by helping people understand risk, procedures, controls, evidence, conduct and escalation expectations.</p>
+      </div>
+    </section>
+
     <section class="section alt">
       <div class="container">
         <div class="grid">
