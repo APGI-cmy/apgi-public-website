@@ -8,12 +8,14 @@
 | Stage | 12 - Build Evidence |
 | Addendum | Website Intent Build Alignment |
 | Version | v0.4 |
-| Status | Drafted for PR validation |
+| Status | Validated for PR review |
 | Owner | Johan Ras |
 | Authority | CS2: Johan Ras |
 | Branch | `apw-stage12-intent-build-v04` |
 | Upstream Baseline | PR #26 root intent canon and PR #27 Stage 1-11 prebuild intent alignment |
 | Root Intent Anchor | `APW_WEBSITE_INTENT.md` |
+| PR | #28 |
+| Vercel Status | Success / Ready on PR head `7f4bad29fb35e8405401d1bafd89865f889ee9b3` |
 
 ---
 
@@ -33,7 +35,7 @@ The build remains static-first and public-only. It does not add backend assessme
 | Structured content | `src/data/site.ts` adds loss framing, maturity journey, free assessment, ecosystem roles, real-time awareness, hover/click/ask/train and case-study model content. |
 | Homepage | `src/pages/index.astro` now leads with loss prevention, maturity journey, free assessment CTA, ecosystem role preview and learning pattern. |
 | Platform route | `src/pages/[slug].astro` now renders a journey-led APGI Hub page rather than only a module registry. |
-| Build evidence | `modules/APW/11-build/build-evidence.md` updated for v0.4. |
+| Build evidence | `modules/APW/11-build/build-evidence.md` updated for v0.4 and PR validation. |
 | Tracker | `modules/APW/BUILD_PROGRESS_TRACKER.md` updated for the Stage 12 v0.4 wave. |
 
 ---
@@ -100,4 +102,7 @@ The Training page retains the v0.3 catalogue and now explicitly frames training 
 
 ## 6. Validation Status
 
-Validation is pending PR creation and Vercel status inspection.
+- PR #28 is open and mergeable.
+- GitHub review threads: none open/unresolved at review time.
+- Vercel PR status: success / Ready on head `7f4bad29fb35e8405401d1bafd89865f889ee9b3` before this evidence-status patch.
+- This evidence-status patch is documentation-only and does not alter runtime implementation.
