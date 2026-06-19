@@ -7,12 +7,13 @@
 | Module | APW - APGI Public Website |
 | Stage | Post-merge readiness review |
 | Version | v0.5 |
-| Status | Started - initial configuration blocker identified |
+| Status | In progress - APW Vercel deployment URL confirmed |
 | Owner | Johan Ras |
 | Authority | CS2: Johan Ras |
 | Branch | `apw-post-merge-readiness-v05` |
 | Main Baseline | PR #29 merge commit `61230a701666626e8b2386a56b279064b995488f` |
 | Root Intent Anchor | `APW_WEBSITE_INTENT.md` |
+| Confirmed APW Validation URL | `https://apgi-public-website.vercel.app/` |
 
 ---
 
@@ -32,7 +33,9 @@ This review checks whether APW is ready for public launch, whether configuration
 - PR #29: post-PR28 tracker update.
 - `modules/APW/BUILD_PROGRESS_TRACKER.md` on `main`.
 - GitHub/Vercel commit status for PR #29 merge commit.
-- Public production domain check for `https://apginc.ca/`.
+- CS2-provided live deployment URL: `https://apgi-public-website.vercel.app/`.
+- CS2-provided screenshot confirming the new APW homepage is visible on that URL.
+- Public custom domain check for `https://apginc.ca/`.
 
 ---
 
@@ -44,33 +47,55 @@ This review checks whether APW is ready for public launch, whether configuration
 
 **Disposition:** PASS for build status.
 
-### 2. Public production domain
+### 2. Confirmed APW deployment URL
 
-The public domain `https://apginc.ca/` does not currently appear to serve the newly merged Astro/APW implementation. It still presents the legacy public website content and navigation, including legacy sections such as `Who We Are`, `Who You Are`, `Our Philanthropy`, and `Who Our Clients Are`.
+CS2 confirmed that Vercel deploys the new APW implementation to:
 
-The expected APW v0.4 homepage should lead with loss prevention through maturity and include the maturity journey/free assessment/APGI Hub narrative. That is not visible on the current public domain check.
+`https://apgi-public-website.vercel.app/`
 
-**Disposition:** CONFIGURATION REQUIRED / LAUNCH BLOCKER.
+The supplied screenshot shows the expected APW v0.4 homepage content, including:
 
-### 3. Public route coverage on production domain
+- APGI public navigation with `Home`, `Services`, `APGI Hub`, `Training`, `About`, `Team`, and `Contact`.
+- Hero eyebrow: `Loss prevention through maturity`.
+- Hero headline: `Reduce the opportunities that become loss.`
+- Free assessment CTA.
+- Maturity journey CTA.
+- Supporting panel: `From exposed to resilient.`
+
+**Disposition:** PASS for APW Vercel deployment visibility.
+
+### 3. Public custom domain
+
+The public custom domain `https://apginc.ca/` appears to still serve the legacy APGI website content and navigation, including legacy sections such as `Who We Are`, `Who You Are`, `Our Philanthropy`, and `Who Our Clients Are`.
+
+This no longer means the APW deployment is missing. It means `apginc.ca` is a separate custom-domain mapping / launch decision.
+
+**Disposition:** CONFIGURATION DECISION REQUIRED, not a source/build blocker.
+
+### 4. Public route coverage
 
 The v0.4 source implements the governed routes expected for APW, including `/`, `/services`, `/platform`, `/training`, `/about`, `/team`, `/contact`, `/privacy`, and `/terms`.
 
-However, because `https://apginc.ca/` appears to be serving the legacy site, route-level public verification cannot be completed against the intended production domain yet.
+The homepage route has been visually confirmed by CS2 on `https://apgi-public-website.vercel.app/`.
 
-**Disposition:** BLOCKED by production domain mapping/configuration.
+The remaining route checks should be performed against the confirmed APW Vercel URL, not `https://apginc.ca/`, unless CS2 decides that `apginc.ca` must be mapped before route validation.
 
-### 4. Free maturity assessment CTA
+**Disposition:** IN PROGRESS.
+
+### 5. Free maturity assessment CTA
 
 The source implements the free maturity assessment handoff using `ISMS_PUBLIC_BASE_URL` when configured, otherwise falling back to contact-assisted access.
 
-Because the production domain is not serving the new APW implementation, the live CTA cannot yet be validated on `https://apginc.ca/`.
+CS2 screenshot shows the CTA label `Start free assessment` on the Vercel deployment. The target behaviour still needs to be clicked/validated:
 
-**Disposition:** CONFIGURATION REQUIRED.
+- If `ISMS_PUBLIC_BASE_URL` is configured, CTA should route to the APGI Hub / ISMS maturity-roadmap destination.
+- If not configured, CTA should use the governed fallback/contact-assisted path.
 
-### 5. Content/design/legal/profile launch polish
+**Disposition:** LIVE CTA CHECK REQUIRED.
 
-The merged source still includes governed placeholders for legal copy and team/profile copy. These may be acceptable for internal preview, but they are not automatically public-launch ready.
+### 6. Content/design/legal/profile launch polish
+
+The merged source still includes governed placeholders for legal copy and team/profile copy. These may be acceptable for internal preview or soft launch, but they are not automatically public-launch ready.
 
 **Disposition:** POLISH / CS2 DECISION REQUIRED.
 
@@ -80,41 +105,52 @@ The merged source still includes governed placeholders for legal copy and team/p
 
 | Gap ID | Area | Finding | Disposition | Required action |
 |---|---|---|---|---|
-| APW-V05-GAP-001 | Production domain | `https://apginc.ca/` appears to serve the legacy site, not the merged Astro/APW implementation. | CONFIGURATION REQUIRED - BLOCKER | Confirm Vercel production alias/domain mapping and deploy the merged APW build to the public domain. |
-| APW-V05-GAP-002 | Production route validation | Public route checks cannot be completed on the intended domain while it serves the legacy site. | BLOCKED | Re-run route review after domain/deployment mapping is corrected. |
-| APW-V05-GAP-003 | Free assessment handoff | CTA behaviour cannot be verified on production until the APW implementation is live on the domain. | CONFIGURATION REQUIRED | Confirm `ISMS_PUBLIC_BASE_URL` or accept contact-assisted pending handoff. |
-| APW-V05-GAP-004 | Legal copy | `/privacy` and `/terms` source routes still use governed placeholder wording. | CS2 DECISION | Decide whether placeholders are acceptable or final legal copy is required before launch. |
-| APW-V05-GAP-005 | Team/profile copy | `/team` source route still uses approved-placeholder profile wording. | CS2 DECISION | Decide whether placeholders are acceptable or approved public profile copy is required before launch. |
-| APW-V05-GAP-006 | Public case studies | Source provides anonymised case-study model only, not final case studies. | NON-BLOCKING / CS2 DECISION | Decide whether model-only content is acceptable for launch or whether anonymised examples should be added later. |
+| APW-V05-GAP-001 | APW deployment URL | New APW implementation is visible at `https://apgi-public-website.vercel.app/`. | PASS | Continue live validation on this URL. |
+| APW-V05-GAP-002 | Custom public domain | `https://apginc.ca/` appears to serve legacy APGI site content, not the new APW implementation. | CONFIGURATION DECISION | Decide whether/when to map `apginc.ca` to the new Vercel APW deployment. |
+| APW-V05-GAP-003 | Live route validation | Homepage has been visually confirmed on the Vercel URL; remaining routes still need live review. | IN PROGRESS | Check `/platform`, `/training`, `/services`, `/about`, `/team`, `/contact`, `/privacy`, and `/terms` on `https://apgi-public-website.vercel.app/`. |
+| APW-V05-GAP-004 | Free assessment handoff | CTA is visible on the Vercel homepage; target behaviour still requires live click/path validation. | CHECK REQUIRED | Confirm `ISMS_PUBLIC_BASE_URL` path or accept governed contact-assisted fallback. |
+| APW-V05-GAP-005 | Legal copy | `/privacy` and `/terms` source routes still use governed placeholder wording. | CS2 DECISION | Decide whether placeholders are acceptable or final legal copy is required before launch. |
+| APW-V05-GAP-006 | Team/profile copy | `/team` source route still uses approved-placeholder profile wording. | CS2 DECISION | Decide whether placeholders are acceptable or approved public profile copy is required before launch. |
+| APW-V05-GAP-007 | Public case studies | Source provides anonymised case-study model only, not final case studies. | NON-BLOCKING / CS2 DECISION | Decide whether model-only content is acceptable for launch or whether anonymised examples should be added later. |
 
 ---
 
 ## Current Disposition
 
-**CONFIGURATION REQUIRED.**
+**IN PROGRESS - APW VERCEL DEPLOYMENT CONFIRMED.**
 
-The merged APW source and main build status are in a good state, but the public production domain check indicates that the new APW implementation is not yet what visitors see at `https://apginc.ca/`.
+The earlier blocker is narrowed: APW is visible on the Vercel deployment URL, but `apginc.ca` remains a custom-domain mapping / launch decision.
 
-This is a launch blocker until the domain/deployment mapping is corrected or CS2 confirms that a different production URL should be used for APW launch validation.
+Public launch readiness cannot be finally granted until the remaining live routes and CTA behaviour are reviewed, and CS2 decides whether legal/team placeholders are acceptable.
 
 ---
 
 ## Recommended Next Actions
 
-1. Confirm whether `https://apginc.ca/` is intended to serve the new Astro APW implementation immediately.
-2. If yes, configure the Vercel production domain/alias so the merged `main` deployment is served at `https://apginc.ca/`.
-3. Confirm `ISMS_PUBLIC_BASE_URL` for the free maturity assessment destination, or formally accept the contact-assisted pending fallback.
-4. Re-run route validation after the domain is corrected.
-5. Decide whether legal/team placeholders are launch-acceptable or require a v0.6 polish wave.
+1. Use `https://apgi-public-website.vercel.app/` as the v0.5 validation URL unless CS2 instructs otherwise.
+2. Check the remaining live routes:
+   - `/platform`
+   - `/training`
+   - `/services`
+   - `/about`
+   - `/team`
+   - `/contact`
+   - `/privacy`
+   - `/terms`
+3. Click/verify the `Start free assessment` CTA behaviour.
+4. Decide whether `https://apginc.ca/` should be mapped to this new Vercel deployment now or later.
+5. Decide whether legal/team placeholders are acceptable for launch or require a v0.6 polish wave.
 
 ---
 
-## Not Started / Blocked Checks
+## Remaining Checks
 
-The following checks remain blocked until the production domain serves the APW implementation:
+The following checks remain open:
 
 - live `/platform` content check;
 - live `/training` content check;
 - live `/services`, `/about`, `/team`, `/contact`, `/privacy`, `/terms` checks;
-- live CTA checks;
-- live responsive and visual inspection of the production domain.
+- live free assessment CTA check;
+- live responsive and visual inspection beyond the confirmed homepage screenshot;
+- CS2 decision on custom-domain mapping;
+- CS2 decision on legal/team/profile placeholders.
