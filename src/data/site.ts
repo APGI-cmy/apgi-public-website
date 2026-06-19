@@ -1,7 +1,7 @@
 export const site = {
   name: 'Assurance Protection Group Inc.',
   shortName: 'APGI',
-  tagline: 'Protecting people, process and property.',
+  tagline: 'Loss prevention through operational maturity.',
   url: import.meta.env.APW_PUBLIC_SITE_URL || 'https://apginc.ca',
   email: 'info@apginc.ca',
   phone: '(416) 642-9974',
@@ -11,18 +11,50 @@ export const site = {
 };
 
 export const routes = [
-  { key: 'home', path: '/', label: 'Home', title: 'APGI Public Website', description: 'Assurance Protection Group Inc. protects people, process and property through security risk mitigation, training, assurance and APGI Hub capabilities.', footer: true },
-  { key: 'services', path: '/services', label: 'Services', title: 'Services', description: 'Security risk mitigation, assurance, training and operational support services for organizations protecting people, process and property.', footer: true },
-  { key: 'platform', path: '/platform', label: 'APGI Hub', title: 'APGI Hub Platform', description: 'Public overview of the APGI Hub ecosystem and module readiness states.', footer: true },
-  { key: 'training', path: '/training', label: 'Training', title: 'Training', description: 'APGI classroom, contact-delivery and e-learning training catalogue covering security investigations, supervision, risk management, VPSHR, diamond controls and specialist awareness programmes.', footer: true },
-  { key: 'about', path: '/about', label: 'About', title: 'About APGI', description: 'APGI story, operating principles and independent risk mitigation approach.', footer: true },
+  { key: 'home', path: '/', label: 'Home', title: 'APGI Public Website', description: 'APGI helps organizations prevent malicious and non-malicious loss by assessing maturity, identifying gaps, building roadmaps and connecting clients to APGI Hub, training, monitoring and assurance.', footer: true },
+  { key: 'services', path: '/services', label: 'Services', title: 'Services', description: 'Loss-prevention, maturity roadmap, risk, assurance, training and operational support services for organizations moving toward resilient operations.', footer: true },
+  { key: 'platform', path: '/platform', label: 'APGI Hub', title: 'APGI Hub Platform', description: 'Journey-led public overview of APGI Hub modules supporting maturity assessment, roadmap implementation, risk management, PIT, RADAM, training and assurance.', footer: true },
+  { key: 'training', path: '/training', label: 'Training', title: 'Training', description: 'APGI classroom, contact-delivery and e-learning training catalogue supporting capability-building across the maturity journey.', footer: true },
+  { key: 'about', path: '/about', label: 'About', title: 'About APGI', description: 'APGI story, loss-prevention philosophy, maturity approach and independent risk mitigation principles.', footer: true },
   { key: 'team', path: '/team', label: 'Team', title: 'Team', description: 'Governed team profile area with approved public-facing profile placeholders.', footer: true },
   { key: 'contact', path: '/contact', label: 'Contact', title: 'Contact APGI', description: 'Public APGI email, phone and office handoffs without backend form capture.', footer: true },
   { key: 'privacy', path: '/privacy', label: 'Privacy', title: 'Privacy', description: 'Governed privacy placeholder for the APGI public website.', footer: true },
   { key: 'terms', path: '/terms', label: 'Terms', title: 'Terms', description: 'Governed terms placeholder for the APGI public website.', footer: true }
 ];
 
+export const lossTypes = [
+  {
+    name: 'Malicious loss',
+    summary: 'Loss caused by deliberate wrongdoing, fraud, theft, collusion or exploitation of control weaknesses.',
+    detail: 'APGI helps organizations reduce the opportunities that allow people to exploit weak processes, poor visibility, unclear accountability or immature controls.'
+  },
+  {
+    name: 'Non-malicious loss',
+    summary: 'Loss caused by operational failure, process variance, poor maintenance, weak data, misaligned procedures or human error.',
+    detail: 'APGI treats these failures as opportunity generators. A process that is not controlled, measured or understood can create the conditions for avoidable loss.'
+  }
+];
+
+export const maturityJourney = [
+  { step: 'Assess current state', detail: 'Use practical criteria and minimum performance expectations to understand the organization as it really operates.' },
+  { step: 'Understand maturity', detail: 'Translate evidence into a maturity view: Basic, Reactive, Compliant, Proactive or Resilient.' },
+  { step: 'Identify gaps', detail: 'Find weak controls, opportunity generators, missing evidence and practices that depend too much on individual heroics.' },
+  { step: 'Build the roadmap', detail: 'Convert findings into a structured improvement roadmap with priorities, owners and realistic sequencing.' },
+  { step: 'Implement over time', detail: 'Use consultation, PIT, training, risk tools, monitoring and assurance to manage the roadmap as a long-term programme.' },
+  { step: 'Mature toward resilience', detail: 'Move from manual and person-dependent controls toward embedded, monitored, automated and evidence-producing operations.' }
+];
+
+export const freeAssessment = {
+  eyebrow: 'Free maturity assessment',
+  heading: 'Start with a maturity indication, then continue the journey in APGI Hub.',
+  detail: 'The free assessment is an introductory indication, not a full audit. It helps an organization understand where it may sit on the maturity journey and points the next step toward the ISMS / APGI Hub environment for deeper assessment and roadmap work.',
+  cta: 'Start free assessment',
+  fallback: 'Assessment destination pending - contact APGI for access',
+  slug: 'marketing/maturity-roadmap'
+};
+
 export const services = [
+  { name: 'Maturity assessment and roadmap advisory', need: 'Organizations need to know where they are before they can improve.', outcome: 'Current maturity, gaps and roadmap priorities are made visible.', cta: '/platform' },
   { name: 'Security risk mitigation advisory', need: 'Complex operations need clear, proportionate protection decisions.', outcome: 'Risk posture, controls and next actions are clarified for leaders.', cta: '/contact' },
   { name: 'Human rights security training', need: 'Teams need practical training that starts with people, not paperwork.', outcome: 'Learners understand risk, conduct and escalation expectations.', cta: '/training' },
   { name: 'Independent assurance and verification', need: 'Executives need unbiased checks that separate claims from evidence.', outcome: 'Assurance findings, gaps and readiness states are made visible.', cta: '/contact' },
@@ -30,13 +62,36 @@ export const services = [
 ];
 
 export const hubModules = [
-  { name: 'Maturity Roadmap / MMM', slug: 'marketing/maturity-roadmap' },
-  { name: 'Risk Management', slug: 'marketing/risk-management' },
-  { name: 'Project Implementation Tracker / PIT', slug: 'marketing/project-implementation' },
-  { name: 'Incident & Intelligence Hub', slug: 'marketing/incident-intelligence' },
-  { name: 'Data Analytics & Remote Assurance', slug: 'marketing/data-analytics-assurance' },
-  { name: 'Systems Integration / RADAM', slug: 'marketing/systems-integration' },
-  { name: 'Skills Development Portal', slug: 'marketing/skills-development' }
+  { name: 'Maturity Roadmap / MMM', slug: 'marketing/maturity-roadmap', role: 'Assessment and roadmap engine', journey: 'Uses criteria to assess current maturity, identify gaps and define the roadmap toward resilient operations.' },
+  { name: 'Risk Management', slug: 'marketing/risk-management', role: 'Risk logic engine', journey: 'Connects threats, vulnerabilities, likelihood, consequence, control effectiveness, residual risk and mitigation planning.' },
+  { name: 'Project Implementation Tracker / PIT', slug: 'marketing/project-implementation', role: 'Roadmap execution tracker', journey: 'Turns the maturity roadmap into a governed implementation programme with actions, accountability, milestones and evidence.' },
+  { name: 'Incident & Intelligence Hub', slug: 'marketing/incident-intelligence', role: 'Workflow and intelligence layer', journey: 'Manages incidents, anomalies, weak signals, operational failures and response workflows so learning feeds back into the roadmap.' },
+  { name: 'Data Analytics & Remote Assurance', slug: 'marketing/data-analytics-assurance', role: 'Monitoring and assurance layer', journey: 'Uses operational data and system evidence to identify possible loss events, monitor control effectiveness and support independent assurance.' },
+  { name: 'Systems Integration / RADAM', slug: 'marketing/systems-integration', role: 'Systems and data integration support', journey: 'Connects data sources and operational systems so maturity evidence can increasingly be produced by live systems rather than manual checking.' },
+  { name: 'Skills Development Portal', slug: 'marketing/skills-development', role: 'Capability-building layer', journey: 'Builds the knowledge and skills people need to improve governance, risk management, controls, assurance and operational discipline.' }
+];
+
+export const situationAwareness = [
+  'What work is being performed?',
+  'Who is performing the work?',
+  'What risks are attached to the activity?',
+  'Which controls must be in place?',
+  'What evidence proves the controls worked?',
+  'Which exceptions, weak signals or incidents need escalation?'
+];
+
+export const learningPattern = [
+  { label: 'Hover', detail: 'A short one-line explanation helps the user orient quickly.' },
+  { label: 'Click', detail: 'A concise paragraph or panel explains the concept in context.' },
+  { label: 'Ask', detail: 'Maturion can guide the user deeper when the platform context is available.' },
+  { label: 'Train', detail: 'Structured training supports topics that require deeper learning and behaviour change.' }
+];
+
+export const caseStudyModel = [
+  { label: 'Context and challenge', detail: 'Describe the operational problem without naming the client unless permission exists.' },
+  { label: 'Risk or opportunity generator', detail: 'Explain how process, people, systems, controls or data created exposure to loss.' },
+  { label: 'APGI intervention', detail: 'Show how APGI supported assessment, design, roadmap, training, assurance or control improvement.' },
+  { label: 'Maturity improvement', detail: 'Summarise the operational benefit and how the client moved toward more resilient practice.' }
 ];
 
 export const classroomTraining = [
@@ -70,8 +125,8 @@ export const trainingOffers = [
 export const pageContent = {
   services: {
     eyebrow: 'Services',
-    heading: 'Risk mitigation services with substance, evidence and human judgement.',
-    intro: 'APGI supports organizations that need practical security, assurance and training capability without turning the public website into a private system.',
+    heading: 'Practical services for the maturity journey.',
+    intro: 'APGI services help organizations reduce opportunity for loss, improve maturity, and build evidence-backed security, risk, training and assurance capability over time.',
     sections: [
       'Service delivery focuses on real-world protection of people, process and property.',
       'Each service block connects a client need to an outcome and a safe public CTA.',
@@ -80,20 +135,20 @@ export const pageContent = {
   },
   platform: {
     eyebrow: 'APGI Hub',
-    heading: 'A public view of the APGI Hub ecosystem.',
-    intro: 'The platform page explains the APGI Hub direction and renders module states safely. If the Hub base URL is unavailable, module actions remain pending rather than broken.',
+    heading: 'The APGI Hub ecosystem supports one maturity journey.',
+    intro: 'APGI Hub is presented as a connected pathway from maturity assessment and roadmap planning to implementation tracking, risk management, incident workflows, monitoring, assurance and training.',
     sections: []
   },
   training: {
     eyebrow: 'Training',
-    heading: 'Training that extends beyond VPSHR into a full APGI catalogue.',
-    intro: 'APGI training is presented as a structured catalogue with classroom/contact-delivery programmes and a separate public e-learning platform surface. VPSHR is one training family, not the whole training offer.',
+    heading: 'Training that builds maturity, not just attendance records.',
+    intro: 'APGI training supports the maturity journey by helping people understand risk, controls, conduct, investigations, surveillance, VPSHR, diamond controls and practical loss prevention.',
     sections: []
   },
   about: {
     eyebrow: 'About',
-    heading: 'Independent protection advice for people, process and property.',
-    intro: 'APGI positions security risk mitigation as a people-first discipline supported by experience, integrity and practical verification.',
+    heading: 'Loss prevention through operational maturity.',
+    intro: 'APGI helps organizations reduce the opportunities that lead to malicious and non-malicious loss by combining assessment, roadmap thinking, consultation, tools, training and assurance.',
     sections: ['APGI gives clients what they need, not what they do not.', 'The public site presents APGI clearly while keeping private delivery systems out of scope.', 'Philanthropy, training and mentorship remain important parts of the APGI story.']
   },
   team: {
@@ -126,4 +181,8 @@ export function hubHref(moduleSlug: string) {
   const base = import.meta.env.ISMS_PUBLIC_BASE_URL;
   if (!base) return null;
   return `${base.replace(/\/$/, '')}/${moduleSlug}`;
+}
+
+export function freeAssessmentHref() {
+  return hubHref(freeAssessment.slug);
 }
