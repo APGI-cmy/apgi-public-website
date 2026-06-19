@@ -2,8 +2,8 @@
 
 **Module**: APW (APGI Public Website)  
 **Module Slug**: APW  
-**Status**: Stage 12 v0.4 Website Intent Build Alignment drafted  
-**Last Updated**: 2026-06-18  
+**Status**: Stage 12 v0.4 Website Intent Build Alignment merged; post-merge validation and final site polish next  
+**Last Updated**: 2026-06-19  
 **Authority**: CS2: Johan Ras  
 **Canonical Root**: `modules/APW`
 
@@ -19,7 +19,9 @@ PR #26 merged the root APW website intent alignment canon in `APW_WEBSITE_INTENT
 
 PR #27 merged the Stage 1 through Stage 11 prebuild intent-alignment addenda.
 
-The current corrective wave is Stage 12 v0.4 Website Intent Build Alignment. It applies the new intent QA-to-Red tests to the existing Astro implementation and updates only the public content/rendering needed to turn those tests green.
+PR #28 merged Stage 12 v0.4 Website Intent Build Alignment. The public Astro implementation now includes the APGI loss-prevention maturity narrative, malicious and non-malicious loss framing, free maturity assessment CTA/handoff, journey-led APGI Hub Platform page, ecosystem role mapping, real-time situational awareness, hover/click/ask/train content, and anonymised case-study model.
+
+The current position is post-merge validation and final public-site readiness review. The next wave should verify the merged `main` deployment and then decide whether APW needs final copy/design polish, ISMS/free-assessment URL confirmation, legal copy finalisation, team/profile content, or launch/handover evidence.
 
 ---
 
@@ -40,36 +42,49 @@ The current corrective wave is Stage 12 v0.4 Website Intent Build Alignment. It 
 13. Stage 12 Training Catalogue Expansion v0.3 - merged in PR #25.
 14. Root Website Intent Canon - merged in PR #26.
 15. Prebuild Intent Alignment v0.4 - merged in PR #27.
-16. Stage 12 Website Intent Build Alignment v0.4 - active current wave on branch `apw-stage12-intent-build-v04`.
+16. Stage 12 Website Intent Build Alignment v0.4 - merged in PR #28; merge commit `10ad4acf05ad4bdf9ffd5d15a0dbd1a0b90a5948`.
+17. Tracker post-PR28 update - active on branch `apw-tracker-after-pr28`.
 
 ---
 
-## Stage 12 v0.4 Scope
+## Stage 12 v0.4 Outcome
 
 | Area | Status | Notes |
 |---|---|---|
-| QA-to-Red | Drafted | `modules/APW/11-build/stage12-v04-intent-qa-to-red.md` records RED findings before build. |
-| Structured data | Drafted | `src/data/site.ts` adds loss framing, maturity journey, free assessment, ecosystem roles, situational awareness, learning pattern and case-study model. |
-| Homepage | Drafted | `/` now leads with APGI loss prevention through maturity and includes free assessment CTA. |
-| Platform route | Drafted | `/platform` now renders a journey-led APGI Hub page rather than only a module-card registry. |
-| Training route | Drafted | `/training` keeps v0.3 catalogue and frames training as maturity capability-building. |
-| Build evidence | Drafted | `modules/APW/11-build/build-evidence.md` updated for v0.4. |
-| Boundary | Preserved | No backend, Supabase, CRM, auth, LMS admin, assessment engine, or private runtime added. |
-| Vercel validation | Pending | To be checked after PR creation. |
+| QA-to-Red | Complete | `modules/APW/11-build/stage12-v04-intent-qa-to-red.md` records RED findings before build and now follows the standard status-header format. |
+| Structured data | Complete | `src/data/site.ts` adds loss framing, maturity journey, free assessment, ecosystem roles, situational awareness, learning pattern and case-study model. |
+| Homepage | Complete | `/` leads with APGI loss prevention through maturity and includes free assessment CTA. |
+| Platform route | Complete | `/platform` renders a journey-led APGI Hub page rather than only a module-card registry. |
+| Training route | Complete | `/training` keeps v0.3 catalogue and frames training as maturity capability-building. |
+| Build evidence | Complete | `modules/APW/11-build/build-evidence.md` updated for v0.4 and PR validation. |
+| Boundary | Preserved | No backend, Supabase, CRM, auth, LMS admin, assessment engine, private runtime, secrets, or new environment variables added. |
+| Vercel validation | Green before merge | PR #28 Vercel preview was Ready/success on the reviewed head. Merged `main` deployment should be checked next. |
 
 ---
 
 ## Current Focus
 
-Open and validate the Stage 12 v0.4 Website Intent Build Alignment PR. Confirm Vercel/build is green and the public routes satisfy the intent QA checks:
+Run a post-merge APW readiness review on `main`.
 
-- APGI as holistic loss-prevention and maturity-improvement partner;
-- malicious and non-malicious loss framing;
-- maturity journey as conceptual spine;
-- public free maturity assessment entry point;
-- ISMS/APGI Hub handoff for deeper assessment;
-- ecosystem module roles in one journey;
-- real-time situational awareness concept;
-- hover/click/ask/train learning pattern;
-- anonymised case-study boundary;
-- no unapproved APW backend/platform runtime scope.
+Minimum checks:
+
+- Confirm the merged `main` Vercel deployment is green.
+- Inspect `/`, `/platform`, `/training`, `/services`, `/about`, `/team`, `/contact`, `/privacy`, and `/terms` on the deployed site.
+- Confirm the free maturity assessment CTA behaviour is acceptable when `ISMS_PUBLIC_BASE_URL` is configured or absent.
+- Decide whether the assessment destination should remain contact-assisted pending or point to a confirmed ISMS/APGI Hub public URL.
+- Review final copy tone for APGI philosophy, especially homepage and Platform.
+- Decide whether legal placeholders, team/profile placeholders, case-study model, and contact handoffs are launch-acceptable or need a final polish wave.
+
+---
+
+## Recommended Next Wave
+
+**APW Post-Merge Readiness & Launch Gap Review v0.5**
+
+Purpose: inspect the merged deployment as a public website, not just a passing PR. The output should be a launch-gap list with one of three dispositions:
+
+1. **Launch acceptable** - no blocking gaps; proceed to final launch/handover evidence.
+2. **Polish required** - content/design/legal/profile/CTA improvements needed before launch.
+3. **Configuration required** - environment or external destination setup needed, especially the ISMS/APGI Hub free assessment URL.
+
+No new feature build should start until that post-merge readiness review is complete.
