@@ -1,0 +1,40 @@
+---
+const chatEndpoint = import.meta.env.APW_PUBLIC_MATURION_CHAT_ENDPOINT || '';
+const chatEnabled = import.meta.env.APW_PUBLIC_MATURION_CHAT_ENABLED !== 'false';
+---
+{chatEnabled && (
+  <section class="maturion-chat" data-maturion-chat data-endpoint={chatEndpoint} aria-label="Ask Maturion">
+    <button class="maturion-launcher" type="button" aria-expanded="false" aria-controls="maturion-chat-panel">
+      <span class="maturion-launcher-mark">M</span>
+      <span>Ask Maturion</span>
+    </button>
+
+    <div class="maturion-panel" id="maturion-chat-panel" hidden>
+      <div class="maturion-panel-header">
+        <div>
+          <p class="maturion-eyebrow">APGI AI guidance</p>
+          <h2>Maturion</h2>
+        </div>
+        <button class="maturion-close" type="button" aria-label="Close Maturion chat">×</button>
+      </div>
+
+      <div class="maturion-panel-body" role="log" aria-live="polite" aria-relevant="additions">
+        <article class="maturion-message maturion-message-ai">
+          <p><strong>Maturion:</strong> Ask me about APGI, maturity, loss prevention, APGI Hub, training or assurance.</p>
+          <p>{chatEndpoint ? 'The Maturion gateway is configured.' : 'The Maturion gateway is not connected yet.'}</p>
+        </article>
+      </div>
+
+      <form class="maturion-form">
+        <label class="maturion-label" for="maturion-input">Ask Maturion a question</label>
+        <textarea id="maturion-input" name="message" rows="3" maxlength="1200" placeholder="Ask a question." required></textarea>
+        <div class="maturion-actions">
+          <p class="maturion-status" data-maturion-status>{chatEndpoint ? 'Gateway configured.' : 'Gateway pending.'}</p>
+          <button class="button" type="submit">Send</button>
+        </div>
+      </form>
+
+      <p class="maturion-disclaimer">Do not submit confidential, personal or client-identifying information through the public website chat.</p>
+    </div>
+  </section>
+)}
