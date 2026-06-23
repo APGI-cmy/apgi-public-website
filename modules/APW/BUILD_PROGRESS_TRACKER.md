@@ -3,7 +3,7 @@
 **Module**: APW (APGI Public Website)  
 **Module Slug**: APW  
 **Status**: APW Post-Merge Readiness & Launch Gap Review v0.5 in progress; APW Vercel deployment URL confirmed  
-**Last Updated**: 2026-06-19  
+**Last Updated**: 2026-06-23  
 **Authority**: CS2: Johan Ras  
 **Canonical Root**: `modules/APW`
 
@@ -32,7 +32,7 @@ The current wave is APW Post-Merge Readiness & Launch Gap Review v0.5. CS2 confi
 1. Stage 1 App Description v0.2 - complete / merged in PR #12; intent-alignment addendum v0.4 merged in PR #27.
 2. Stage 2 UX Workflow & Wiring v0.2 - complete / merged in PR #13; intent-alignment addendum v0.4 merged in PR #27.
 3. Stage 3 FRS v0.2 - complete / merged in PR #14; intent-alignment addendum v0.4 merged in PR #27.
-4. Stage 4 TRS v0.2A - complete / merged through PR #16 and PR #17; intent-alignment addendum v0.4 merged in PR #27.
+4. Stage 4 TRS v0.2 - complete / merged in PR #15; intent-alignment addendum v0.4 merged in PR #27.
 5. Stage 5 Architecture v0.2A - complete / merged through PR #16 and PR #17; intent-alignment addendum v0.4 merged in PR #27.
 6. Stage 6 QA-to-Red v0.2 - complete / merged in PR #18; intent-alignment addendum v0.4 merged in PR #27.
 7. Stage 7 PBFAG v0.2 - complete / merged in PR #19; intent-alignment addendum v0.4 merged in PR #27.
@@ -61,7 +61,7 @@ The current wave is APW Post-Merge Readiness & Launch Gap Review v0.5. CS2 confi
 | Training route | Source complete / live check pending | `/training` keeps v0.3 catalogue and frames training as maturity capability-building in source. |
 | Build evidence | Complete | `modules/APW/11-build/build-evidence.md` updated for v0.4 and PR validation. |
 | Boundary | Preserved | No backend, Supabase, CRM, auth, LMS admin, assessment engine, private runtime, secrets, or new environment variables added. |
-| Vercel validation | Green after PR #29 | GitHub/Vercel status for PR #29 merge commit is success. |
+| Vercel validation | Green after PR #29 | GitHub/Vercel status for PR #29 merge commit was successful. |
 | APW Vercel URL | Confirmed | `https://apgi-public-website.vercel.app/` shows the new APW implementation. |
 | Public custom domain | Configuration decision | `https://apginc.ca/` appears to serve legacy APGI website content; decide whether/when to map it to the new APW deployment. |
 
