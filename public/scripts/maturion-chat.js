@@ -15,7 +15,11 @@
   function setOpen(open) {
     panel.hidden = !open;
     launcher.setAttribute('aria-expanded', String(open));
-    if (open) input.focus();
+    if (open) {
+      input.focus();
+    } else {
+      launcher.focus();
+    }
   }
 
   function addMessage(kind, text) {
