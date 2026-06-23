@@ -1,5 +1,6 @@
 ---
 import { routes, site } from '../data/site';
+import MaturionChat from '../components/MaturionChat.astro';
 
 const { title, description } = Astro.props;
 const pageTitle = title ? `${title} | ${site.shortName}` : `${site.name}`;
@@ -20,6 +21,7 @@ const navRoutes = routes.filter((route) => !['privacy', 'terms'].includes(route.
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="/styles/global.css" />
+    <link rel="stylesheet" href="/styles/maturion-chat.css" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -64,5 +66,7 @@ const navRoutes = routes.filter((route) => !['privacy', 'terms'].includes(route.
         </section>
       </div>
     </footer>
+    <MaturionChat />
+    <script src="/scripts/maturion-chat.js" defer></script>
   </body>
 </html>
