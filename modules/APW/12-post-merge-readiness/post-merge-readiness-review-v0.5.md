@@ -10,6 +10,7 @@
 | Status | In progress - APW Vercel deployment URL confirmed |
 | Owner | Johan Ras |
 | Authority | CS2: Johan Ras |
+| Last Updated | 2026-06-23 |
 | Branch | `apw-post-merge-readiness-v05` |
 | Main Baseline | PR #29 merge commit `61230a701666626e8b2386a56b279064b995488f` |
 | Root Intent Anchor | `APW_WEBSITE_INTENT.md` |
