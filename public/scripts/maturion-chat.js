@@ -7,12 +7,15 @@
   const close = root.querySelector('.maturion-close');
   const minimise = root.querySelector('.maturion-minimise');
   const fullscreen = root.querySelector('.maturion-fullscreen');
+  const controls = root.querySelector('.maturion-window-controls');
   const form = root.querySelector('.maturion-form');
   const input = root.querySelector('#maturion-input');
   const log = root.querySelector('.maturion-panel-body');
   const status = root.querySelector('[data-maturion-status]');
   const endpoint = root.dataset.endpoint || '';
   const history = [];
+
+  controls.setAttribute('role', 'group');
 
   function setFullscreen(active) {
     root.classList.toggle('maturion-chat-fullscreen', active);
