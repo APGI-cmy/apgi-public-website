@@ -5,6 +5,9 @@
   const launcher = root.querySelector('.maturion-launcher');
   const panel = root.querySelector('.maturion-panel');
   const close = root.querySelector('.maturion-close');
+  const minimise = root.querySelector('.maturion-minimise');
+  const fullscreen = root.querySelector('.maturion-fullscreen');
+  const controls = root.querySelector('.maturion-window-controls');
   const form = root.querySelector('.maturion-form');
   const input = root.querySelector('#maturion-input');
   const log = root.querySelector('.maturion-panel-body');
@@ -12,14 +15,21 @@
   const endpoint = root.dataset.endpoint || '';
   const history = [];
 
+  controls.setAttribute('role', 'group');
+
+  function setFullscreen(active) {
+    root.classList.toggle('maturion-chat-fullscreen', active);
+    fullscreen.setAttribute('aria-pressed', String(active));
+    fullscreen.setAttribute('aria-label', active ? 'Return Maturion chat to compact view' : 'Open Maturion chat full screen');
+  }
+
   function setOpen(open) {
     panel.hidden = !open;
+    launcher.hidden = open;
     launcher.setAttribute('aria-expanded', String(open));
-    if (open) {
-      input.focus();
-    } else {
-      launcher.focus();
-    }
+    if (!open) setFullscreen(false);
+    if (open) input.focus();
+    else launcher.focus();
   }
 
   function addMessage(kind, text) {
@@ -69,8 +79,10 @@
     addMessage('ai', answer);
   }
 
-  launcher.addEventListener('click', () => setOpen(panel.hidden));
+  launcher.addEventListener('click', () => setOpen(true));
   close.addEventListener('click', () => setOpen(false));
+  minimise.addEventListener('click', () => setOpen(false));
+  fullscreen.addEventListener('click', () => setFullscreen(!root.classList.contains('maturion-chat-fullscreen')));
 
   form.addEventListener('submit', async (event) => {
     event.preventDefault();
