@@ -19,6 +19,11 @@
   cursor: pointer;
 }
 
+.maturion-launcher[hidden],
+.maturion-panel[hidden] {
+  display: none !important;
+}
+
 .maturion-launcher-mark {
   display: grid;
   place-items: center;
