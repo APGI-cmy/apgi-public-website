@@ -114,7 +114,7 @@ const assessmentHref = freeAssessmentHref();
         <div class="section-head">
           <p class="eyebrow">Classroom / contact delivery</p>
           <h2>APGI classroom training catalogue</h2>
-          <p>These programmes are available for classroom, residential-contact, group, or custom delivery. Cards use a contact handoff rather than pretending every course is self-enrolment.</p>
+          <p>Choose classroom, residential, group or tailored programmes. Contact APGI to discuss your team’s needs and arrange delivery.</p>
         </div>
         <div class="grid two">
           {classroomTraining.map((course) => <article class="card"><span class="status">{course.category} · {course.duration}</span><h3>{course.title}</h3><p>{course.overview}</p><p><strong>Who should attend:</strong> {course.audience}</p><p><strong>Delivery:</strong> {course.delivery}</p><p><strong>Assessment:</strong> {course.assessment}</p><a class="button secondary" href="/contact">{course.cta}</a></article>)}
