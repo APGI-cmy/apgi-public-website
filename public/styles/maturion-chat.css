@@ -211,3 +211,6 @@
 .maturion-message-user{background:var(--brand-blue);color:#fff}
 .maturion-send{background:var(--brand-blue);color:#fff}
 .maturion-message a,.maturion-status,.maturion-label{color:var(--ink)}
+.maturion-form textarea{background:var(--surface);color:var(--ink);border-color:var(--line)}
+.maturion-message-user{border-color:var(--brand-mid-blue)}
+.maturion-launcher:focus-visible,.maturion-window-controls button:focus-visible{outline-color:var(--brand-mid-blue)}
