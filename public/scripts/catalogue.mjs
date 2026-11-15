@@ -20,7 +20,7 @@ function applyBrand(brand){
  for(const [key,name] of Object.entries({primaryColor:'--brand-navy',secondaryColor:'--brand-blue',accentColor:'--brand-mid-blue',paleColor:'--brand-pale-blue'}))if(/^#[0-9a-f]{6}$/i.test(brand[key]))document.documentElement.style.setProperty(name,brand[key]);
  const logo=safeImage(brand.logoUrl);if(logo)document.querySelectorAll('[data-apgi-logo]').forEach(img=>{img.src=logo;});
  const mark=brand.watermark;const src=mark&&safeImage(mark.src);const layer=document.querySelector('[data-brand-watermark]');
- if(layer){layer.replaceChildren();if(src){const image=element('img');image.src=src;image.alt='';layer.style.opacity=String(Math.max(.02,Math.min(.12,Number(mark.opacity)||.07)));layer.append(image);}}
+ if(layer){layer.replaceChildren();if(src){const image=element('img');image.src=src;image.alt='';layer.style.opacity=String(Math.max(0,Math.min(1,Number(mark.opacity)||.07)));layer.append(image);}}
 }
 async function refresh(){
  const containers=[...document.querySelectorAll('[data-live-catalogue]')];
