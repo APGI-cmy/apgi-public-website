@@ -201,3 +201,13 @@
     inset: 0.5rem;
   }
 }
+/* APGI Training palette shared across the public guidance panel. */
+.maturion-launcher{background:var(--brand-blue);color:#fff;border-radius:12px}
+.maturion-launcher-mark,.maturion-panel-header{background:var(--brand-navy);color:#fff}
+.maturion-panel{background:var(--surface);color:var(--ink);border-color:var(--line);font-family:"Trebuchet MS",Arial,Helvetica,sans-serif}
+.maturion-eyebrow{color:var(--brand-pale-blue)}
+.maturion-panel-body,.maturion-form,.maturion-input{background:var(--surface);color:var(--ink)}
+.maturion-message-ai{background:var(--bg);border-color:var(--line)}
+.maturion-message-user{background:var(--brand-blue);color:#fff}
+.maturion-send{background:var(--brand-blue);color:#fff}
+.maturion-message a,.maturion-status,.maturion-label{color:var(--ink)}

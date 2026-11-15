@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import LiveCatalogue from '../components/LiveCatalogue.astro';
 import { routes, services, hubModules, trainingOffers, site, hubHref, lossTypes, maturityJourney, freeAssessment, freeAssessmentHref, situationAwareness, learningPattern } from '../data/site';
 const route = routes.find((item) => item.key === 'home');
 const assessmentHref = freeAssessmentHref();
@@ -19,7 +20,7 @@ const assessmentHref = freeAssessmentHref();
       <aside class="hero-card" aria-label="APGI maturity journey">
         <h2>From exposed to resilient.</h2>
         <p>APGI connects criteria-based assessment, maturity scoring, gap identification, roadmap planning, implementation tracking, remote assurance and training into one improvement journey.</p>
-        <p>{assessmentHref ? 'The free assessment starts in the APGI Hub / ISMS environment.' : 'The deeper assessment destination is governed as a pending APGI Hub / ISMS handoff until the public base URL is configured.'}</p>
+        <p>Start with an assessment, build a practical roadmap and strengthen the capabilities that matter.</p>
       </aside>
     </div>
   </section>
@@ -42,7 +43,7 @@ const assessmentHref = freeAssessmentHref();
       <div class="section-head">
         <p class="eyebrow">Maturity journey</p>
         <h2>Assess, understand, improve and assure.</h2>
-        <p>The website and APGI Hub must guide visitors through a maturity journey, not a disconnected list of services or app cards.</p>
+        <p>Connect assessment, practical improvement, training and assurance in one continuous maturity journey.</p>
       </div>
       <div class="grid">
         {maturityJourney.map((item, index) => <article class="card"><span class="status">Step {index + 1}</span><h3>{item.step}</h3><p>{item.detail}</p></article>)}
@@ -82,7 +83,7 @@ const assessmentHref = freeAssessmentHref();
         <h2>Each module has a role in the same maturity journey.</h2>
       </div>
       <div class="grid">
-        {hubModules.slice(0, 6).map((module) => <article class="card"><span class="status">{module.role}</span><h3>{module.name}</h3><p>{module.journey}</p><p class="muted">{hubHref(module.slug) ? 'Public Hub link available.' : 'Pending Hub base URL.'}</p></article>)}
+        {hubModules.slice(0, 6).map((module) => <article class="card"><span class="status">{module.role}</span><h3>{module.name}</h3><p>{module.journey}</p>{module.slug === 'marketing/skills-development' ? <a class="button secondary" href={`${site.trainingPortalUrl}/courses`}>Explore training</a> : hubHref(module.slug) ? <a class="button secondary" href={hubHref(module.slug)}>Explore solution</a> : <a href="/contact">Discuss this solution</a>}</article>)}
       </div>
       <div class="cta-row"><a class="button" href="/platform">Explore APGI Hub</a></div>
     </div>
@@ -113,24 +114,13 @@ const assessmentHref = freeAssessmentHref();
     </div>
   </section>
 
-  <section class="section">
-    <div class="container">
-      <div class="section-head">
-        <p class="eyebrow">Training preview</p>
-        <h2>Training builds the capability needed to move up the maturity scale.</h2>
-      </div>
-      <div class="grid">
-        {trainingOffers.map((offer) => <article class="card"><span class="status">{offer.status}</span><h3>{offer.name}</h3><p>{offer.detail}</p></article>)}
-      </div>
-      <div class="cta-row"><a class="button" href={site.thinkificUrl}>Open Thinkific storefront</a><a class="button secondary" href="/training">View training page</a></div>
-    </div>
-  </section>
+  <LiveCatalogue preview />
 
   <section class="section alt">
     <div class="container proof-panel">
       <p class="eyebrow">Contact path</p>
       <h2>Ready to discuss maturity, risk, training or assurance needs?</h2>
-      <p>Use public handoffs only: email, phone and contact route. No backend form capture is introduced.</p>
+      <p>Talk to APGI about the challenges you face and the capabilities your organisation needs.</p>
       <div class="cta-row"><a class="button" href="/contact">Contact APGI</a><a class="button secondary" href={`mailto:${site.email}`}>{site.email}</a></div>
     </div>
   </section>
