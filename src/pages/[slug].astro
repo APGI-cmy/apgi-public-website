@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import LiveCatalogue from '../components/LiveCatalogue.astro';
 import { routes, services, hubModules, trainingOffers, classroomTraining, eLearningTraining, site, pageContent, hubHref, freeAssessment, freeAssessmentHref, maturityJourney, situationAwareness, learningPattern, caseStudyModel } from '../data/site';
 
 export function getStaticPaths() {
@@ -21,13 +22,14 @@ const assessmentHref = freeAssessmentHref();
         <p class="lead">{content.intro}</p>
         <div class="cta-row">
           {route.key !== 'contact' && <a class="button" href="/contact">Contact APGI</a>}
-          {route.key === 'training' && <a class="button secondary" href={site.thinkificUrl}>Open Thinkific storefront</a>}
+          {route.key === 'training' && <a class="button secondary" href={`${site.trainingPortalUrl}/courses`}>Explore training courses</a>}
           {route.key === 'platform' && (assessmentHref ? <a class="button secondary" href={assessmentHref}>{freeAssessment.cta}</a> : <a class="button secondary" href="/contact">{freeAssessment.fallback}</a>)}
         </div>
       </div>
       <aside class="hero-card">
-        <h2>Intent alignment note</h2>
-        <p>This public route is aligned to `APW_WEBSITE_INTENT.md`: APGI is presented through loss prevention, maturity journey, safe public handoffs and no unapproved backend scope.</p>
+        <h2>Connected capabilities.<br />Lasting resilience.</h2>
+        <p>Bring people, processes and evidence together through practical advice, training and assurance.</p>
+        <a class="button secondary" href={`${site.trainingPortalUrl}/courses`}>Build your capability</a>
       </aside>
     </div>
   </section>
@@ -67,9 +69,9 @@ const assessmentHref = freeAssessmentHref();
 
     <section class="section alt">
       <div class="container">
-        <div class="section-head"><p class="eyebrow">Ecosystem roles</p><h2>Required APGI Hub modules, mapped to the journey</h2><p>Module links are composed from the governed APGI Hub map only when `ISMS_PUBLIC_BASE_URL` is configured. Otherwise, they show a polished pending state.</p></div>
+        <div class="section-head"><p class="eyebrow">Ecosystem roles</p><h2>Required APGI Hub modules, mapped to the journey</h2><p>Find the capabilities that support your next stage of improvement.</p></div>
         <div class="grid">
-          {hubModules.map((module) => { const href = hubHref(module.slug); return <article class="card"><span class="status">{module.role}</span><h3>{module.name}</h3><p>{module.journey}</p><p class="muted">Governed destination: <code>{module.slug}</code></p>{href ? <a class="button secondary" href={href}>Open module</a> : <span class="button pending">Pending Hub URL</span>}</article>; })}
+          {hubModules.map((module) => { const href = module.slug === 'marketing/skills-development' ? `${site.trainingPortalUrl}/courses` : hubHref(module.slug); return <article class="card"><span class="status">{module.role}</span><h3>{module.name}</h3><p>{module.journey}</p>{href ? <a class="button secondary" href={href}>Open module</a> : <span class="button pending">Pending Hub URL</span>}</article>; })}
         </div>
       </div>
     </section>
@@ -90,7 +92,7 @@ const assessmentHref = freeAssessmentHref();
 
     <section class="section">
       <div class="container">
-        <div class="section-head"><p class="eyebrow">Case studies</p><h2>Success stories must be anonymised unless permission exists.</h2><p>Future case studies should show risk, APGI intervention and maturity improvement without naming clients or projects unless explicit approval is recorded.</p></div>
+        <div class="section-head"><p class="eyebrow">Case studies</p><h2>Understand the work behind stronger operations.</h2><p>Our approach connects operational challenges with practical interventions and measurable improvement.</p></div>
         <div class="grid two">{caseStudyModel.map((item) => <article class="card"><h3>{item.label}</h3><p>{item.detail}</p></article>)}</div>
       </div>
     </section>
@@ -105,36 +107,17 @@ const assessmentHref = freeAssessmentHref();
       </div>
     </section>
 
-    <section class="section alt">
-      <div class="container">
-        <div class="grid">
-          {trainingOffers.map((offer) => <article class="card"><span class="status">{offer.status}</span><h2>{offer.name}</h2><p>{offer.detail}</p></article>)}
-        </div>
-      </div>
-    </section>
+    <LiveCatalogue />
 
     <section class="section">
       <div class="container">
         <div class="section-head">
           <p class="eyebrow">Classroom / contact delivery</p>
           <h2>APGI classroom training catalogue</h2>
-          <p>These programmes are available for classroom, residential-contact, group, or custom delivery. Cards use a contact handoff rather than pretending every course is self-enrolment.</p>
+          <p>Choose classroom, residential, group or tailored programmes. Contact APGI to discuss your team’s needs and arrange delivery.</p>
         </div>
         <div class="grid two">
           {classroomTraining.map((course) => <article class="card"><span class="status">{course.category} · {course.duration}</span><h3>{course.title}</h3><p>{course.overview}</p><p><strong>Who should attend:</strong> {course.audience}</p><p><strong>Delivery:</strong> {course.delivery}</p><p><strong>Assessment:</strong> {course.assessment}</p><a class="button secondary" href="/contact">{course.cta}</a></article>)}
-        </div>
-      </div>
-    </section>
-
-    <section class="section alt">
-      <div class="container">
-        <div class="section-head">
-          <p class="eyebrow">E-learning platform</p>
-          <h2>Available public e-learning offerings</h2>
-          <p>These offerings are shown as the public course-platform surface. Course-specific links can be added later when governed public URLs are supplied.</p>
-        </div>
-        <div class="grid">
-          {eLearningTraining.map((course) => <article class="card"><span class="status">{course.meta}</span><h3>{course.title}</h3><p>{course.detail}</p><p><strong>Status:</strong> {course.status}</p><a class="button" href={site.thinkificUrl}>Open Thinkific storefront</a></article>)}
         </div>
       </div>
     </section>
@@ -144,7 +127,7 @@ const assessmentHref = freeAssessmentHref();
         <p class="eyebrow">Training handoff</p>
         <h2>Need classroom, group, or organization-specific delivery?</h2>
         <p>APGI can discuss classroom programmes, e-learning handoffs, VPSHR levels, diamond-control training, risk-management training, surveillance/search programmes and custom delivery.</p>
-        <div class="cta-row"><a class="button" href="/contact">Contact APGI about training</a><a class="button secondary" href={site.thinkificUrl}>Open e-learning storefront</a></div>
+        <div class="cta-row"><a class="button" href="/contact">Contact APGI about training</a><a class="button secondary" href={`${site.trainingPortalUrl}/courses`}>Explore the training portal</a></div>
       </div>
     </section>
   </>}

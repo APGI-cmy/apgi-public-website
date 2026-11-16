@@ -21,15 +21,17 @@ const navRoutes = routes.filter((route) => !['privacy', 'terms'].includes(route.
     <meta property="og:url" content={canonical} />
     <meta name="twitter:card" content="summary_large_image" />
     <link rel="stylesheet" href="/styles/global.css" />
+    <link rel="stylesheet" href="https://training-platform-v2-staging.vercel.app/api/public/catalogue.css" />
     <link rel="stylesheet" href="/styles/maturion-chat.css" />
   </head>
   <body>
+    <div class="brand-watermark" data-brand-watermark aria-hidden="true"></div>
     <a class="skip-link" href="#main">Skip to content</a>
     <header class="site-header" aria-label="Site header">
       <div class="container header-inner">
         <a class="brand" href="/" aria-label="APGI home">
-          <span class="brand-mark">APGI</span>
-          <span class="brand-copy">Assurance Protection Group Inc.</span>
+          <img class="brand-logo" data-apgi-logo src="/branding/apgi-logo.png" alt="APGI — Assurance Protection Group Inc." width="160" height="72" />
+          <span class="brand-copy">Assurance. Protection.<br />Connected solutions.</span>
         </a>
         <nav class="desktop-nav" aria-label="Primary navigation">
           {navRoutes.map((route) => <a href={route.path}>{route.label}</a>)}
@@ -40,6 +42,8 @@ const navRoutes = routes.filter((route) => !['privacy', 'terms'].includes(route.
             {navRoutes.map((route) => <a href={route.path}>{route.label}</a>)}
           </nav>
         </details>
+        <a class="portal-link" href="https://training-platform-v2-staging.vercel.app/alp-sign-in">Training portal</a>
+        <button class="theme-toggle" type="button" data-theme-toggle>Dark</button>
       </div>
     </header>
     <main id="main">
@@ -50,7 +54,7 @@ const navRoutes = routes.filter((route) => !['privacy', 'terms'].includes(route.
         <section>
           <h2>{site.shortName}</h2>
           <p>{site.tagline}</p>
-          <p class="muted">Public website only. No backend form capture, CRM storage, authentication or private system access is provided here.</p>
+          <p class="muted">Connecting people, knowledge and practical solutions to build resilient operations.</p>
         </section>
         <nav aria-label="Footer navigation">
           <h2>Explore</h2>
@@ -68,5 +72,7 @@ const navRoutes = routes.filter((route) => !['privacy', 'terms'].includes(route.
     </footer>
     <MaturionChat />
     <script src="/scripts/maturion-chat.js" defer></script>
+    <script type="module" src="/scripts/catalogue.mjs" is:inline></script>
+    <script src="/scripts/theme.js" defer></script>
   </body>
 </html>

@@ -7,7 +7,8 @@ export const site = {
   phone: '(416) 642-9974',
   phoneHref: 'tel:+14166429974',
   address: ['310 - 3660 Midland Ave.', 'Scarborough, Ontario', 'Canada M1V 0B8'],
-  thinkificUrl: 'https://apgi.thinkific.com/'
+  thinkificUrl: 'https://apgi.thinkific.com/',
+  trainingPortalUrl: 'https://training-platform-v2-staging.vercel.app'
 };
 
 export const routes = [

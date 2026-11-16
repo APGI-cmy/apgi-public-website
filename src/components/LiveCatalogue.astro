@@ -1,0 +1,12 @@
+---
+const {preview=false}=Astro.props;
+const portal='https://training-platform-v2-staging.vercel.app';
+---
+<section class="section catalogue-section" aria-labelledby={preview?'featured-courses':'available-courses'}>
+ <div class="container">
+  <div class="section-head"><p class="eyebrow">APGI Training</p><h2 id={preview?'featured-courses':'available-courses'}>{preview?'Your next learning journey':'Explore available courses'}</h2><p>Build practical skills in security, risk and responsible operations. Explore courses published in the APGI training portal.</p></div>
+  <div data-live-catalogue data-limit={preview?'3':''} aria-busy="true"><p role="status">Loading available courses…</p></div>
+  <noscript><p>View the latest published courses directly in the <a href={`${portal}/courses`}>training catalogue</a>.</p></noscript>
+  <div class="cta-row"><a class="button" href={`${portal}/courses`}>Browse all training courses</a><a class="button secondary" href={`${portal}/alp-sign-in`}>Training portal sign in</a></div>
+ </div>
+</section>

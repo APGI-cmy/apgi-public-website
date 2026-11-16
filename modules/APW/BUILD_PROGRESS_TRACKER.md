@@ -15,6 +15,12 @@
 
 ## Current Position
 
+### 15 November 2026 — Portal branding and live catalogue integration
+
+16 November follow-up: Johan reported that the homepage did not show the course imagery in the handover screenshot. Browser inspection found the image loaded correctly about 3053px below the initial viewport. The bounded correction features the existing published cover in the opening hero, moves the live catalogue directly below the hero and adds a course anchor. Build (nine routes), existing safety tests (three), local narrow layout and live desktop image/link checks passed. Production release `dpl_7D9ZBkXqrx3WUYS6bUpq4kJVE2zE`, runtime source `b401910`. Live hero image loaded at native width 1448; its panel spans y166–716 inside a 900px viewport. The image link opens the correct portal course. Portal source/data and publication criteria are unchanged. Independent acceptance is not claimed; draft PR #35 retains the source changes.
+
+Johan requested alignment with the V2 training portal, direct course handoffs and automatic visibility after course publication. The bounded implementation is documented in `docs/portal-catalogue-integration-20261115.md`. The existing maturity journey and contact/classroom material are retained. The V2 portal owns the public metadata, saved cover images, brand data and shared course-card CSS. Private client courses and review copies are excluded. Producer tests and release/browser evidence are required; independent acceptance is not represented as complete. Custom-domain mapping and learner release approval remain separate.
+
 PR #26 merged the root APW website intent alignment canon in `APW_WEBSITE_INTENT.md`.
 
 PR #27 merged the Stage 1 through Stage 11 prebuild intent-alignment addenda.
