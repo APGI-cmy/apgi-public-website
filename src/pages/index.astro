@@ -7,7 +7,7 @@ const assessmentHref = freeAssessmentHref();
 ---
 <BaseLayout title={route?.title} description={route?.description}>
   <section class="hero">
-    <div class="container hero-grid">
+    <div class="container hero-grid home-hero-grid">
       <div>
         <p class="eyebrow">Loss prevention through maturity</p>
         <h1>Reduce the opportunities that become loss.</h1>
@@ -15,15 +15,21 @@ const assessmentHref = freeAssessmentHref();
         <div class="cta-row">
           {assessmentHref ? <a class="button" href={assessmentHref}>{freeAssessment.cta}</a> : <a class="button" href="/contact">Request free assessment access</a>}
           <a class="button secondary" href="/platform">Explore the maturity journey</a>
+          <a class="button secondary" href="#featured-courses">Explore available courses</a>
         </div>
       </div>
-      <aside class="hero-card" aria-label="APGI maturity journey">
+      <aside class="hero-card featured-course" data-featured-course aria-label="Featured APGI training">
+        <div data-feature-fallback>
         <h2>From exposed to resilient.</h2>
         <p>APGI connects criteria-based assessment, maturity scoring, gap identification, roadmap planning, implementation tracking, remote assurance and training into one improvement journey.</p>
         <p>Start with an assessment, build a practical roadmap and strengthen the capabilities that matter.</p>
+        </div>
+        <div data-feature-content hidden></div>
       </aside>
     </div>
   </section>
+
+  <LiveCatalogue preview />
 
   <section class="section alt">
     <div class="container">
@@ -113,8 +119,6 @@ const assessmentHref = freeAssessmentHref();
       </div>
     </div>
   </section>
-
-  <LiveCatalogue preview />
 
   <section class="section alt">
     <div class="container proof-panel">

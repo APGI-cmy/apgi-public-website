@@ -15,6 +15,21 @@ function renderCourse(course){
  const body=element('div','public-course-body');body.append(element('span','public-course-level',course.level),element('h3','',course.title),element('p','',course.description),element('p','',course.duration));
  const link=element('a','public-course-link','Explore course');link.href=course.href;body.append(link);article.append(cover,body);return article;
 }
+function renderFeatured(courses){
+ const course=courses.find(item=>item.cover);
+ for(const panel of document.querySelectorAll('[data-featured-course]')){
+  const content=panel.querySelector('[data-feature-content]');const fallback=panel.querySelector('[data-feature-fallback]');
+  content.hidden=true;fallback.hidden=false;content.replaceChildren();
+  if(!course)continue;
+  const link=element('a','featured-course-image');link.href=course.href;
+  const image=element('img');image.alt=course.cover.alt;image.loading='eager';image.decoding='async';image.fetchPriority='high';
+  const reveal=()=>{if(content.contains(image)&&image.naturalWidth){content.hidden=false;fallback.hidden=true;}};
+  image.addEventListener('load',reveal,{once:true});image.addEventListener('error',()=>{if(content.contains(image)){content.hidden=true;fallback.hidden=false;}},{once:true});
+  link.append(image);const body=element('div','featured-course-body');
+  body.append(element('p','eyebrow','Featured training'),element('h2','',course.title));
+  const action=element('a','button','Explore course');action.href=course.href;body.append(action);content.append(link,body);image.src=course.cover.src;reveal();
+ }
+}
 function applyBrand(brand){
  if(!brand)return;
  for(const [key,name] of Object.entries({primaryColor:'--brand-navy',secondaryColor:'--brand-blue',accentColor:'--brand-mid-blue',paleColor:'--brand-pale-blue'}))if(/^#[0-9a-f]{6}$/i.test(brand[key]))document.documentElement.style.setProperty(name,brand[key]);
@@ -27,9 +42,10 @@ async function refresh(){
  try{
   const response=await fetch(`${PORTAL}/api/public/catalogue`,{cache:'no-store',credentials:'omit',signal:AbortSignal.timeout(15000)});if(!response.ok)throw Error('unavailable');
   const payload=await response.json();if(payload.schemaVersion!==1||!Array.isArray(payload.courses))throw Error('invalid catalogue');
-  const courses=payload.courses.map(normaliseCourse).filter(Boolean);applyBrand(payload.branding);
+  const courses=payload.courses.map(normaliseCourse).filter(Boolean);applyBrand(payload.branding);renderFeatured(courses);
   for(const container of containers){const limit=Number(container.dataset.limit)||courses.length;const grid=element('div','public-course-grid');courses.slice(0,limit).forEach(c=>grid.append(renderCourse(c)));container.replaceChildren(courses.length?grid:element('p','','New learning pathways will appear here when they are published.'));container.setAttribute('aria-busy','false');}
  }catch{
+  renderFeatured([]);
   for(const container of containers){const message=element('p','','The latest course list is temporarily unavailable. ');message.setAttribute('role','status');const link=element('a','','View courses in the training portal');link.href=`${PORTAL}/courses`;message.append(link);container.replaceChildren(message);container.setAttribute('aria-busy','false');}
  }
 }

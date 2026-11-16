@@ -26,4 +26,8 @@ A failed feed read displays a portal handoff instead of a stale or invented avai
 
 ## Validation
 
+### 16 November visibility correction
+
+Johan's homepage screenshot exposed a placement problem: the saved course image loaded correctly but the homepage preview was below eight content sections (approximately 3053px below the initial viewport). The earlier handover screenshot showed the training page. The homepage now features the first published course with an available cover alongside its opening headline and places the shared catalogue immediately below the hero. A direct in-page courses link improves discovery. Both images still come from the portal feed; no separate course-image copy is introduced. Missing covers, image failures and catalogue outages retain the descriptive hero fallback. Publication and privacy rules are unchanged. Local nine-route build and three existing safety tests passed, and browser checks confirmed the original 1448px cover loads in the opening panel with a single-column narrow layout and no horizontal overflow. These remain producer checks.
+
 Portal tests cover reviewed publication, client privacy, draft exclusion, fail-closed reads and automatic publish/withdraw changes. APW tests cover portal-only links, image URL boundaries and original cover identity. Builds and browser checks are recorded in the delivery evidence. These producer checks do not constitute independent acceptance.
